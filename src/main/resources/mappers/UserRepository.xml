@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.myproject.demo.repository.UserRepository">
+    <insert id="doJoin" parameterType="map">
+        INSERT INTO `user`
+        SET regDate = NOW(),
+        updateDate = NOW(),
+        loginId = #{loginId},
+        loginPw = #{loginPw},
+        `name` = #{name},
+        nickName = #{nickName},
+        email = #{email},
+        login_type = 'normal'
+    </insert>
+
+    <select id="getLastInsertId" parameterType="int">
+        SELECT
+        LAST_INSERT_ID()
+    </select>
+
+    <select id="getUserByLoginId" parameterType="String" resultType="org.myproject.demo.vo.User">
+        SELECT *
+        FROM `user`
+        WHERE loginId = #{loginId};
+    </select>
+
+    <select id="getUserByNameAndEmail">
+        SELECT *
+        FROM `user`
+        WHERE `name` = #{name}
+        AND email = #{email}
+    </select>
+</mapper>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.myproject.demo.repository.ReviewRepository">
+    <insert id="doWrite" parameterType="map">
+        INSERT INTO review
+        SET regDate = NOW(),
+        updateDate = NOW(),
+        title = #{title},
+        `body` = #{body}
+    </insert>
+
+    <select id="getReviewList" resultType="org.myproject.demo.vo.Review">
+        SELECT *
+        FROM review
+        ORDER BY id DESC;
+    </select>
+
+    <select id="getReviewById" parameterType="int" resultType="org.myproject.demo.vo.Review">
+        SELECT *
+        FROM review
+        WHERE id = #{id};
+    </select>
+
+    <update id="doModify" parameterType="map">
+        UPDATE review
+        <set>
+            updateDate = NOW(),
+            <if test="title != null and title != ''">title = #{title},</if>
+            <if test="body != null and body != ''">`body` = #{body}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="doDelete" parameterType="int">
+        DELETE
+        FROM review
+        WHERE id = #{id}
+    </delete>
+</mapper>
