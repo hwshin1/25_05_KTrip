@@ -33,7 +33,7 @@ public class ReviewController {
 
     @RequestMapping("/review/doWrite")
     @ResponseBody
-    public String doWrite(String title, String body){
+    public String doWrite(String title, String body) {
         reviewService.doWrite(title, body);
         return Ut.jsReplace("S-1", Ut.f("리뷰 쓰기 성공!"), "/review/list");
     }
