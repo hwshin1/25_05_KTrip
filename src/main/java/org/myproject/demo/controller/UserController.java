@@ -2,6 +2,7 @@ package org.myproject.demo.controller;
 
 import org.myproject.demo.service.UserService;
 import org.myproject.demo.util.Ut;
+import org.myproject.demo.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +16,7 @@ public class UserController {
 
     @RequestMapping("/user/join")
     public String Join() {
-        return "user/Login";
+        return "user/join";
     }
 
     @RequestMapping("/user/doJoin")
@@ -42,5 +43,34 @@ public class UserController {
         }
 
         return userService.doJoin(loginId, loginPw, name, nickName, email);
+    }
+
+    @RequestMapping("user/login")
+    public String login() {
+        return "user/login";
+    }
+
+    @RequestMapping("user/doLogin")
+    @ResponseBody
+    public String doLogin(String loginId, String loginPw) {
+        if (Ut.isEmptyOrNull(loginId)) {
+            return Ut.jsHistoryBack("F-1", Ut.f("아이디 입력"));
+        }
+
+        if (Ut.isEmptyOrNull(loginPw)) {
+            return Ut.jsHistoryBack("F-2", Ut.f("비밀번호 입력"));
+        }
+
+        User user = userService.getUserByLoginId(loginId);
+
+        if (user == null) {
+            return Ut.jsHistoryBack("F-3", Ut.f("%s는 없는 아이디 입니다.", loginId));
+        }
+
+        if (!user.getLoginPw().equals(loginPw)) {
+            return Ut.jsHistoryBack("F-4", Ut.f("비밀번호가 일치하지 않습니다."));
+        }
+
+        return Ut.jsReplace("S-1", Ut.f("%s님 환영합니다!", user.getNickName()), "/");
     }
 }
