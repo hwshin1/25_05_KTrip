@@ -1,10 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head>
-    <title>회원가입</title>
-</head>
-<body>
+
+<%@ include file="../common/head.jspf" %>
 <h1 style="text-align: center;">THE JOIN PAGE</h1>
 <section>
     <div style="margin-left: auto; margin-right: auto;">
@@ -42,7 +39,7 @@
 
                     <!-- 카카오 로그인 -->
                     <a href="${sendURL}">
-                        <img src="/kakao_login_medium_narrow.png" alt="카카오 로그인" style="margin-left: auto; margin-right: auto;">
+                        <img src="/kakao_login_medium_narrow.png" alt="카카오 로그인" class="mx-auto">
                     </a>
                 </div>
             </div>

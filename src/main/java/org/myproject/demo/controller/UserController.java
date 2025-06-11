@@ -2,9 +2,12 @@ package org.myproject.demo.controller;
 
 import org.myproject.demo.service.UserService;
 import org.myproject.demo.util.Ut;
+import org.myproject.demo.vo.KakaoApi;
 import org.myproject.demo.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -12,10 +15,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
 
     @Autowired
+    private KakaoApi kakaoApi;
+
+    @Autowired
     private UserService userService;
 
-    @RequestMapping("/user/join")
-    public String Join() {
+    @GetMapping("/user/join")
+    public String Join(Model model) {
+        String sendURL = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="
+                + kakaoApi.getClient_id() + "&redirect_uri="+ kakaoApi.getRedirect_url();
+
+        model.addAttribute("sendURL", sendURL);
+
         return "user/join";
     }
 
