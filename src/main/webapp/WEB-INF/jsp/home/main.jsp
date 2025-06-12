@@ -3,7 +3,7 @@
 
 <%@ include file="../common/head.jspf" %>
 
-<div style="width: 1920px; height: 2628px; position: relative; overflow: hidden; background: #fff;">
+<div style="width: 100%; height: 2628px; position: relative; overflow: hidden; background: #fff;">
     <div style="width: 1920px; height: 600px; position: absolute; left: 0px; top: 1410px; overflow: hidden; background: #fff;">
         <img src="/bennel.png" style="width: 1920px; height: 600px; position: absolute; left: -1px; top: -1px; object-fit: cover;"/>
         <p style="position: absolute; left: 778px; top: 160px; font-size: 50px; font-weight: 700; text-align: left; text-transform: uppercase; color: #fff;">
@@ -109,49 +109,156 @@
             </div>
         </div>
     </div>
-    <div style="width: 1920px; height: 580px; position: absolute; left: 0px; top: 70px; overflow: hidden; background: #fff;">
-        <img src="/slide3.png" style="width: 1920px; height: 580px; position: absolute; left: -1px; top: -1px; object-fit: none;"/>
-        <div style="width: 1920px; height: 580px; position: absolute; left: -1px; top: -1px; background: rgba(0,12,8,0.3);"></div>
-        <p style="position: absolute; left: 696px; top: 150px; font-size: 110px; text-align: left; text-transform: uppercase; color: #001c48;">
-            K LEAGUE TRIP
-        </p>
-        <div style="width: 120px; height: 20px; position: absolute; left: 1420px; top: 80px; overflow: hidden; border-radius: 50px; background: #fff;">
-            <p style="position: absolute; left: 12px; top: 1px; font-size: 16px; text-align: left; text-transform: uppercase; color: #000;">
-                Developer
-            </p>
+    <div class="relative max-w-full mx-auto overflow-hidden">
+        <!-- 슬라이드 컨테이너 -->
+        <div id="slider" class="flex transition-transform duration-500 ease-in-out w-[400%]">
+            <!-- 각 슬라이드 -->
+            <div class="relative w-full flex-shrink-0">
+                <img src="/deajeon.png" class="opacity-80 object-cover" />
+                <div class="absolute inset-0 flex flex-col justify-center items-center">
+                    <h1 class="text-6xl md:text-8xl font-bold text-[#001c48] mb-10">K LEAGUE TRIP</h1>
+                    <div class="flex gap-2">
+                        <button class="bg-black text-white px-6 py-2">자세히 보기</button>
+                        <button class="text-black px-4 py-2">텍스트 입력</button>
+                    </div>
+                    <div class="mt-4 flex items-center gap-1">
+                        <i class="fa-solid fa-map-location-dot" class="w-5 h-5 text-[#9b2743]"></i>
+                        <span class="text-sm text-white">대전 월드컵 경기장</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative w-full flex-shrink-0">
+                <img src="/seoul.png" class="opacity-80 object-cover" />
+                <div class="absolute inset-0 flex flex-col justify-center items-center">
+                    <h1 class="text-6xl md:text-8xl font-bold text-[#001c48] mb-10">K LEAGUE TRIP</h1>
+                    <div class="flex gap-2">
+                        <button class="bg-black text-white px-6 py-2">자세히 보기</button>
+                        <button class="text-black px-4 py-2">텍스트 입력</button>
+                    </div>
+                    <div class="mt-4 flex items-center gap-1">
+                        <i class="fa-solid fa-map-location-dot" class="w-5 h-5 text-[#9b2743]"></i>
+                        <span class="text-sm text-white">서울 월드컵 경기장</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative w-full flex-shrink-0">
+                <img src="/pohang.png" class="opacity-80 object-cover" />
+                <div class="absolute inset-0 flex flex-col justify-center items-center">
+                    <h1 class="text-6xl md:text-8xl font-bold text-[#001c48] mb-10">K LEAGUE TRIP</h1>
+                    <div class="flex gap-2">
+                        <button class="bg-black text-white px-6 py-2">자세히 보기</button>
+                        <button class="text-black px-4 py-2">텍스트 입력</button>
+                    </div>
+                    <div class="mt-4 flex items-center gap-1">
+                        <i class="fa-solid fa-map-location-dot" class="w-5 h-5 text-[#9b2743]"></i>
+                        <span class="text-sm text-white">포항 스틸야드</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative w-full flex-shrink-0">
+                <img src="/jeonju.png" class="opacity-80 object-cover" />
+                <div class="absolute inset-0 flex flex-col justify-center items-center">
+                    <h1 class="text-6xl md:text-8xl font-bold text-[#001c48] mb-10">K LEAGUE TRIP</h1>
+                    <div class="flex gap-2">
+                        <button class="bg-black text-white px-6 py-2">자세히 보기</button>
+                        <button class="text-black px-4 py-2">텍스트 입력</button>
+                    </div>
+                    <div class="mt-4 flex items-center gap-1">
+                        <i class="fa-solid fa-map-location-dot" class="w-5 h-5 text-[#9b2743]"></i>
+                        <span class="text-sm text-white">전주 월드컵 경기장</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 좌우 버튼 -->
+            <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl z-10">
+                &#10094;
+            </button>
+            <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl z-10">
+                &#10095;
+            </button>
+
+            <!-- 하단 컨트롤 -->
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3">
+                <div class="w-3 h-3 bg-white rounded-full slide-indicator"></div>
+                <div class="w-3 h-3 bg-white rounded-full opacity-50 slide-indicator"></div>
+                <div class="w-3 h-3 bg-white rounded-full opacity-50 slide-indicator"></div>
+                <div class="w-3 h-3 bg-white rounded-full opacity-50 slide-indicator"></div>
+                <button onclick="pauseSlider()" class="text-white text-xl ml-3">&#10073;&#10073;</button>
+            </div>
         </div>
-        <div style="width: 180px; height: 40px; position: absolute; left: 1359px; top: 429px; background: #fff;"></div>
-        <div style="width: 180px; height: 40px; position: absolute; left: 1169px; top: 429px; background: #000;"></div>
-        <p style="position: absolute; left: 1410px; top: 441px; font-size: 16px; text-align: left; text-transform: uppercase; color: #000;">
-            텍스트 입력
-        </p>
-        <p style="position: absolute; left: 1220px; top: 441px; font-size: 16px; text-align: left; text-transform: uppercase; color: #fff;">
-            자세히 보기
-        </p>
-        <i class="fa-solid fa-map-location-dot" style="left: 1420px; top: 480px; font-size: 12px;"></i>
-        <p style="position: absolute; left: 1440px; top: 480px; font-size: 12px; font-weight: 300; text-align: left; text-transform: uppercase; color: #fff;">
-            대전 월드컵 경기장
-        </p>
-        <svg
-                width="33"
-                height="58"
-                viewBox="0 0 33 58"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style="position: absolute; left: 48.5px; top: 316.5px;"
-                preserveAspectRatio="none"
-        >
-            <path
-                    d="M32 1L2 29L12.5 38.8L32 57"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-            ></path>
-        </svg>
-        <svg width="33" height="58" viewBox="0 0 33 58" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: 1868.5px; top: 260.5px;" preserveAspectRatio="none">
-            <path d="M1 57L31 29L20.5 19.2L1 1" stroke="white" stroke-width="2" stroke-linecap="round"></path>
-        </svg>
     </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const slides = slider.querySelectorAll('div.relative.w-full.flex-shrink-0');
+        const indicators = slider.querySelectorAll('.slide-indicator');
+        const pauseBtn = slider.querySelector('button[onclick="pauseSlider()"]');
+
+        let currentIndex = 0;
+        let slideInterval = null;
+        let isPaused = false;
+
+        function updateSlide() {
+            // 슬라이더 이동: 현재 인덱스 * -100%
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // 인디케이터 활성화 표시
+            indicators.forEach((el, i) => {
+                if(i === currentIndex) {
+                    el.classList.remove('opacity-50');
+                } else {
+                    el.classList.add('opacity-50');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlide();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlide();
+        }
+
+        function pauseSlider() {
+            if(isPaused) {
+                // 다시 재생
+                slideInterval = setInterval(nextSlide, 5000);
+                pauseBtn.innerHTML = '&#10073;&#10073;'; // || 아이콘
+            } else {
+                clearInterval(slideInterval);
+                pauseBtn.innerHTML = '&#9658;'; // ▶ 아이콘
+            }
+            isPaused = !isPaused;
+        }
+
+        // 인디케이터 클릭 시 해당 슬라이드로 이동
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlide();
+                if (!isPaused) {
+                    clearInterval(slideInterval);
+                    slideInterval = setInterval(nextSlide, 5000);
+                }
+            });
+        });
+
+        // 초기 슬라이드 설정 및 자동 슬라이드 시작
+        updateSlide();
+        slideInterval = setInterval(nextSlide, 5000);
+
+        // 전역 함수로 노출 (HTML 버튼 onclick에서 호출 가능하게)
+        window.nextSlide = nextSlide;
+        window.prevSlide = prevSlide;
+        window.pauseSlider = pauseSlider;
+    </script>
+
     <div style="width: 1920px; height: 118px; position: absolute; left: 0px; top: 2010px; overflow: hidden; background: #fff;">
         <div style="width: 90px; height: 102px;">
             <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg"
