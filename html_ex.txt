@@ -1,0 +1,152 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ include file="../common/head.jspf" %>
+
+<!-- K LEAGUE TRIP 슬라이드 섹션 -->
+<section class="relative w-full h-[580px] bg-cover bg-center bg-[url(/slide3.png)]">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white">
+        <h1 class="text-4xl md:text-6xl lg:text-[110px] font-bold text-[#001c48] uppercase">
+            K LEAGUE TRIP
+        </h1>
+        <div class="mt-8 flex gap-4">
+            <button class="bg-black text-white px-6 py-2 text-sm uppercase">자세히 보기</button>
+            <button class="bg-white text-black px-6 py-2 text-sm uppercase">텍스트 입력</button>
+        </div>
+        <div class="flex items-center gap-2 mt-4">
+            <i class="fa-solid fa-map-location-dot text-[#9b2743]"></i>
+            <span class="text-xs">대전 월드컵 경기장</span>
+        </div>
+    </div>
+</section>
+
+<!-- 추천 장소 섹션 -->
+<section class="bg-gray-200 py-16 px-4">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold uppercase">어디로 갈까?</h2>
+        <p class="text-lg mt-2 uppercase text-gray-700">갈 만한 곳 찾아보기</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div class="relative">
+            <img src="rectangle-7.png" class="w-full h-[370px] object-cover rounded-lg shadow-lg" />
+            <div class="absolute bottom-6 left-6 text-white">
+                <h3 class="text-2xl font-semibold uppercase">남산타워</h3>
+                <p class="text-sm uppercase">서울 용산구에 위치한 타워</p>
+                <button class="mt-2 bg-[#9b2734] px-4 py-2 text-sm uppercase text-white rounded">자세히 보기</button>
+            </div>
+        </div>
+
+        <div class="relative">
+            <img src="rectangle-8.jpeg" class="w-full h-[370px] object-cover rounded-lg shadow-lg" />
+            <div class="absolute bottom-6 left-6 text-white">
+                <h3 class="text-2xl font-semibold uppercase">여의도 한강 공원</h3>
+                <button class="mt-2 bg-gray-400 px-4 py-2 text-sm uppercase text-black rounded">자세히 보기</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 클럽 로고 푸터 섹션 -->
+<footer class="bg-white py-8 px-4">
+    <div class="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
+        <!-- 클럽 로고 1 -->
+        <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
+                <img src="" alt="FC 서울" class="h-12 object-contain" />
+            </div>
+            <span class="text-xs mt-2">FC 서울</span>
+        </div>
+
+        <!-- 클럽 로고 2 -->
+        <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
+                <img src="" alt="전북현대모터스" class="h-14 object-contain" />
+            </div>
+            <span class="text-xs mt-2">전북현대모터스</span>
+        </div>
+
+        <!-- 클럽 로고 3 -->
+        <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
+                <img src="" alt="울산 HD" class="h-12 object-contain" />
+            </div>
+            <span class="text-xs mt-2">울산 HD</span>
+        </div>
+
+        <!-- 클럽 로고 4 -->
+        <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
+                <img src="" alt="대전하나시티즌" class="h-12 object-contain" />
+            </div>
+            <span class="text-xs mt-2">대전하나시티즌</span>
+        </div>
+
+        <!-- 클럽 로고 5 -->
+        <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
+                <img src="" alt="대구 FC" class="h-14 object-contain" />
+            </div>
+            <span class="text-xs mt-2">대구 FC</span>
+        </div>
+
+        <!-- 클럽 로고 6 -->
+        <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
+                <img src="" alt="FC 안양" class="h-12 object-contain" />
+            </div>
+            <span class="text-xs mt-2">FC 안양</span>
+        </div>
+
+        <!-- 클럽 로고 7 -->
+        <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
+                <img src="" alt="포항스틸러스" class="h-12 object-contain" />
+            </div>
+            <span class="text-xs mt-2">포항스틸러스</span>
+        </div>
+
+        <!-- 클럽 로고 8 -->
+        <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
+                <img src="" alt="제주 SK" class="h-12 object-contain" />
+            </div>
+            <span class="text-xs mt-2">제주 SK</span>
+        </div>
+
+        <!-- 클럽 로고 9 -->
+        <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
+                <img src="" alt="강원 FC" class="h-12 object-contain" />
+            </div>
+            <span class="text-xs mt-2">강원 FC</span>
+        </div>
+
+        <!-- 클럽 로고 10 -->
+        <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
+                <img src="" alt="광주 FC" class="h-12 object-contain" />
+            </div>
+            <span class="text-xs mt-2">광주 FC</span>
+        </div>
+
+        <!-- 클럽 로고 11 -->
+        <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
+                <img src="" alt="수원 FC" class="h-12 object-contain" />
+            </div>
+            <span class="text-xs mt-2">수원 FC</span>
+        </div>
+
+        <!-- 클럽 로고 12 -->
+        <div class="flex flex-col items-center">
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
+                <img src="" alt="김천상무프로축구단" class="h-12 object-contain" />
+            </div>
+            <span class="text-xs mt-2">김천상무프로축구단</span>
+        </div>
+    </div>
+</footer>
+
+<%@ include file="../common/foot.jspf" %>

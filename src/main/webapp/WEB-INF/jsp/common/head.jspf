@@ -4,27 +4,46 @@
 <head>
     <title>Title</title>
 </head>
-<body>
+<!-- 제이쿼리 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <!-- 테일윈드 -->
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 <!-- 폰트어썸 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<div style="width: 1920px; height: 70px; position: relative; overflow: hidden; background: #fff;">
-    <div class="w-[1920px] h-[70px] relative overflow-hidden bg-white">
-        <div class="w-[110px] h-10">
-            <div class="w-[110px] h-10 absolute left-[1789.5px] top-[14.5px] rounded-[50px] border border-black"></div>
-            <p class="absolute left-[1822px] top-[15px] text-base text-left uppercase text-black"><a href="../user/login">로그인</a></p>
-        </div>
+<body>
+<header>
+    <div class="w-[1920px] h-[70px] relative overflow-visible bg-[#F2F3F6]">
         <p class="absolute left-5 top-[15px] text-left uppercase text-black">
-            <span class="text-3xl font-bold text-left uppercase" style="color: #001c48">K LEAGUE </span><span
-                class="text-lg font-medium text-left uppercase" style="color: #9d0a0f">Trip</span>
+            <span class="text-3xl font-bold text-left uppercase" style="color: #001c48">K LEAGUE</span>
+            <span class="text-lg font-medium text-left uppercase" style="color: #9d0a0f">Trip</span>
         </p>
-        <p class="absolute left-[577px] top-[15px] text-base text-left uppercase text-black">헤더 영역</p>
-        <p class="absolute left-[1263px] top-[15px] text-base text-left uppercase text-black">컨텐츠 영역</p>
-        <p class="absolute left-[741px] top-[15px] text-base text-left uppercase text-black">슬라이드 영역</p>
-        <p class="absolute left-[935px] top-[15px] text-base text-left uppercase text-black">배너 영역</p>
-        <p class="absolute left-[1099px] top-[15px] text-base text-left uppercase text-black">푸터 영역</p>
+        <p class="absolute left-[580px] top-[15px] text-base text-left uppercase text-black">헤더 영역</p>
+        <p class="absolute left-[740px] top-[15px] text-base text-left uppercase text-black">슬라이드 영역</p>
+        <p class="absolute left-[940px] top-[15px] text-base text-left uppercase text-black">컨텐츠 영역</p>
+        <p class="absolute left-[1200px] top-[15px] text-base text-left uppercase text-black">배너 영역</p>
+
+        <c:if test="${!rq.isLogined()}">
+            <div class="w-[110px] h-10">
+                <div class="w-[110px] h-10 absolute left-[1789.5px] top-[15px] rounded-[50px] border border-black"></div>
+                <p class="absolute left-[1822px] top-[15px] text-base text-left uppercase text-black">
+                    <a href="../user/login">로그인</a>
+                </p>
+            </div>
+        </c:if>
+
+        <c:if test="${rq.isLogined()}">
+            <ul class="absolute left-[1700px] top-[15px] text-base text-left uppercase text-black bg-white rounded-xl border border-black px-4 py-2 shadow-lg z-50">
+                <li class="mb-1"><a href="/user/myPage" class="hover:underline">마이페이지</a></li>
+                <li class="mb-1"><a href="/review/write" class="hover:underline">후기 작성</a></li>
+                <li>
+                    <a href="/user/doLogout" onclick="if(confirm('로그아웃 하시겠습니까?') == false) return false;"
+                       class="hover:underline">
+                        로그아웃
+                    </a>
+                </li>
+            </ul>
+        </c:if>
     </div>
-</div>
+</header>

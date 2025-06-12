@@ -1,8 +1,10 @@
 package org.myproject.demo.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.myproject.demo.service.UserService;
 import org.myproject.demo.util.Ut;
 import org.myproject.demo.vo.KakaoApi;
+import org.myproject.demo.vo.Rq;
 import org.myproject.demo.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class UserController {
+
+    @Autowired
+    private Rq rq;
 
     @Autowired
     private KakaoApi kakaoApi;
@@ -32,7 +37,7 @@ public class UserController {
 
     @RequestMapping("/user/doJoin")
     @ResponseBody
-    public String doJoin(String loginId, String loginPw, String name, String nickName, String email) {
+    public String doJoin(HttpServletRequest req, String loginId, String loginPw, String name, String nickName, String email) {
         if (Ut.isEmptyOrNull(loginId)) {
             return Ut.jsHistoryBack("F-1", Ut.f("아이디 입력"));
         }
@@ -56,7 +61,7 @@ public class UserController {
         return userService.doJoin(loginId, loginPw, name, nickName, email);
     }
 
-    @RequestMapping("user/login")
+    @RequestMapping("/user/login")
     public String login() {
         return "user/login";
     }
@@ -82,20 +87,30 @@ public class UserController {
             return Ut.jsHistoryBack("F-4", Ut.f("비밀번호가 일치하지 않습니다."));
         }
 
+        rq.login(user);
+
         return Ut.jsReplace("S-1", Ut.f("%s님 환영합니다!", user.getNickName()), "/");
     }
 
-    @RequestMapping("user/myPage")
+    @RequestMapping("/user/doLogout")
+    @ResponseBody
+    public String doLogout() {
+        rq.logout();
+
+        return Ut.jsReplace("S-1", "로그아웃 성공", "/");
+    }
+
+    @RequestMapping("/user/myPage")
     public String myPage() {
         return "user/myPage";
     }
 
-    @RequestMapping("user/checkPw")
+    @RequestMapping("/user/checkPw")
     public String checkPw() {
         return "user/checkPw";
     }
 
-    @RequestMapping("user/doCheckPw")
+    @RequestMapping("/user/doCheckPw")
     @ResponseBody
     public String doCheckPw(String loginId, String loginPw) {
         User user = userService.getUserByLoginId(loginId);
@@ -111,15 +126,17 @@ public class UserController {
         return Ut.jsReplace("S-1", Ut.f("비밀번호 확인 성공!"), "modify");
     }
 
-    @RequestMapping("user/modify")
+    @RequestMapping("/user/modify")
     public String showModify() {
         return "user/modify";
     }
 
-    @RequestMapping("user/doModify")
+    @RequestMapping("/user/doModify")
     @ResponseBody
-    public String doModify(String loginId, String loginPw, String name,
+    public String doModify(HttpServletRequest req, String loginId, String loginPw, String name,
                            String nickName, String email) {
+        rq = (Rq) req.getAttribute("rq");
+
         if (Ut.isEmptyOrNull(name)) {
             return Ut.jsHistoryBack("F-1", Ut.f("name 입력 x"));
         }

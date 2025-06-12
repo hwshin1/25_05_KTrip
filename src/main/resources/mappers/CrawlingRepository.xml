@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.myproject.demo.repository.CrawlingRepository">
+    <insert id="webCrawling" parameterType="map">
+        INSERT INTO team
+        SET team_logo = #{teamLogo}, team_name = #{teamName}, team_location = #{teamLocation}
+    </insert>
+
+    <select id="teamList" resultType="org.myproject.demo.vo.Team">
+        SELECT * FROM team
+    </select>
+
+    <select id="teamListLogo" parameterType="int" resultType="org.myproject.demo.vo.Team">
+        SELECT * FROM team
+        WHERE id = #{id};
+    </select>
+</mapper>

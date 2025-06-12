@@ -12,6 +12,7 @@ public class Review {
     private int id;
     private String regDate;
     private String updateDate;
+    private int userId;
     private String title;
     private String body;
     private boolean like;

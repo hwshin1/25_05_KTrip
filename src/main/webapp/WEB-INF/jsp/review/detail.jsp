@@ -31,7 +31,7 @@
       </tr>
       <tr>
         <th>별점</th>
-        <td>${review.hit }</td>
+        <td>${review.rating }</td>
       </tr>
       </tbody>
     </table>

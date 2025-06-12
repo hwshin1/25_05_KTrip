@@ -1,16 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head>
-    <title>LOGIN</title>
-</head>
-<style>
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-</style>
-<body>
+
+<%@ include file="../common/head.jspf" %>
 <h1 style="text-align: center;">THE LOGIN PAGE</h1>
 <section>
     <div style="margin-left: auto; margin-right: auto;">
