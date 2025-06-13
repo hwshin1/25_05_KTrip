@@ -33,7 +33,7 @@
 </style>
 <body>
     <header>
-        <div class="w-full h-[70px] bg-[#F2F3F6] flex items-center justify-between px-5">
+        <div class="w-full h-[70px] bg-[#F2F3F6] flex items-center justify-between px-5 box-border">
             <div class="text-3xl uppercase w-1/5">
                 <a style="font-weight: 700" class="text-[#001C48]" href="/">K LEAGUE <em class="text-lg not-italic text-[#9D0A0F]">Trip</em></a>
             </div>
