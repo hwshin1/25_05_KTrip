@@ -1,25 +1,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head>
-    <title>WRITE</title>
-</head>
-<body>
+
+<%@ include file="../common/head.jspf"%>
+<!-- daisy UI -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/4.12.23/full.css" />
+
 <section class="mt-8 text-xl px-4">
   <div class="mx-auto">
     <form action="../review/doWrite" method="POST">
-      <table>
+      <table class="table">
         <tbody>
         <tr>
           <th>제목</th>
           <td>
-            <input required="required" name="title" type="text" autocomplete="off" placeholder="제목" />
+            <input name="title" type="text" autocomplete="off" placeholder="제목" />
           </td>
         </tr>
         <tr>
           <th>내용</th>
           <td>
-            <input name="body" autocomplete="off" type="text" placeholder="내용" />
+            <input name="body" type="text" autocomplete="off" placeholder="내용" />
           </td>
         </tr>
         <tr>
@@ -36,5 +36,5 @@
     </div>
   </div>
 </section>
-</body>
-</html>
+
+<%@ include file="../common/foot.jspf" %>

@@ -5,7 +5,7 @@
 
 <div class="w-full h-[3000px] relative overflow-hidden bg-white">
     <%@ include file="../common/slider.jspf" %>
-    <div style="width: 1920px; height: 600px; position: absolute; left: 0px; top: 1410px; overflow: hidden; background: #fff;">
+    <div style="width: 100%; height: 600px; position: absolute; left: 0; top: 1410px; overflow: hidden; background: #fff;">
         <img src="/bennel.png" class="opacity-80 w-full"
              style="width: 1920px; height: 600px; position: absolute; left: -1px; top: -1px; object-fit: cover;"/>
         <p style="position: absolute; left: 778px; top: 160px; font-size: 50px; font-weight: 700; text-align: left; text-transform: uppercase; color: #fff;">
@@ -24,57 +24,7 @@
             카페, 음식점, 지역 내 가볼만한 곳
         </p>
     </div>
-    <div style="width: 1920px; height: 500px; position: absolute; left: 0px; top: 2128px; overflow: hidden; background: #fff;">
-        <p style="position: absolute; left: 806px; top: 100px; font-size: 20px; text-align: left; color: #000;">
-            사이트 제작
-        </p>
-        <p style="position: absolute; left: 1003px; top: 100px; font-size: 20px; text-align: left; color: #000;">
-            사이트 제작
-        </p>
-        <p style="position: absolute; left: 806px; top: 142px; font-size: 14px; text-align: left; color: #666;">
-            웹표준 사이트
-        </p>
-        <p style="position: absolute; left: 1003px; top: 142px; font-size: 14px; text-align: left; color: #666;">
-            웹표준 사이트
-        </p>
-        <p style="position: absolute; left: 806px; top: 168px; font-size: 14px; text-align: left; color: #666;">
-            반응형 사이트
-        </p>
-        <p style="position: absolute; left: 1003px; top: 168px; font-size: 14px; text-align: left; color: #666;">
-            반응형 사이트
-        </p>
-        <p style="position: absolute; left: 806px; top: 191px; font-size: 14px; text-align: left; color: #666;">
-            패럴랙스 사이트
-        </p>
-        <p style="position: absolute; left: 1003px; top: 191px; font-size: 14px; text-align: left; color: #666;">
-            패럴랙스 사이트
-        </p>
-        <p style="position: absolute; left: 806px; top: 215px; font-size: 14px; text-align: left; color: #666;">
-            포트폴리오 사이트
-        </p>
-        <p style="position: absolute; left: 1003px; top: 215px; font-size: 14px; text-align: left; color: #666;">
-            포트폴리오 사이트
-        </p>
-        <p style="position: absolute; left: 1003px; top: 241px; font-size: 14px; text-align: left; color: #666;">
-            코더 사이트
-        </p>
-        <svg
-                width="1160"
-                height="3"
-                viewBox="0 0 1160 3"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style="position: absolute; left: 378px; top: 344px;"
-                preserveAspectRatio="none">
-            <line y1="1.5" x2="1160" y2="1.5" stroke="#D9D9D9" stroke-width="3"></line>
-        </svg>
-        <p style="position: absolute; left: 814px; top: 379px; font-size: 20px; text-align: center; color: #666;">
-            <span style="font-size: 20px; text-align: center; color: #666;">2025 K Trip. Pfotocol POWER</span>
-            <br/>
-            <span style="font-size: 20px; text-align: center; color: #666;">All - in</span>
-        </p>
-    </div>
-    <div style="width: 1920px; height: 760px; position: absolute; left: 0px; top: 650px; overflow: hidden; background: #e5e5e5;">
+    <div style="width: 100%; height: 760px; position: absolute; left: 0px; top: 650px; overflow: hidden; background: #e5e5e5;">
         <p style="position: absolute; left: 841px; top: 120px; font-size: 50px; text-align: left; text-transform: uppercase; color: #000;">
             어디로 갈까?
         </p>
@@ -116,9 +66,11 @@
         <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 89.5px; top: 9.5px;">
             <!-- 원형 배경과 로고 -->
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                    <img src="${team7.team_logo}" class="w-[50px] h-[50px] object-contain" />
-                </div>
+                <a href="https://www.ticketlink.co.kr/sports/138/65" target="_blank">
+                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                        <img src="${team7.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                    </div>
+                </a>
             </div>
             <p class="text-[12px] font-light text-black text-center">
                 FC 서울
@@ -127,9 +79,11 @@
         <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 239.5px; top: 9.5px;">
             <!-- 원형 배경과 로고 -->
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                    <img src="${team1.team_logo}" class="w-[50px] h-[50px] object-contain" />
-                </div>
+                <a href="https://www.ticketlink.co.kr/sports/138/73" target="_blank">
+                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                        <img src="${team1.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                    </div>
+                </a>
             </div>
             <p class="text-[12px] font-light text-black text-center">
                 전북현대모터스
@@ -138,9 +92,11 @@
         <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 389.5px; top: 9.5px;">
             <!-- 원형 배경과 로고 -->
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                    <img src="${team3.team_logo}" class="w-[50px] h-[50px] object-contain" />
-                </div>
+                <a href="https://www.ticketlink.co.kr/sports/138/66" target="_blank">
+                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                        <img src="${team3.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                    </div>
+                </a>
             </div>
             <p class="text-[12px] font-light text-black text-center">
                 울산 HD
@@ -149,9 +105,11 @@
         <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 539.5px; top: 9.5px;">
             <!-- 원형 배경과 로고 -->
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                    <img src="${team2.team_logo}" class="w-[50px] h-[50px] object-contain" />
-                </div>
+                <a href="https://www.ticketlink.co.kr/sports/138/83" target="_blank">
+                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                        <img src="${team2.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                    </div>
+                </a>
             </div>
 
             <p class="text-[12px] font-light text-black text-center">
@@ -161,9 +119,11 @@
         <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 689.5px; top: 9.5px;">
             <!-- 원형 배경과 로고 -->
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                    <img src="${team12.team_logo}" class="w-[50px] h-[50px] object-contain" />
-                </div>
+                <a href="https://www.ticketlink.co.kr/sports/138/84" target="_blank">
+                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                        <img src="${team12.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                    </div>
+                </a>
             </div>
 
             <p class="text-[12px] font-light text-black text-center">
@@ -173,9 +133,11 @@
         <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 839.5px; top: 9.5px;">
             <!-- 원형 배경과 로고 -->
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                    <img src="${team8.team_logo}" class="w-[50px] h-[50px] object-contain" />
-                </div>
+                <a href="https://www.ticketlink.co.kr/sports/138/86" target="_blank">
+                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                        <img src="${team8.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                    </div>
+                </a>
             </div>
             <p class="text-[12px] font-light text-black text-center">
                 FC 안양
@@ -184,9 +146,11 @@
         <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 989.5px; top: 9.5px;">
             <!-- 원형 배경과 로고 -->
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                    <img src="${team4.team_logo}" class="w-[50px] h-[50px] object-contain" />
-                </div>
+                <a href="https://www.ticketlink.co.kr/sports/138/74" target="_blank">
+                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                        <img src="${team4.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                    </div>
+                </a>
             </div>
 
             <p class="text-[12px] font-light text-black text-center">
@@ -196,9 +160,11 @@
         <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 1139.5px; top: 9.5px;">
             <!-- 원형 배경과 로고 -->
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                    <img src="${team9.team_logo}" class="w-[50px] h-[50px] object-contain" />
-                </div>
+                <a href="https://ticket.interpark.com/Contents/Sports/GoodsInfo?SportsCode=07002&TeamCode=PS014" target="_blank">
+                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                        <img src="${team9.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                    </div>
+                </a>
             </div>
 
             <p class="text-[12px] font-light text-black text-center">
@@ -208,9 +174,11 @@
         <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 1289.5px; top: 9.5px;">
             <!-- 원형 배경과 로고 -->
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                    <img src="${team6.team_logo}" class="w-[50px] h-[50px] object-contain" />
-                </div>
+                <a href="https://www.ticketlink.co.kr/sports/138/79" target="_blank">
+                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                        <img src="${team6.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                    </div>
+                </a>
             </div>
 
             <!-- 팀명 -->
@@ -221,9 +189,11 @@
         <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 1439.5px; top: 9.5px;">
             <!-- 원형 배경과 로고 -->
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                    <img src="${team10.team_logo}" class="w-[50px] h-[50px] object-contain" />
-                </div>
+                <a href="https://www.jejuskfc.com/reservation/ticketInfo" target="_blank">
+                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                        <img src="${team10.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                    </div>
+                </a>
             </div>
 
             <p class="text-[12px] font-light text-black text-center">
@@ -233,9 +203,11 @@
         <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 1589.5px; top: 9.5px;">
             <!-- 원형 배경과 로고 -->
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                    <img src="${team11.team_logo}" class="w-[50px] h-[50px] object-contain" />
-                </div>
+                <a href="https://ticket.interpark.com/Contents/Sports/GoodsInfo?SportsCode=07002&TeamCode=PS061" target="_blank">
+                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                        <img src="${team11.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                    </div>
+                </a>
             </div>
 
             <p class="text-[12px] font-light text-black text-center">
@@ -245,9 +217,11 @@
         <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 1739.5px; top: 9.5px;">
             <!-- 원형 배경과 로고 -->
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                    <img src="${team5.team_logo}" class="w-[50px] h-[50px] object-contain" />
-                </div>
+                <a href="https://www.ticketlink.co.kr/sports/138/80" target="_blank">
+                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                        <img src="${team5.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                    </div>
+                </a>
             </div>
 
             <p class="text-[12px] font-light text-black text-center">
@@ -256,6 +230,7 @@
         </div>
         <h5 class="absolute bottom-1 left-1/2">티켓 바로가기</h5>
     </div>
+    <%@ include file="../common/footer.jspf" %>
 </div>
 
 <%@ include file="../common/foot.jspf" %>

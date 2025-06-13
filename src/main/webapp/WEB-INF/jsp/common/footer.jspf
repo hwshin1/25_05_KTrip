@@ -1,0 +1,47 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<div class="w-full h-[500px] absolute bg-white" style="left: 0; top: 2170px;">
+  <p style="position: absolute; left: 806px; top: 100px; font-size: 20px; text-align: left; color: #000;">
+    사이트 제작
+  </p>
+  <p style="position: absolute; left: 1003px; top: 100px; font-size: 20px; text-align: left; color: #000;">
+    사이트 제작
+  </p>
+  <p style="position: absolute; left: 806px; top: 142px; font-size: 14px; text-align: left; color: #666;">
+    웹표준 사이트
+  </p>
+  <p style="position: absolute; left: 1003px; top: 142px; font-size: 14px; text-align: left; color: #666;">
+    웹표준 사이트
+  </p>
+  <p style="position: absolute; left: 806px; top: 168px; font-size: 14px; text-align: left; color: #666;">
+    반응형 사이트
+  </p>
+  <p style="position: absolute; left: 1003px; top: 168px; font-size: 14px; text-align: left; color: #666;">
+    반응형 사이트
+  </p>
+  <p style="position: absolute; left: 806px; top: 191px; font-size: 14px; text-align: left; color: #666;">
+    패럴랙스 사이트
+  </p>
+  <p style="position: absolute; left: 1003px; top: 191px; font-size: 14px; text-align: left; color: #666;">
+    패럴랙스 사이트
+  </p>
+  <p style="position: absolute; left: 806px; top: 215px; font-size: 14px; text-align: left; color: #666;">
+    포트폴리오 사이트
+  </p>
+  <p style="position: absolute; left: 1003px; top: 215px; font-size: 14px; text-align: left; color: #666;">
+    포트폴리오 사이트
+  </p>
+  <p style="position: absolute; left: 1003px; top: 241px; font-size: 14px; text-align: left; color: #666;">
+    코더 사이트
+  </p>
+  <svg width="1160" height="3" viewBox="0 0 1160 3" fill="none" xmlns="http://www.w3.org/2000/svg"
+       style="position: absolute; left: 378px; top: 344px;">
+    <line y1="1.5" x2="1160" y2="1.5" stroke="#D9D9D9" stroke-width="3"></line>
+  </svg>
+  <p style="position: absolute; left: 814px; top: 379px; font-size: 20px; text-align: center; color: #666;">
+    <span style="font-size: 20px; text-align: center; color: #666;">2025 K Trip.</span>
+    <br/>
+    <span style="font-size: 20px; text-align: center; color: #666;">All - in</span>
+  </p>
+</div>

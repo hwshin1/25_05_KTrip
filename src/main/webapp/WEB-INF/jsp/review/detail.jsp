@@ -22,6 +22,10 @@
         <td>${review.updateDate }</td>
       </tr>
       <tr>
+        <th>작성자</th>
+        <td>${review.userId }</td>
+      </tr>
+      <tr>
         <th>제목</th>
         <td>${review.title }</td>
       </tr>
