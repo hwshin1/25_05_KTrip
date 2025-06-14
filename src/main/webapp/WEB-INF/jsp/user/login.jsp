@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ include file="../common/head.jspf" %>
-<h1 style="text-align: center;">THE LOGIN PAGE</h1>
+<h1></h1>
 <section>
     <div style="margin-left: auto; margin-right: auto;">
         <form action="../user/doLogin" method="POST">
@@ -39,7 +39,7 @@
             </div>
         </form>
         <div>
-            <button type="button" onclick="history.back();">뒤로가기</button>
+            <button class="btn btn btn-ghost" type="button" onclick="history.back();">뒤로가기</button>
         </div>
     </div>
 </section>
