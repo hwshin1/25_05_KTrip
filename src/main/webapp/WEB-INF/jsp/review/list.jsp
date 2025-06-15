@@ -6,8 +6,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/4.12.23/full.css" />
 <section>
     <div class="overflow-x-auto">
-        <table class="table">
-            <!-- head -->
+        <table class="table text-3xl">
             <thead>
             <tr>
                 <th></th>

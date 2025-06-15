@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ include file="../common/head.jspf" %>
-<h1></h1>
+<h1 class="text-center">The Login Page</h1>
 <section>
     <div style="margin-left: auto; margin-right: auto;">
         <form action="../user/doLogin" method="POST">
@@ -23,7 +23,7 @@
 
                     <!-- 회원가입 하러가기 버튼 -->
                     <button style="border: none; color: white; font-size: 14px; cursor: pointer; width: 100%; height: 40px; margin-top: 1rem; border-radius: 20px; background-color: #333;">
-                        <a style="display: block" href="${pageContext.request.contextPath}/user/join">회원가입 하러가기</a>
+                        <a style="display: block; width: 100%;" href="${pageContext.request.contextPath}/user/join">회원가입 하러가기</a>
                     </button>
 
                     <!-- 구분선 및 SNS 문구 -->
@@ -38,8 +38,12 @@
                 </div>
             </div>
         </form>
-        <div>
-            <button class="btn btn btn-ghost" type="button" onclick="history.back();">뒤로가기</button>
+        <!-- 뒤로가기 버튼 -->
+        <div style="text-align:center; margin-top:20px;">
+            <a href="javascript:history.back()"
+               style="display:block; max-width:300px; margin:0 auto; padding:12px; background:#eeeeee; color:#333; border-radius:8px; text-decoration:none; font-weight:bold; font-size:16px;">
+                ← 뒤로 가기
+            </a>
         </div>
     </div>
 </section>

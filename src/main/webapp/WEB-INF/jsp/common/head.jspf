@@ -30,21 +30,37 @@
     }
 </style>
 <body>
-    <header>
-        <div class="w-full h-[70px] bg-[#F2F3F6] flex items-center justify-between px-5">
-            <div class="text-3xl uppercase w-1/5">
-                <a style="font-weight: 700" class="text-[#001C48]" href="/">K LEAGUE <em class="text-lg not-italic text-[#9D0A0F]">Trip</em></a>
-            </div>
-            <nav class="text-center w-3/5 header_menu">
-                <ul>
-                    <li class="inline"><a class="mx-1" href="#">구단 소개</a></li>
-                    <li class="inline"><a class="mx-1" href="#">공지사항</a></li>
-                    <li class="inline"><a class="mx-1" href="#">후기 글</a></li>
-                    <li class="inline"><a class="mx-1" href="#">메뉴</a></li>
-                </ul>
-            </nav>
-            <div class="w-1/5 text-right ">
-                <a class="text-base border rounded border-solid border-black " href="${pageContext.request.contextPath}/user/login">로그인</a>
-            </div>
+<header>
+    <div class="w-full h-[70px] bg-[#F2F3F6] flex items-center justify-between px-5">
+        <div class="text-3xl uppercase w-1/5">
+            <a style="font-weight: 700" class="text-[#001C48]" href="/">K LEAGUE <em
+                    class="text-lg not-italic text-[#9D0A0F]">Trip</em></a>
         </div>
-    </header>
+        <nav class="text-center w-3/5 header_menu">
+            <ul>
+                <li class="inline"><a class="mx-1" href="#">구단 별 소개</a></li>
+                <li class="inline"><a class="mx-1" href="#">공지사항</a></li>
+                <li class="inline"><a class="mx-1" href="/review/list">후기 글</a></li>
+                <li class="inline"><a class="mx-1" href="#">메뉴</a></li>
+            </ul>
+        </nav>
+        <div class="relative w-60 h-60 mx-auto">
+            <c:if test="${!rq.isLogined()}">
+                <div class="absolute inset-0 flex justify-center items-center">
+                    <a href="/user/login"
+                       class="w-24 h-10 text-center rounded-full text-base text-white bg-[#001C48] flex justify-center items-center hover:bg-[#002e70]">
+                        로그인
+                    </a>
+                </div>
+            </c:if>
+            <c:if test="${rq.isLogined()}">
+                <div class="absolute inset-0 flex justify-center items-center">
+                    <a href="/user/doLogout"
+                       class="w-24 h-10 text-center rounded-full text-base text-white bg-[#001C48] flex justify-center items-center hover:bg-[#002e70]">
+                        로그아웃
+                    </a>
+                </div>
+            </c:if>
+        </div>
+    </div>
+</header>

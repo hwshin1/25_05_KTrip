@@ -44,8 +44,12 @@
                 </div>
             </div>
         </form>
-        <div>
-            <button type="button" onclick="history.back();">뒤로가기</button>
+        <!-- 뒤로가기 버튼 -->
+        <div style="text-align:center; margin-top:20px;">
+            <a href="javascript:history.back()"
+               style="display:block; max-width:300px; margin:0 auto; padding:12px; background:#eeeeee; color:#333; border-radius:8px; text-decoration:none; font-weight:bold; font-size:16px;">
+                ← 뒤로 가기
+            </a>
         </div>
     </div>
 </section>

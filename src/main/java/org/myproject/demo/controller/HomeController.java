@@ -20,4 +20,9 @@ public class HomeController {
     public String showMain(){
         return "redirect:/home/main";
     }
+
+    @RequestMapping("/listjsp")
+    public String showLogo(){
+        return "test";
+    }
 }
