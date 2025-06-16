@@ -7,6 +7,7 @@
         INSERT INTO review
         SET regDate = NOW(),
         updateDate = NOW(),
+        userId = #{userId},
         title = #{title},
         `body` = #{body}
     </insert>
@@ -38,4 +39,18 @@
         FROM review
         WHERE id = #{id}
     </delete>
+
+    <select id="getLastInsertId" parameterType="int">
+        SELECT
+        LAST_INSERT_ID();
+    </select>
+
+    <select id="getForPrintReview" parameterType="int"
+            resultType="org.myproject.demo.vo.Review">
+        SELECT R.*, U.nickname AS extra_writer
+        FROM review AS R
+        INNER JOIN `user` AS U
+        ON R.userId = U.id
+        WHERE R.id = #{id}
+    </select>
 </mapper>

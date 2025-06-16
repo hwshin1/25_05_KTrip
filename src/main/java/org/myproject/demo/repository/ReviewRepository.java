@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface ReviewRepository {
 
-    int doWrite(String title, String body);
+    int doWrite(int userId, String title, String body);
 
     List<Review> getReviewList();
 
@@ -17,4 +17,8 @@ public interface ReviewRepository {
     void doModify(int id, String title, String body);
 
     void doDelete(int id);
+
+    int getLastInsertId();
+
+    Review getForPrintReview(int id);
 }

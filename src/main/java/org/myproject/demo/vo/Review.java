@@ -15,4 +15,7 @@ public class Review {
     private String title;
     private String body;
     private float rating;
+
+    private boolean userCanModify;
+    private boolean userCanDelete;
 }

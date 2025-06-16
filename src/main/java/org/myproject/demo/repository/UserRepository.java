@@ -11,4 +11,12 @@ public interface UserRepository {
     User getUserByLoginId(String loginId);
 
     User getUserByNameAndEmail(String name, String email);
+
+    int getLastInsertId();
+
+    void modifyWithoutPw(int loginedUserId, String name, String nickName, String email);
+
+    void modify(int loginedUserId, String loginPw, String name, String nickName, String email);
+
+    User getUserById(int loginedUserId);
 }

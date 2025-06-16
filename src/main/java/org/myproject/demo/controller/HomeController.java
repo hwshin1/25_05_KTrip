@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
+
     @Autowired
     private CrawlingController crawlingController;
 
@@ -19,10 +20,5 @@ public class HomeController {
     @RequestMapping("/")
     public String showMain(){
         return "redirect:/home/main";
-    }
-
-    @RequestMapping("/listjsp")
-    public String showLogo(){
-        return "test";
     }
 }

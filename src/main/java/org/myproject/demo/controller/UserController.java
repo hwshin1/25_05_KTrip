@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.myproject.demo.service.UserService;
 import org.myproject.demo.util.Ut;
 import org.myproject.demo.vo.KakaoApi;
+import org.myproject.demo.vo.ResultData;
 import org.myproject.demo.vo.Rq;
 import org.myproject.demo.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/user/join")
-    public String Join(Model model) {
+    public String Join(HttpServletRequest req, Model model) {
         String sendURL = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="
                 + kakaoApi.getClient_id() + "&redirect_uri="+ kakaoApi.getRedirect_url();
 
@@ -58,17 +59,26 @@ public class UserController {
             return Ut.jsHistoryBack("F-5", Ut.f("이메일 입력"));
         }
 
-        return userService.doJoin(loginId, loginPw, name, nickName, email);
+        ResultData joinRd = userService.doJoin(loginId, loginPw, name, nickName, email);
+
+        if (joinRd.isFail()) {
+            return Ut.jsHistoryBack(joinRd.getResultCode(), joinRd.getMsg());
+        }
+
+        return Ut.jsReplace(joinRd.getResultCode(), joinRd.getMsg(), "/user/login");
     }
 
     @RequestMapping("/user/login")
-    public String login() {
+    public String login(HttpServletRequest req) {
         return "user/login";
     }
 
-    @RequestMapping("user/doLogin")
+    @RequestMapping("/user/doLogin")
     @ResponseBody
-    public String doLogin(String loginId, String loginPw) {
+    public String doLogin(HttpServletRequest req, String loginId, String loginPw) {
+
+        rq = (Rq) req.getAttribute("rq");
+
         if (Ut.isEmptyOrNull(loginId)) {
             return Ut.jsHistoryBack("F-1", Ut.f("아이디 입력"));
         }
@@ -94,7 +104,10 @@ public class UserController {
 
     @RequestMapping("/user/doLogout")
     @ResponseBody
-    public String doLogout() {
+    public String doLogout(HttpServletRequest req) {
+
+        rq = (Rq) req.getAttribute("rq");
+
         rq.logout();
 
         return Ut.jsReplace("S-1", "로그아웃 성공", "/");
@@ -113,6 +126,7 @@ public class UserController {
     @RequestMapping("/user/doCheckPw")
     @ResponseBody
     public String doCheckPw(String loginId, String loginPw) {
+
         User user = userService.getUserByLoginId(loginId);
 
         if (Ut.isEmptyOrNull(loginPw)) {
@@ -133,8 +147,9 @@ public class UserController {
 
     @RequestMapping("/user/doModify")
     @ResponseBody
-    public String doModify(HttpServletRequest req, String loginId, String loginPw, String name,
+    public String doModify(HttpServletRequest req, String loginPw, String name,
                            String nickName, String email) {
+
         rq = (Rq) req.getAttribute("rq");
 
         if (Ut.isEmptyOrNull(name)) {
@@ -149,6 +164,14 @@ public class UserController {
             return Ut.jsHistoryBack("F-3", Ut.f("email 입력 x"));
         }
 
-        return Ut.jsReplace("S-1", Ut.f("get"), "../user/myPage");
+        ResultData modifyRd;
+
+        if (Ut.isEmptyOrNull(loginPw)) {
+            modifyRd = userService.modifyWithoutPw(rq.getLoginedUserId(), name, nickName, email);
+        } else {
+            modifyRd = userService.modifyRd(rq.getLoginedUserId(), loginPw, name, nickName, email);
+        }
+
+        return Ut.jsReplace(modifyRd.getResultCode(), modifyRd.getMsg(), "/user/myPage");
     }
 }

@@ -11,10 +11,12 @@
                     <h2 style="text-align: center; margin-bottom: 24px; color: #333;">로그인</h2>
 
                     <!-- 아이디 -->
-                    <input name="loginId" type="text" placeholder="아이디를 입력하세요" style="width: 100%; height: 40px; margin-bottom: 12px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
+                    <input name="loginId" type="text" placeholder="아이디를 입력하세요"
+                           style="width: 100%; height: 40px; margin-bottom: 12px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
 
                     <!-- 비밀번호 -->
-                    <input name="loginPw" type="text" placeholder="비밀번호를 입력하세요" style="width: 100%; height: 40px; margin-bottom: 12px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
+                    <input name="loginPw" type="text" placeholder="비밀번호를 입력하세요"
+                           style="width: 100%; height: 40px; margin-bottom: 12px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
 
                     <!-- 로그인 버튼 -->
                     <button style="width: 100%; height: 40px; border: none; border-radius: 20px; background-color: #333; color: white; font-size: 14px; cursor: pointer;">
@@ -23,7 +25,8 @@
 
                     <!-- 회원가입 하러가기 버튼 -->
                     <button style="border: none; color: white; font-size: 14px; cursor: pointer; width: 100%; height: 40px; margin-top: 1rem; border-radius: 20px; background-color: #333;">
-                        <a style="display: block; width: 100%;" href="${pageContext.request.contextPath}/user/join">회원가입 하러가기</a>
+                        <a style="display: block; width: 100%;" href="${pageContext.request.contextPath}/user/join">회원가입
+                            하러가기</a>
                     </button>
 
                     <!-- 구분선 및 SNS 문구 -->
@@ -34,18 +37,19 @@
                     </div>
 
                     <!-- 카카오 로그인 -->
-                    <img src="/kakao_login_medium_narrow.png" alt="카카오 로그인" style="margin-left: auto; margin-right: auto; object-fit: cover; cursor: pointer;">
+                    <img src="/kakao_login_medium_narrow.png" alt="카카오 로그인"
+                         style="margin-left: auto; margin-right: auto; object-fit: cover; cursor: pointer;">
                 </div>
             </div>
         </form>
         <!-- 뒤로가기 버튼 -->
-        <div style="text-align:center; margin-top:20px;">
-            <a href="javascript:history.back()"
-               style="display:block; max-width:300px; margin:0 auto; padding:12px; background:#eeeeee; color:#333; border-radius:8px; text-decoration:none; font-weight:bold; font-size:16px;">
+        <div class="text-center mt-5">
+            <button class="max-w-xs my-0 mx-auto text-black bg-[#eeeeee] font-semibold text-base rounded-lg"
+                    onclick="history.back();">
                 ← 뒤로 가기
-            </a>
+            </button>
         </div>
     </div>
 </section>
 
-<%@ include file="../common/foot.jspf"%>
+<%@ include file="../common/foot.jspf" %>

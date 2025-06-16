@@ -5,8 +5,6 @@ import org.myproject.demo.vo.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class CrawlingController {
@@ -15,6 +13,7 @@ public class CrawlingController {
     private CrawlingService crawlingService;
 
     public String showLogo(Model model) {
+
         int id;
 
         for (id = 1; id <= 12; id++) {
@@ -62,11 +61,5 @@ public class CrawlingController {
         }
 
         return "home/main";
-    }
-
-    @RequestMapping("/craw/ling")
-    @ResponseBody
-    public void crawling() {
-        crawlingService.crawling();
     }
 }

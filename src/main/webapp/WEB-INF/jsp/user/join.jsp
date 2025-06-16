@@ -11,19 +11,24 @@
                     <h2 style="text-align: center; margin-bottom: 24px; color: #333;">회원가입</h2>
 
                     <!-- 아이디 -->
-                    <input name="loginId" type="text" placeholder="아이디를 입력하세요" style="width: 100%; height: 40px; margin-bottom: 12px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
+                    <input name="loginId" type="text" placeholder="아이디를 입력하세요"
+                           style="width: 100%; height: 40px; margin-bottom: 12px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
 
                     <!-- 비밀번호 -->
-                    <input name="loginPw" type="text" placeholder="비밀번호를 입력하세요" style="width: 100%; height: 40px; margin-bottom: 12px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
+                    <input name="loginPw" type="text" placeholder="비밀번호를 입력하세요"
+                           style="width: 100%; height: 40px; margin-bottom: 12px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
 
                     <!-- 이름 -->
-                    <input name="name" type="text" placeholder="이름을 입력하세요" style="width: 100%; height: 40px; margin-bottom: 12px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
+                    <input name="name" type="text" placeholder="이름을 입력하세요"
+                           style="width: 100%; height: 40px; margin-bottom: 12px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
 
                     <!-- 닉네임 -->
-                    <input name="nickName" type="text" placeholder="닉네임을 입력하세요" style="width: 100%; height: 40px; margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
+                    <input name="nickName" type="text" placeholder="닉네임을 입력하세요"
+                           style="width: 100%; height: 40px; margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
 
                     <!-- 이메일 -->
-                    <input name="email" type="text" placeholder="이메일을 입력하세요" style="width: 100%; height: 40px; margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
+                    <input name="email" type="text" placeholder="이메일을 입력하세요"
+                           style="width: 100%; height: 40px; margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px;">
 
                     <!-- 회원가입 버튼 -->
                     <button style="width: 100%; height: 40px; border: none; border-radius: 20px; background-color: #333; color: white; font-size: 14px; cursor: pointer;">
@@ -45,11 +50,11 @@
             </div>
         </form>
         <!-- 뒤로가기 버튼 -->
-        <div style="text-align:center; margin-top:20px;">
-            <a href="javascript:history.back()"
-               style="display:block; max-width:300px; margin:0 auto; padding:12px; background:#eeeeee; color:#333; border-radius:8px; text-decoration:none; font-weight:bold; font-size:16px;">
+        <div class="text-center mt-5">
+            <button class="max-w-xs my-0 mx-auto text-black bg-[#eeeeee] font-semibold text-base rounded-lg"
+                    onclick="history.back();">
                 ← 뒤로 가기
-            </a>
+            </button>
         </div>
     </div>
 </section>

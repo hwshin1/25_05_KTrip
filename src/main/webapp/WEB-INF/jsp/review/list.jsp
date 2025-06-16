@@ -4,6 +4,16 @@
 <%@ include file="../common/head.jspf" %>
 <!-- daisy UI -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/4.12.23/full.css" />
+<header>
+    <div>
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="../review/list">LIST</a></li>
+            <li><a href="../review/write">글쓰기</a></li>
+        </ul>
+    </div>
+</header>
+
 <section>
     <div class="overflow-x-auto">
         <table class="table text-3xl">

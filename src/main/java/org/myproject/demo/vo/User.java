@@ -19,4 +19,7 @@ public class User {
     private String nickName;
     private String email;
     private String login_type;
+    private int teamId;
+
+    private String extra_writer;
 }
