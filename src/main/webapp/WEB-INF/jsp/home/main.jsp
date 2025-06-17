@@ -137,7 +137,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://www.ticketlink.co.kr/sports/138/74" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team5.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="${team4.team_logo}" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>
@@ -207,7 +207,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://www.ticketlink.co.kr/sports/138/80" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team4.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="${team5.team_logo}" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>

@@ -36,6 +36,17 @@ nickName = 'admin',
 email = 'test1@naver.com',
 login_type = 'normal';
 
+INSERT INTO `user`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test1',
+loginPw = 'test1',
+`authLevel` = 3,
+`name` = 'test1',
+nickName = 'test1',
+email = 'test1@gmail.com',
+login_type = 'normal';
+
 SELECT *
 FROM `user`
 WHERE loginId = 'test1';
@@ -91,6 +102,22 @@ userId = 1,
 boardId = 2,
 title = 'test',
 `body` = 'test';
+
+INSERT INTO review
+SET regDate = NOW(),
+updateDate = NOW(),
+userId = 2,
+boardId = 2,
+title = 'ss',
+`body` = 'ss';
+
+INSERT INTO review
+SET regDate = NOW(),
+updateDate = NOW(),
+userId = 2,
+boardId = 2,
+title = 'aa',
+`body` = 'aa';
 
 SELECT *
 FROM review
@@ -221,14 +248,14 @@ FROM reactionPoint;
 
 # 게시글에 좋아요 업데이트
 UPDATE review AS R
-    INNER JOIN (
+INNER JOIN (
     SELECT RP.relTypeCode, RP.relId,
-    SUM (IF(RP.point > 0, RP.point, 0)) AS `point`
+    SUM(IF(RP.`point` > 0, RP.`point`, 0)) AS `point`
     FROM reactionPoint AS RP
     GROUP BY RP.relTypeCode, RP.relId
-    ) AS RP_SUM
+) AS RP_SUM
 ON R.id = RP_SUM.relId
-    SET R.`point` = RP_SUM.`point`;
+SET R.`point` = RP_SUM.`point`;
 
 SELECT *
 FROM review;
