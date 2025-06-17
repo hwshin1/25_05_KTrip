@@ -15,6 +15,7 @@ public class User {
     private LocalDateTime updateDate;
     private String loginId;
     private String loginPw;
+    private int authLevel;
     private String name;
     private String nickName;
     private String email;
@@ -22,4 +23,17 @@ public class User {
     private int teamId;
 
     private String extra_writer;
+
+    // 권한 레벨 상수
+    public static final int AUTH_LEVEL_USER = 3;
+    public static final int AUTH_LEVEL_ADMIN = 7;
+
+    // 편의 메서드
+    public boolean isAdmin() {
+        return this.authLevel == AUTH_LEVEL_ADMIN;
+    }
+
+    public boolean isUser() {
+        return this.authLevel == AUTH_LEVEL_USER;
+    }
 }

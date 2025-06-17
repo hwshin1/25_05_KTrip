@@ -23,74 +23,6 @@
         flex: 0 0 auto;
     }
 
-    .frame .gmb {
-        display: flex;
-        align-items: flex-start;
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        flex: 0 0 auto;
-    }
-
-    .frame .div-wrapper {
-        position: relative;
-        flex: 1;
-        flex-grow: 1;
-        height: 47px;
-        background-color: #ffffff;
-        border-right-width: 1px;
-        border-right-style: solid;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-color: #111111;
-    }
-
-    .frame .text-wrapper {
-        position: absolute;
-        height: 21px;
-        top: 12px;
-        left: 67px;
-        font-family: "Pretendard-Bold", Helvetica;
-        font-weight: 700;
-        color: #000000;
-        font-size: 18px;
-        letter-spacing: 0;
-        line-height: normal;
-        white-space: nowrap;
-    }
-
-    .frame .div-2 {
-        display: flex;
-        align-items: center;
-        position: relative;
-        flex: 1;
-        flex-grow: 1;
-    }
-
-    .frame .div-3 {
-        position: relative;
-        flex: 1;
-        flex-grow: 1;
-        height: 48px;
-        background-color: #ffffff;
-        border-right-width: 1px;
-        border-right-style: solid;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-color: #111111;
-    }
-
-    .frame .div-4 {
-        position: relative;
-        flex: 1;
-        flex-grow: 1;
-        height: 48px;
-        background-color: #ffffff;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-color: #111111;
-    }
-
     .frame .div-5 {
         display: flex;
         height: 750px;
@@ -289,20 +221,6 @@
 
 <div class="frame">
     <div class="div">
-        <div class="gmb">
-            <div class="div-wrapper"><div class="text-wrapper">LOGO NAME</div></div>
-            <div class="div-wrapper"><div class="text-wrapper">LOGO NAME</div></div>
-            <div class="div-wrapper"><div class="text-wrapper">LOGO NAME</div></div>
-            <div class="div-wrapper"><div class="text-wrapper">LOGO NAME</div></div>
-            <div class="div-wrapper"><div class="text-wrapper">LOGO NAME</div></div>
-            <div class="div-wrapper"><div class="text-wrapper">LOGO NAME</div></div>
-            <div class="div-wrapper"><div class="text-wrapper">LOGO NAME</div></div>
-            <div class="div-2">
-                <div class="div-3"></div>
-                <div class="div-3"></div>
-                <div class="div-4"></div>
-            </div>
-        </div>
         <div class="div-5">
             <div class="frame-wrapper">
                 <div class="div-6">
@@ -331,18 +249,18 @@
                 <div class="text-wrapper-5">ALL</div>
                 <div class="rectangle"></div>
             </div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">대전하나시티즌</div></div>
             <div class="div-wrapper-2"><div class="text-wrapper-6">FC 서울</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">수원 FC</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">울산 HD</div></div>
             <div class="div-wrapper-2"><div class="text-wrapper-6">전북현대모터스</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">FC 안양</div></div>
+            <div class="div-wrapper-2"><div class="text-wrapper-6">울산 HD</div></div>
+            <div class="div-wrapper-2"><div class="text-wrapper-6">대전하나시티즌</div></div>
             <div class="div-wrapper-2"><div class="text-wrapper-6">대구 FC</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">김천상무프로축구단</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">제주 SK</div></div>
             <div class="div-wrapper-2"><div class="text-wrapper-6">포항스틸러스</div></div>
+            <div class="div-wrapper-2"><div class="text-wrapper-6">FC 안양</div></div>
             <div class="div-wrapper-2"><div class="text-wrapper-6">강원 FC</div></div>
             <div class="div-wrapper-2"><div class="text-wrapper-6">광주 FC</div></div>
+            <div class="div-wrapper-2"><div class="text-wrapper-6">제주 SK</div></div>
+            <div class="div-wrapper-2"><div class="text-wrapper-6">수원 FC</div></div>
+            <div class="div-wrapper-2"><div class="text-wrapper-6">김천상무프로축구단</div></div>
         </div>
     </div>
 </div>
