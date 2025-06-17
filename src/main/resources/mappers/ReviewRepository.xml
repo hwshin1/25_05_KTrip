@@ -8,6 +8,7 @@
         SET regDate = NOW(),
         updateDate = NOW(),
         userId = #{userId},
+        boardId = #{boardId},
         title = #{title},
         `body` = #{body}
     </insert>
@@ -52,5 +53,71 @@
         INNER JOIN `user` AS U
         ON R.userId = U.id
         WHERE R.id = #{id}
+    </select>
+
+    <select id="getForPrintReviews"
+            resultType="org.myproject.demo.vo.Review">
+        SELECT R.*, U.nickname AS extra_writer
+        FROM review AS R
+        INNER JOIN `user` AS U
+        ON R.userId = U.id
+        WHERE 1
+        <if test="boardId != 0">
+            AND boardId = #{boardId}
+        </if>
+        <if test="searchKeyword != ''">
+            <choose>
+                <when test="searchKeywordTypeCode == 'title'">
+                    AND R.title LIKE CONCAT('%', #{searchKeyword}, '%')
+                </when>
+                <when test="searchKeywordTypeCode == 'body'">
+                    AND R.`body` LIKE CONCAT('%', #{searchKeyword}, '%')
+                </when>
+                <when test="searchKeywordTypeCode == 'nickname'">
+                    AND U.nickname LIKE CONCAT('%', #{searchKeyword},
+                    '%')
+                </when>
+                <otherwise>
+                    AND R.title LIKE CONCAT('%', #{searchKeyword}, '%')
+                    OR
+                    R.`body` LIKE CONCAT('%', #{searchKeyword}, '%')
+                </otherwise>
+            </choose>
+        </if>
+        GROUP BY R.id
+        ORDER BY R.id
+        DESC
+        <if test="limitFrom >= 0">
+            LIMIT #{limitFrom}, #{limitTake}
+        </if>
+    </select>
+
+    <select id="getReviewCount" parameterType="int">
+        SELECT COUNT(*), U.nickname AS extra_writer
+        FROM review AS R
+        INNER JOIN `user` AS U
+        ON R.userId = U.id
+        WHERE 1
+        <if test="boardId != 0">
+            AND R.boardId = #{boardId}
+        </if>
+        <if test="searchKeyword != ''">
+            <choose>
+                <when test="searchKeywordTypeCode == 'title'">
+                    AND R.title LIKE CONCAT('%', #{searchKeyword}, '%')
+                </when>
+                <when test="searchKeywordTypeCode == 'body'">
+                    AND R.`body` LIKE CONCAT('%', #{searchKeyword}, '%')
+                </when>
+                <when test="searchKeywordTypeCode == 'nickname'">
+                    AND U.nickname LIKE CONCAT('%', #{searchKeyword}, '%')
+                </when>
+                <otherwise>
+                    AND R.title LIKE CONCAT('%', #{searchKeyword}, '%')
+                    OR
+                    R.`body` LIKE CONCAT('%', #{searchKeyword}, '%')
+                </otherwise>
+            </choose>
+        </if>
     </select>
 </mapper>

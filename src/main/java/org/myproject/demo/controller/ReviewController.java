@@ -2,8 +2,10 @@ package org.myproject.demo.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.myproject.demo.interceptor.BeforeInterceptor;
+import org.myproject.demo.service.BoardService;
 import org.myproject.demo.service.ReviewService;
 import org.myproject.demo.util.Ut;
+import org.myproject.demo.vo.Board;
 import org.myproject.demo.vo.ResultData;
 import org.myproject.demo.vo.Review;
 import org.myproject.demo.vo.Rq;
@@ -11,8 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -26,29 +30,53 @@ public class ReviewController {
     @Autowired
     private ReviewService reviewService;
 
+    @Autowired
+    private BoardService boardService;
+
     ReviewController(BeforeInterceptor beforeInterceptor) {
         this.beforeInterceptor = beforeInterceptor;
     }
 
     @RequestMapping("/review/list")
-    public String reviewList(HttpServletRequest req, Model model) {
+    public String reviewList(HttpServletRequest req, Model model, @RequestParam(defaultValue = "2") int boardId, @RequestParam(defaultValue = "1") int page,
+                             @RequestParam(defaultValue = "title") String searchKeywordTypeCode,
+                             @RequestParam(defaultValue = "") String searchKeyword) throws IOException {
         rq = (Rq) req.getAttribute("rq");
 
-        List<Review> reviews = reviewService.getReviewList();
+        Board board = boardService.getBoardById(boardId);
+
+        if (board == null) {
+            return rq.historyBackOnView("존재하지 않는 게시판");
+        }
+
+        int reviewsCount = reviewService.getReviewCount(boardId, searchKeywordTypeCode, searchKeyword);
+
+        int itemsPage = 10;
+
+        int pagesCount = (int) Math.ceil(reviewsCount / (double) itemsPage);
+
+        List<Review> reviews = reviewService.getForPrintReviews(boardId, itemsPage, page, searchKeywordTypeCode, searchKeyword);
 
         model.addAttribute("reviews", reviews);
+        model.addAttribute("pagesCount", pagesCount);
+        model.addAttribute("reviewsCount", reviewsCount);
+        model.addAttribute("searchKeywordTypeCode", searchKeywordTypeCode);
+        model.addAttribute("searchKeyword", searchKeyword);
+        model.addAttribute("boardId", boardId);
+        model.addAttribute("board", board);
+        model.addAttribute("page", page);
 
         return "review/list";
     }
 
     @RequestMapping("/review/write")
-    public String write(HttpServletRequest req) {
+    public String write() {
         return "review/write";
     }
 
     @RequestMapping("/review/doWrite")
     @ResponseBody
-    public String doWrite(HttpServletRequest req, String title, String body) {
+    public String doWrite(HttpServletRequest req, String title, String body, String boardId) {
         rq = (Rq) req.getAttribute("rq");
 
         if (Ut.isEmptyOrNull(title)) {
@@ -56,10 +84,18 @@ public class ReviewController {
         }
 
         if (Ut.isEmptyOrNull(body)) {
-            return Ut.jsHistoryBack("F-1", Ut.f("내용을 입력하세요."));
+            return Ut.jsHistoryBack("F-2", Ut.f("내용을 입력하세요."));
         }
 
-        ResultData doWriteRd = reviewService.doWrite(rq.getLoginedUserId(), title, body);
+        if (Ut.isEmptyOrNull(boardId)) {
+            return Ut.jsHistoryBack("F-3", Ut.f("게시판을 선택하세요."));
+        }
+
+        if (rq.getLoginedUserId() != 1) {
+            boardId = "2";
+        }
+
+        ResultData doWriteRd = reviewService.doWrite(rq.getLoginedUserId(), title, body, boardId);
 
         int id = (int) doWriteRd.getData1();
 

@@ -15,8 +15,8 @@ public class ReviewService {
     @Autowired
     private ReviewRepository reviewRepository;
 
-    public ResultData doWrite(int userId, String title, String body) {
-        reviewRepository.doWrite(userId, title, body);
+    public ResultData doWrite(int userId, String title, String body, String boardId) {
+        reviewRepository.doWrite(userId, title, body, boardId);
 
         int id = reviewRepository.getLastInsertId();
 
@@ -73,5 +73,16 @@ public class ReviewService {
         }
 
         return ResultData.from("S-1", Ut.f("%d번 리뷰가 삭제 되었습니다", review.getId()));
+    }
+
+    public int getReviewCount(int boardId, String searchKeywordTypeCode, String searchKeyword) {
+        return reviewRepository.getReviewCount(boardId, searchKeywordTypeCode, searchKeyword);
+    }
+
+    public List<Review> getForPrintReviews(int boardId, int itemsPage, int page, String searchKeywordTypeCode, String searchKeyword) {
+        int limitFrom = (page - 1) * itemsPage;
+        int limitTake = itemsPage;
+
+        return reviewRepository.getForPrintReviews(boardId, limitFrom, limitTake, searchKeywordTypeCode, searchKeyword);
     }
 }

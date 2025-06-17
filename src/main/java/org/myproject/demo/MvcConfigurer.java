@@ -5,6 +5,7 @@ import org.myproject.demo.interceptor.NeedLoginInterceptor;
 import org.myproject.demo.interceptor.NeedLogoutInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -25,16 +26,27 @@ public class MvcConfigurer implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+
+        InterceptorRegistration ir;
+
         // 모든 요청이 들어오기 전에 before 인터셉터 활용하겠다.
-        registry.addInterceptor(beforeInterceptor).addPathPatterns("/**");
+        ir = registry.addInterceptor(beforeInterceptor);
+        ir.addPathPatterns("/**");
+        ir.addPathPatterns("/favicon.ico");
+        ir.excludePathPatterns("/error");
 
-        registry.addInterceptor(needLoginInterceptor).addPathPatterns("/review/write")
-                .addPathPatterns("/review/doWrite").addPathPatterns("/review/modify")
-                .addPathPatterns("/review/doModify").addPathPatterns("/review/doDelete")
-                .addPathPatterns("/user/doLogout");
+        ir = registry.addInterceptor(needLoginInterceptor);
+        ir.addPathPatterns("/review/write");
+        ir.addPathPatterns("/review/doWrite");
+        ir.addPathPatterns("/review/modify");
+        ir.addPathPatterns("/review/doModify");
+        ir.addPathPatterns("/review/doDelete");
+        ir.addPathPatterns("/user/doLogout");
 
-        registry.addInterceptor(needLogoutInterceptor).addPathPatterns("/user/join")
-                .addPathPatterns("/user/doJoin").addPathPatterns("/user/login")
-                .addPathPatterns("/user/doLogin");
+        ir = registry.addInterceptor(needLogoutInterceptor);
+        ir.addPathPatterns("/user/join");
+        ir.addPathPatterns("/user/doJoin");
+        ir.addPathPatterns("/user/login");
+        ir.addPathPatterns("/user/doLogin");
     }
 }

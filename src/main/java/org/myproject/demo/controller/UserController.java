@@ -27,7 +27,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/user/join")
-    public String Join(HttpServletRequest req, Model model) {
+    public String Join(Model model) {
         String sendURL = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="
                 + kakaoApi.getClient_id() + "&redirect_uri="+ kakaoApi.getRedirect_url();
 
@@ -38,7 +38,7 @@ public class UserController {
 
     @RequestMapping("/user/doJoin")
     @ResponseBody
-    public String doJoin(HttpServletRequest req, String loginId, String loginPw, String name, String nickName, String email) {
+    public String doJoin(String loginId, String loginPw, String name, String nickName, String email) {
         if (Ut.isEmptyOrNull(loginId)) {
             return Ut.jsHistoryBack("F-1", Ut.f("아이디 입력"));
         }
@@ -69,7 +69,7 @@ public class UserController {
     }
 
     @RequestMapping("/user/login")
-    public String login(HttpServletRequest req) {
+    public String login() {
         return "user/login";
     }
 
@@ -111,67 +111,5 @@ public class UserController {
         rq.logout();
 
         return Ut.jsReplace("S-1", "로그아웃 성공", "/");
-    }
-
-    @RequestMapping("/user/myPage")
-    public String myPage() {
-        return "user/myPage";
-    }
-
-    @RequestMapping("/user/checkPw")
-    public String checkPw() {
-        return "user/checkPw";
-    }
-
-    @RequestMapping("/user/doCheckPw")
-    @ResponseBody
-    public String doCheckPw(String loginId, String loginPw) {
-
-        User user = userService.getUserByLoginId(loginId);
-
-        if (Ut.isEmptyOrNull(loginPw)) {
-           return Ut.jsHistoryBack("F-1", Ut.f("비밀번호 입력"));
-        }
-
-        if (!user.getLoginPw().equals(loginPw)) {
-            return Ut.jsHistoryBack("F-2", Ut.f("비밀번호가 일치하지 않습니다."));
-        }
-
-        return Ut.jsReplace("S-1", Ut.f("비밀번호 확인 성공!"), "modify");
-    }
-
-    @RequestMapping("/user/modify")
-    public String showModify() {
-        return "user/modify";
-    }
-
-    @RequestMapping("/user/doModify")
-    @ResponseBody
-    public String doModify(HttpServletRequest req, String loginPw, String name,
-                           String nickName, String email) {
-
-        rq = (Rq) req.getAttribute("rq");
-
-        if (Ut.isEmptyOrNull(name)) {
-            return Ut.jsHistoryBack("F-1", Ut.f("name 입력 x"));
-        }
-
-        if (Ut.isEmptyOrNull(nickName)) {
-            return Ut.jsHistoryBack("F-2", Ut.f("nickname 입력 x"));
-        }
-
-        if (Ut.isEmptyOrNull(email)) {
-            return Ut.jsHistoryBack("F-3", Ut.f("email 입력 x"));
-        }
-
-        ResultData modifyRd;
-
-        if (Ut.isEmptyOrNull(loginPw)) {
-            modifyRd = userService.modifyWithoutPw(rq.getLoginedUserId(), name, nickName, email);
-        } else {
-            modifyRd = userService.modifyRd(rq.getLoginedUserId(), loginPw, name, nickName, email);
-        }
-
-        return Ut.jsReplace(modifyRd.getResultCode(), modifyRd.getMsg(), "/user/myPage");
     }
 }

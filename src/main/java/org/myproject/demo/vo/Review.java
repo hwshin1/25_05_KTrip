@@ -12,9 +12,12 @@ public class Review {
     private String regDate;
     private String updateDate;
     private int userId;
+    private int boardId;
     private String title;
     private String body;
     private float rating;
+
+    private String extra_writer;
 
     private boolean userCanModify;
     private boolean userCanDelete;

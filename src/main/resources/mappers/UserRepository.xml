@@ -16,11 +16,6 @@
         login_type = 'normal'
     </insert>
 
-    <select id="getLastInsertId" parameterType="int">
-        SELECT
-        LAST_INSERT_ID()
-    </select>
-
     <select id="getUserByLoginId" parameterType="String" resultType="org.myproject.demo.vo.User">
         SELECT *
         FROM `user`
@@ -40,7 +35,7 @@
     </select>
 
     <select id="getUserById" parameterType="int"
-            resultType="com.example.demo.vo.User">
+            resultType="org.myproject.demo.vo.User">
         SELECT * FROM `user`
         WHERE id = #{loginedUserId}
     </select>
