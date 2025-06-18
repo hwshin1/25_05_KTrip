@@ -112,4 +112,14 @@ public class UserController {
 
         return Ut.jsReplace("S-1", "로그아웃 성공", "/");
     }
+
+    @RequestMapping("/user/mypage")
+    public String mypage(HttpServletRequest req, Model model) {
+        rq = (Rq) req.getAttribute("rq");
+
+        User user = userService.getUserTeamById(rq.getLoginedUserId());
+
+        model.addAttribute("user", user);
+        return "user/mypage";
+    }
 }

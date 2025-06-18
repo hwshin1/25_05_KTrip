@@ -19,4 +19,6 @@ public interface UserRepository {
     void modify(int loginedUserId, String loginPw, String name, String nickName, String email);
 
     User getUserById(int loginedUserId);
+
+    User getUserTeamById(int loginedUserId);
 }

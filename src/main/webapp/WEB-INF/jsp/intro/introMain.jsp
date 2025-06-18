@@ -8,7 +8,7 @@
         display: flex;
         flex-direction: column;
         max-width: 1920px;
-        width: 1920px;
+        width: 100%;
         align-items: flex-start;
         position: relative;
     }
@@ -214,9 +214,9 @@
 </style>
 
 <header>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="style.css"/>
 </header>
 
 <div class="frame">
@@ -228,7 +228,9 @@
                         <div class="text-wrapper-2">Power Metal</div>
                         <div class="text-wrapper-3">Power Metal dfsdfsdfsdfasdfa ffffff</div>
                     </div>
-                    <div class="out-of-stoke-wrapper"><div class="out-of-stoke">OUT OF STOKE</div></div>
+                    <div class="out-of-stoke-wrapper">
+                        <div class="out-of-stoke">OUT OF STOKE</div>
+                    </div>
                 </div>
             </div>
             <div class="frame-wrapper-2">
@@ -237,7 +239,9 @@
                         <div class="text-wrapper-2">Power Metal</div>
                         <div class="text-wrapper-3">Power Metal dfsdfsdfsdfasdfa ffffff</div>
                     </div>
-                    <div class="out-of-stoke-wrapper"><div class="out-of-stoke">OUT OF STOKE</div></div>
+                    <div class="out-of-stoke-wrapper">
+                        <div class="out-of-stoke">OUT OF STOKE</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -249,18 +253,42 @@
                 <div class="text-wrapper-5">ALL</div>
                 <div class="rectangle"></div>
             </div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">FC 서울</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">전북현대모터스</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">울산 HD</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">대전하나시티즌</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">대구 FC</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">포항스틸러스</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">FC 안양</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">강원 FC</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">광주 FC</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">제주 SK</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">수원 FC</div></div>
-            <div class="div-wrapper-2"><div class="text-wrapper-6">김천상무프로축구단</div></div>
+            <div class="div-wrapper-2">
+                <div class="text-wrapper-6"><a href="../intro/Seoul">FC 서울</a></div>
+            </div>
+            <div class="div-wrapper-2">
+                <div class="text-wrapper-6"><a href="../intro/Jeonju">전북현대모터스</a></div>
+            </div>
+            <div class="div-wrapper-2">
+                <div class="text-wrapper-6"><a href="../intro/Ulsan">울산 HD</a></div>
+            </div>
+            <div class="div-wrapper-2">
+                <div class="text-wrapper-6"><a href="../intro/Daejeon">대전하나시티즌</a></div>
+            </div>
+            <div class="div-wrapper-2">
+                <div class="text-wrapper-6"><a href="../intro/Daegu">대구 FC</a></div>
+            </div>
+            <div class="div-wrapper-2">
+                <div class="text-wrapper-6"><a href="../intro/Pohang">포항스틸러스</a></div>
+            </div>
+            <div class="div-wrapper-2">
+                <div class="text-wrapper-6"><a href="../intro/Anyang">FC 안양</a></div>
+            </div>
+            <div class="div-wrapper-2">
+                <div class="text-wrapper-6"><a href="../intro/Gangwon">강원 FC</a></div>
+            </div>
+            <div class="div-wrapper-2">
+                <div class="text-wrapper-6"><a href="../intro/Gwangju">광주 FC</a></div>
+            </div>
+            <div class="div-wrapper-2">
+                <div class="text-wrapper-6"><a href="../intro/Jeju">제주 SK</a></div>
+            </div>
+            <div class="div-wrapper-2">
+                <div class="text-wrapper-6"><a href="../intro/SuwonFC">수원 FC</a></div>
+            </div>
+            <div class="div-wrapper-2">
+                <div class="text-wrapper-6"><a href="../intro/Kimcheon">김천상무프로축구단</a></div>
+            </div>
         </div>
     </div>
 </div>

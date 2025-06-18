@@ -23,6 +23,8 @@ public class User {
     private int teamId;
 
     private String extra_writer;
+    private String extra_teamName;
+    private String extra_teamLogo;
 
     // 권한 레벨 상수
     public static final int AUTH_LEVEL_USER = 3;

@@ -39,12 +39,14 @@
             <a style="font-weight: 700" class="text-[#001C48]" href="/">K LEAGUE <em
                     class="text-lg not-italic text-[#9D0A0F]">Trip</em></a>
         </div>
-        <nav class="text-center w-3/5 header_menu">
-            <ul>
+        <nav class="text-center w-3/5 header_menu relative">
+            <ul class="flex justify-center space-x-4">
                 <li class="inline"><a class="mx-1" href="../intro/home">구단 별 소개</a></li>
                 <li class="inline"><a class="mx-1" href="../review/list?boardId=1">공지사항</a></li>
                 <li class="inline"><a class="mx-1" href="../review/list">후기 글</a></li>
-                <li class="inline"><a class="mx-1" href="#">메뉴</a></li>
+                <li class="inline-block">
+                    <div class="relative hover:underline">메뉴</div>
+                </li>
             </ul>
         </nav>
         <div class="relative w-60 h-60 mx-auto">

@@ -59,11 +59,16 @@ public class IntroductionController {
 
     @RequestMapping("/Ulsan")
     public String introUlSan() {
-        return "intro/UlSanHD";
+        return "intro/UlsanHD";
     }
 
     @RequestMapping("/Jeju")
     public String introJeju() {
         return "intro/JejuSK";
+    }
+
+    @RequestMapping("/Gwangju")
+    public String introGwangju() {
+        return "intro/GwangjuFC";
     }
 }

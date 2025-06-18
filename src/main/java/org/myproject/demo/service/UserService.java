@@ -59,4 +59,8 @@ public class UserService {
     public User getUserById(int loginedUserId) {
         return userRepository.getUserById(loginedUserId);
     }
+
+    public User getUserTeamById(int loginedUserId) {
+        return userRepository.getUserTeamById(loginedUserId);
+    }
 }

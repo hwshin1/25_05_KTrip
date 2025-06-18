@@ -18,7 +18,8 @@ CREATE TABLE `user`
     email       VARCHAR(50) NOT NULL,
     regDate     DATETIME    NOT NULL,
     updateDate  DATETIME    NOT NULL,
-    login_type  ENUM ('normal','kakao')
+    login_type  ENUM ('normal','kakao'),
+    teamId INT
 );
 
 SELECT *
@@ -33,7 +34,7 @@ loginPw = 'admin',
 `authLevel` = 7,
 `name` = 'admin',
 nickName = 'admin',
-email = 'test1@naver.com',
+email = 'admin@naver.com',
 login_type = 'normal';
 
 INSERT INTO `user`
@@ -47,17 +48,26 @@ nickName = 'test1',
 email = 'test1@gmail.com',
 login_type = 'normal';
 
+INSERT INTO `user`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test2',
+loginPw = 'test2',
+`authLevel` = 3,
+`name` = 'test2',
+nickName = 'test2',
+email = 'test2@gmail.com',
+login_type = 'normal',
+teamId = 2;
+
 SELECT *
 FROM `user`
-WHERE loginId = 'test1';
+WHERE loginId = 'test2';
 
 SELECT *
 FROM `user`
 WHERE `name` = 'test2'
-  AND email = 'test2@naver.com';
-
-ALTER TABLE `user`
-    ADD COLUMN teamId INT NULL AFTER login_type;
+AND email = 'test2@gmail.com';
 
 SELECT *
 FROM `user`
@@ -79,6 +89,13 @@ FROM team;
 SELECT *
 FROM team
 WHERE id = 1;
+
+SELECT U.*, T.team_name AS extra_teamName,
+       T.team_logo AS extra_teamLogo
+FROM `user` AS U
+         LEFT JOIN team AS T
+                   ON U.teamId = T.id
+WHERE U.id= 3;
 
 # 리뷰 테이블 생성
 DROP TABLE IF EXISTS review;
@@ -248,12 +265,12 @@ FROM reactionPoint;
 
 # 게시글에 좋아요 업데이트
 UPDATE review AS R
-INNER JOIN (
+    INNER JOIN (
     SELECT RP.relTypeCode, RP.relId,
     SUM(IF(RP.`point` > 0, RP.`point`, 0)) AS `point`
     FROM reactionPoint AS RP
     GROUP BY RP.relTypeCode, RP.relId
-) AS RP_SUM
+    ) AS RP_SUM
 ON R.id = RP_SUM.relId
 SET R.`point` = RP_SUM.`point`;
 

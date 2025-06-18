@@ -55,7 +55,7 @@
             </if>
             updateDate = NOW()
         </set>
-        WHERE id = #{loginedMemberId}
+        WHERE id = #{loginedUserId}
     </update>
 
     <update id="modify">
@@ -75,6 +75,15 @@
             </if>
             updateDate = NOW()
         </set>
-        WHERE id = #{loginedMemberId}
+        WHERE id = #{loginedUserId}
     </update>
+
+    <select id="getUserTeamById" parameterType="int"
+            resultType="org.myproject.demo.vo.User">
+        SELECT U.*, T.team_name AS extra_teamName, T.team_logo AS extra_teamLogo
+        FROM `user` AS U
+        LEFT JOIN team AS T
+        ON U.teamId = T.id
+        WHERE U.id= #{loginedUserId};
+    </select>
 </mapper>
