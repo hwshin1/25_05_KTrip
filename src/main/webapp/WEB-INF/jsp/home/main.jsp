@@ -57,7 +57,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://www.ticketlink.co.kr/sports/138/65" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team6.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="/emblem_K09.png" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>
@@ -70,7 +70,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://www.ticketlink.co.kr/sports/138/73" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team1.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="/emblem_K05.png" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>
@@ -83,7 +83,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://www.ticketlink.co.kr/sports/138/66" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team3.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="/emblem_K01.png" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>
@@ -96,7 +96,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://www.ticketlink.co.kr/sports/138/83" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team2.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="/emblem_K10.png" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>
@@ -110,7 +110,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://www.ticketlink.co.kr/sports/138/84" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team12.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="/emblem_K17.png" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>
@@ -124,7 +124,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://www.ticketlink.co.kr/sports/138/86" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team7.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="/emblem_K27.png" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>
@@ -137,7 +137,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://www.ticketlink.co.kr/sports/138/74" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team4.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="/emblem_K03.png" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>
@@ -151,7 +151,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://ticket.interpark.com/Contents/Sports/GoodsInfo?SportsCode=07002&TeamCode=PS014" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team10.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="/emblem_K21.png" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>
@@ -165,7 +165,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://www.ticketlink.co.kr/sports/138/79" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team8.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="/emblem_K22.png" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>
@@ -179,7 +179,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://www.jejuskfc.com/reservation/ticketInfo" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team9.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="/emblem_K04.png" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>
@@ -193,7 +193,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://ticket.interpark.com/Contents/Sports/GoodsInfo?SportsCode=07002&TeamCode=PS061" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team11.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="/emblem_K29.png" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>
@@ -207,7 +207,7 @@
             <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                 <a href="https://www.ticketlink.co.kr/sports/138/80" target="_blank">
                     <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="${team5.team_logo}" class="w-[50px] h-[50px] object-contain" />
+                        <img src="/emblem_K35.png" class="w-[50px] h-[50px] object-contain" />
                     </div>
                 </a>
             </div>

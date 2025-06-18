@@ -16,7 +16,12 @@
 <section class="mt-24 text-xl px-4">
     <div class="max-w-6xl mx-auto">
         <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
-            <div class="text-base font-semibold">${reviewsCount}개의 후기</div>
+            <c:if test="${boardId == 2}">
+                <div class="text-base font-semibold">${reviewsCount}개의 후기</div>
+            </c:if>
+            <c:if test="${boardId == 1}">
+                <div class="text-base font-semibold">${reviewsCount}개의 공지사항</div>
+            </c:if>
 
             <form action="../review/list" class="flex items-center gap-2">
                 <input type="hidden" name="boardId" value="${param.boardId}"/>

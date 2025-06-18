@@ -122,7 +122,6 @@ public class ReviewController {
     }
 
     @RequestMapping("/review/modify")
-    @ResponseBody
     public String modifyReview(HttpServletRequest req, int id, Model model) {
         rq = (Rq) req.getAttribute("rq");
 
@@ -133,7 +132,7 @@ public class ReviewController {
         }
 
         if (!review.isUserCanModify()) {
-            return Ut.jsHistoryBack("F-A", Ut.f("%d번 리뷰에 대한 수정 권한 없음.", review.getId()));
+            return rq.historyBackOnView(Ut.f("%d번 리뷰에 대한 수정 권한 없음.", review.getId()));
         }
 
         model.addAttribute("review", review);

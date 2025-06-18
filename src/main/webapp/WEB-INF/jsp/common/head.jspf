@@ -41,9 +41,9 @@
         </div>
         <nav class="text-center w-3/5 header_menu">
             <ul>
-                <li class="inline"><a class="mx-1" href="/intro/home">구단 별 소개</a></li>
-                <li class="inline"><a class="mx-1" href="#">공지사항</a></li>
-                <li class="inline"><a class="mx-1" href="/review/list">후기 글</a></li>
+                <li class="inline"><a class="mx-1" href="../intro/home">구단 별 소개</a></li>
+                <li class="inline"><a class="mx-1" href="../review/list?boardId=1">공지사항</a></li>
+                <li class="inline"><a class="mx-1" href="../review/list">후기 글</a></li>
                 <li class="inline"><a class="mx-1" href="#">메뉴</a></li>
             </ul>
         </nav>
