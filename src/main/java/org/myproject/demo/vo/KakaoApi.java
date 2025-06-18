@@ -7,8 +7,11 @@ import org.springframework.stereotype.Component;
 @Component
 @Getter
 public class KakaoApi {
-    @Value("${kakao.client_id}")
-    private String client_id;
+    @Value("${kakao.restapi_key}")
+    private String restapi_key;
+
+    @Value("${kakao.javascript_key}")
+    private String javascript_key;
 
     @Value("${kakao.redirect_url}")
     private String redirect_url;

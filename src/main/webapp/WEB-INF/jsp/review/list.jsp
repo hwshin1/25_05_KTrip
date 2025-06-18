@@ -59,7 +59,7 @@
                     <tr class="hover:bg-base-200">
                         <td>${review.id}</td>
                         <td>${review.regDate.substring(0,10)}</td>
-                        <td class="text-left">
+                        <td>
                             <a href="../review/detail?id=${review.id}" class="hover:underline">${review.title}</a>
                         </td>
                         <td>${review.extra_writer}</td>

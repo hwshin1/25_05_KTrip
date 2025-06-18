@@ -29,7 +29,7 @@ public class UserController {
     @GetMapping("/user/join")
     public String Join(Model model) {
         String sendURL = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="
-                + kakaoApi.getClient_id() + "&redirect_uri="+ kakaoApi.getRedirect_url();
+                + kakaoApi.getRestapi_key() + "&redirect_uri="+ kakaoApi.getRedirect_url();
 
         model.addAttribute("sendURL", sendURL);
 

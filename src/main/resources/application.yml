@@ -17,5 +17,6 @@ server:
   port: 8099
 
 kakao:
-  client_id: 493573b251c629cab49ffc76ab14ea28
+  restapi_key: 493573b251c629cab49ffc76ab14ea28
+  javascript_key: 69544617df3febfc879cd18eed451ba3
   redirect_url: http://localhost:8080/login/demoshw/oauth
