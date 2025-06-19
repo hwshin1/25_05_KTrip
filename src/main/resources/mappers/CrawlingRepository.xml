@@ -4,8 +4,19 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.myproject.demo.repository.CrawlingRepository">
-    <select id="teamListLogo" parameterType="int" resultType="org.myproject.demo.vo.Team">
-        SELECT * FROM team
-        WHERE id = #{id}
+    <insert id="webCrawling" parameterType="map">
+        INSERT INTO team
+        SET team_logo = #{team_logo},
+        team_name = #{team_name},
+        team_homepage = #{team_homepage}
+    </insert>
+
+    <select id="existsTeam" resultType="boolean">
+        SELECT EXISTS (
+        SELECT 1
+        FROM team
+        WHERE team_name = #{team_name}
+        OR team_homepage = #{team_homepage}
+        )
     </select>
 </mapper>

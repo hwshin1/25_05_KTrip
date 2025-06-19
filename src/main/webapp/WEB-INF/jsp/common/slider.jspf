@@ -19,7 +19,9 @@
 
                     <!-- 버튼 그룹 -->
                     <div class="flex gap-4 mb-6">
-                        <button class="bg-black text-white px-6 py-2 text-lg rounded">자세히 보기</button>
+                        <button class="bg-black text-white px-6 py-2 text-lg rounded">
+                            <a href="../intro/Daejeon">자세히 보기</a>
+                        </button>
                         <button class="bg-white text-black px-6 py-2 text-lg rounded">사이트 보기</button>
                     </div>
 
@@ -54,7 +56,9 @@
 
                     <!-- 버튼 그룹 -->
                     <div class="flex gap-4 mb-6">
-                        <button class="bg-black text-white px-6 py-2 text-lg rounded">자세히 보기</button>
+                        <button class="bg-black text-white px-6 py-2 text-lg rounded">
+                            <a href="../intro/Seoul">자세히 보기</a>
+                        </button>
                         <button class="bg-white text-black px-6 py-2 text-lg rounded">사이트 보기</button>
                     </div>
 
@@ -89,7 +93,9 @@
 
                     <!-- 버튼 그룹 -->
                     <div class="flex gap-4 mb-6">
-                        <button class="bg-black text-white px-6 py-2 text-lg rounded">자세히 보기</button>
+                        <button class="bg-black text-white px-6 py-2 text-lg rounded">
+                            <a href="../intro/Pohang">자세히 보기</a>
+                        </button>
                         <button class="bg-white text-black px-6 py-2 text-lg rounded">사이트 보기</button>
                     </div>
 
@@ -124,7 +130,9 @@
 
                     <!-- 버튼 그룹 -->
                     <div class="flex gap-4 mb-6">
-                        <button class="bg-black text-white px-6 py-2 text-lg rounded">자세히 보기</button>
+                        <button class="bg-black text-white px-6 py-2 text-lg rounded">
+                            <a href="../intro/Jeonju">자세히 보기</a>
+                        </button>
                         <button class="bg-white text-black px-6 py-2 text-lg rounded">사이트 보기</button>
                     </div>
 

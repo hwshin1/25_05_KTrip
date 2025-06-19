@@ -25,7 +25,7 @@
 
                     <!-- 회원가입 하러가기 버튼 -->
                     <button style="border: none; color: white; font-size: 14px; cursor: pointer; width: 100%; height: 40px; margin-top: 1rem; border-radius: 20px; background-color: #333;">
-                        <a style="display: block; width: 100%;" href="${pageContext.request.contextPath}/user/join">회원가입
+                        <a style="display: block; width: 100%;" href="../user/join">회원가입
                             하러가기</a>
                     </button>
 
@@ -46,7 +46,7 @@
         <div class="text-center mt-5">
             <button class="max-w-xs my-0 mx-auto text-black bg-[#eeeeee] font-semibold text-base rounded-lg"
                     onclick="history.back();">
-                ← 뒤로 가기
+                뒤로 가기
             </button>
         </div>
     </div>

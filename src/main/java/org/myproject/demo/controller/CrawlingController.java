@@ -4,23 +4,28 @@ import org.myproject.demo.service.CrawlingService;
 import org.myproject.demo.vo.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @Controller
+@RequestMapping("/crawl")
 public class CrawlingController {
 
     @Autowired
     private CrawlingService crawlingService;
 
-    @RequestMapping("/home/main")
-    public String showLogo(Model model) {
+    public void team() {
+        List<Team> teams = crawlingService.webCrawling();
 
-        for (int id = 1; id <= 12; id++) {
-            Team team = crawlingService.teamListLogo(id);
-            model.addAttribute("team"+ id, team);
-        }
+        System.out.println(teams);
+    }
 
-        return "home/main";
+    @GetMapping("/notice")
+    @ResponseBody
+    public void showHomePage() {
+        crawlingService.crawlingNotice();
     }
 }

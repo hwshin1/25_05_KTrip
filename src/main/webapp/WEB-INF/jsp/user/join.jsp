@@ -53,7 +53,7 @@
         <div class="text-center mt-5">
             <button class="max-w-xs my-0 mx-auto text-black bg-[#eeeeee] font-semibold text-base rounded-lg"
                     onclick="history.back();">
-                ← 뒤로 가기
+                뒤로 가기
             </button>
         </div>
     </div>

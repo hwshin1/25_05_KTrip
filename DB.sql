@@ -67,7 +67,7 @@ WHERE loginId = 'test2';
 SELECT *
 FROM `user`
 WHERE `name` = 'test2'
-AND email = 'test2@gmail.com';
+  AND email = 'test2@gmail.com';
 
 SELECT *
 FROM `user`
@@ -80,7 +80,7 @@ CREATE TABLE team
     id            INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     team_logo     TEXT NOT NULL,
     team_name     VARCHAR(30),
-    team_location TEXT NOT NULL
+    team_homepage TEXT NOT NULL
 );
 
 SELECT *
@@ -90,11 +90,18 @@ SELECT *
 FROM team
 WHERE id = 1;
 
+SELECT EXISTS (
+SELECT 1
+FROM team
+WHERE team_name = '대전'
+OR team_homepage = 'https://www.dhcfc.kr/'
+);
+
 SELECT U.*, T.team_name AS extra_teamName,
-       T.team_logo AS extra_teamLogo
+T.team_logo AS extra_teamLogo
 FROM `user` AS U
-         LEFT JOIN team AS T
-                   ON U.teamId = T.id
+LEFT JOIN team AS T
+ON U.teamId = T.id
 WHERE U.id= 3;
 
 # 리뷰 테이블 생성
@@ -148,8 +155,8 @@ ORDER BY id DESC;
 
 SELECT R.*, U.nickName AS extra_write
 FROM review AS R
-         INNER JOIN `user` AS U
-                    ON R.userId = U.id
+INNER JOIN `user` AS U
+ON R.userId = U.id
 WHERE R.id = 2;
 
 # 카카오 테이블 생성
@@ -272,7 +279,7 @@ UPDATE review AS R
     GROUP BY RP.relTypeCode, RP.relId
     ) AS RP_SUM
 ON R.id = RP_SUM.relId
-SET R.`point` = RP_SUM.`point`;
+    SET R.`point` = RP_SUM.`point`;
 
 SELECT *
 FROM review;
