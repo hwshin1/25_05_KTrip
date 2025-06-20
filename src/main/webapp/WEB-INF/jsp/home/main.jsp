@@ -5,7 +5,7 @@
 
 <div class="w-full h-auto relative overflow-hidden bg-white">
     <%@ include file="../common/slider.jspf" %>
-    <div class="w-full h-[760px] relative overflow-hidden bg-gray-300">
+    <div class="w-full h-[760px] relative overflow-hidden bg-[#F5F5F5]">
         <p class="flex justify-center mt-[120px] text-5xl text-center">
             어디로 갈까?
         </p>
@@ -51,170 +51,176 @@
             카페, 음식점, 지역 내 가볼만한 곳
         </p>
     </div>
-    <div class="w-full h-[150px] relative overflow-hidden bg-gray-50 overflow-x-auto">
-        <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 89.5px; top: 9.5px;">
-            <!-- FC 서울 -->
-            <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <a href="https://www.ticketlink.co.kr/sports/138/65" target="_blank">
-                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="/emblem_K09.png" class="w-[50px] h-[50px] object-contain" />
-                    </div>
-                </a>
-            </div>
-            <p class="text-[12px] font-light text-black text-center">
-                FC 서울
-            </p>
+    <div class="w-full h-[150px] relative overflow-hidden overflow-x-auto my-3">
+        <div class="text-center text-xl">
+            <i class="fa-solid fa-ticket text-orange-500"></i>
+            티켓링크 바로가기
         </div>
-        <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 239.5px; top: 9.5px;">
-            <!-- 전북현대모터스 -->
-            <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <a href="https://www.ticketlink.co.kr/sports/138/73" target="_blank">
-                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="/emblem_K05.png" class="w-[50px] h-[50px] object-contain" />
-                    </div>
-                </a>
+        <div class="w-full flex justify-between">
+            <div class="w-[105px] h-[105px] flex flex-col items-center relative float-left mx-3">
+                <!-- FC 서울 -->
+                <div class="relative w-[90px] h-[90px] flex items-center justify-center">
+                    <a href="https://www.ticketlink.co.kr/sports/138/65" target="_blank">
+                        <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                            <img src="/emblem_K09.png" class="w-[50px] h-[50px] object-contain" />
+                        </div>
+                    </a>
+                </div>
+                <p class="text-[12px] font-light text-black text-center">
+                    FC 서울
+                </p>
             </div>
-            <p class="text-[12px] font-light text-black text-center">
-                전북현대모터스
-            </p>
-        </div>
-        <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 389.5px; top: 9.5px;">
-            <!-- 울산 HD -->
-            <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <a href="https://www.ticketlink.co.kr/sports/138/66" target="_blank">
-                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="/emblem_K01.png" class="w-[50px] h-[50px] object-contain" />
-                    </div>
-                </a>
+            <div class="w-[105px] h-[105px] flex flex-col items-center relative float-left mx-3">
+                <!-- 전북현대모터스 -->
+                <div class="relative w-[90px] h-[90px] flex items-center justify-center">
+                    <a href="https://www.ticketlink.co.kr/sports/138/73" target="_blank">
+                        <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                            <img src="/emblem_K05.png" class="w-[50px] h-[50px] object-contain" />
+                        </div>
+                    </a>
+                </div>
+                <p class="text-[12px] font-light text-black text-center">
+                    전북현대모터스
+                </p>
             </div>
-            <p class="text-[12px] font-light text-black text-center">
-                울산 HD
-            </p>
-        </div>
-        <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 539.5px; top: 9.5px;">
-            <!-- 대전하나시티즌 -->
-            <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <a href="https://www.ticketlink.co.kr/sports/138/83" target="_blank">
-                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="/emblem_K10.png" class="w-[50px] h-[50px] object-contain" />
-                    </div>
-                </a>
+            <div class="w-[105px] h-[105px] flex flex-col items-center relative float-left mx-3">
+                <!-- 울산 HD -->
+                <div class="relative w-[90px] h-[90px] flex items-center justify-center">
+                    <a href="https://www.ticketlink.co.kr/sports/138/66" target="_blank">
+                        <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                            <img src="/emblem_K01.png" class="w-[50px] h-[50px] object-contain" />
+                        </div>
+                    </a>
+                </div>
+                <p class="text-[12px] font-light text-black text-center">
+                    울산 HD
+                </p>
             </div>
+            <div class="w-[105px] h-[105px] flex flex-col items-center relative float-left mx-3">
+                <!-- 대전하나시티즌 -->
+                <div class="relative w-[90px] h-[90px] flex items-center justify-center">
+                    <a href="https://www.ticketlink.co.kr/sports/138/83" target="_blank">
+                        <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                            <img src="/emblem_K10.png" class="w-[50px] h-[50px] object-contain" />
+                        </div>
+                    </a>
+                </div>
 
-            <p class="text-[12px] font-light text-black text-center">
-                대전하나시티즌
-            </p>
-        </div>
-        <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 689.5px; top: 9.5px;">
-            <!-- 대구 FC -->
-            <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <a href="https://www.ticketlink.co.kr/sports/138/84" target="_blank">
-                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="/emblem_K17.png" class="w-[50px] h-[50px] object-contain" />
-                    </div>
-                </a>
+                <p class="text-[12px] font-light text-black text-center">
+                    대전하나시티즌
+                </p>
             </div>
+            <div class="w-[105px] h-[105px] flex flex-col items-center relative float-left mx-3">
+                <!-- 대구 FC -->
+                <div class="relative w-[90px] h-[90px] flex items-center justify-center">
+                    <a href="https://www.ticketlink.co.kr/sports/138/84" target="_blank">
+                        <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                            <img src="/emblem_K17.png" class="w-[50px] h-[50px] object-contain" />
+                        </div>
+                    </a>
+                </div>
 
-            <p class="text-[12px] font-light text-black text-center">
-                대구 FC
-            </p>
-        </div>
-        <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 839.5px; top: 9.5px;">
-            <!-- FC 안양 -->
-            <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <a href="https://www.ticketlink.co.kr/sports/138/86" target="_blank">
-                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="/emblem_K27.png" class="w-[50px] h-[50px] object-contain" />
-                    </div>
-                </a>
+                <p class="text-[12px] font-light text-black text-center">
+                    대구 FC
+                </p>
             </div>
-            <p class="text-[12px] font-light text-black text-center">
-                FC 안양
-            </p>
-        </div>
-        <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 989.5px; top: 9.5px;">
-            <!-- 포항스틸러스 -->
-            <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <a href="https://www.ticketlink.co.kr/sports/138/74" target="_blank">
-                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="/emblem_K03.png" class="w-[50px] h-[50px] object-contain" />
-                    </div>
-                </a>
+            <div class="w-[105px] h-[105px] flex flex-col items-center relative float-left mx-3">
+                <!-- FC 안양 -->
+                <div class="relative w-[90px] h-[90px] flex items-center justify-center">
+                    <a href="https://www.ticketlink.co.kr/sports/138/86" target="_blank">
+                        <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                            <img src="/emblem_K27.png" class="w-[50px] h-[50px] object-contain" />
+                        </div>
+                    </a>
+                </div>
+                <p class="text-[12px] font-light text-black text-center">
+                    FC 안양
+                </p>
             </div>
+            <div class="w-[105px] h-[105px] flex flex-col items-center relative float-left mx-3">
+                <!-- 포항스틸러스 -->
+                <div class="relative w-[90px] h-[90px] flex items-center justify-center">
+                    <a href="https://www.ticketlink.co.kr/sports/138/74" target="_blank">
+                        <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                            <img src="/emblem_K03.png" class="w-[50px] h-[50px] object-contain" />
+                        </div>
+                    </a>
+                </div>
 
-            <p class="text-[12px] font-light text-black text-center">
-                포항스틸러스
-            </p>
-        </div>
-        <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 1139.5px; top: 9.5px;">
-            <!-- 강원 FC -->
-            <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <a href="https://ticket.interpark.com/Contents/Sports/GoodsInfo?SportsCode=07002&TeamCode=PS014" target="_blank">
-                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="/emblem_K21.png" class="w-[50px] h-[50px] object-contain" />
-                    </div>
-                </a>
+                <p class="text-[12px] font-light text-black text-center">
+                    포항스틸러스
+                </p>
             </div>
+            <div class="w-[105px] h-[105px] flex flex-col items-center relative float-left mx-3">
+                <!-- 강원 FC -->
+                <div class="relative w-[90px] h-[90px] flex items-center justify-center">
+                    <a href="https://ticket.interpark.com/Contents/Sports/GoodsInfo?SportsCode=07002&TeamCode=PS014" target="_blank">
+                        <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                            <img src="/emblem_K21.png" class="w-[50px] h-[50px] object-contain" />
+                        </div>
+                    </a>
+                </div>
 
-            <p class="text-[12px] font-light text-black text-center">
-                강원 FC
-            </p>
-        </div>
-        <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 1289.5px; top: 9.5px;">
-            <!-- 광주 FC -->
-            <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <a href="https://www.ticketlink.co.kr/sports/138/79" target="_blank">
-                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="/emblem_K22.png" class="w-[50px] h-[50px] object-contain" />
-                    </div>
-                </a>
+                <p class="text-[12px] font-light text-black text-center">
+                    강원 FC
+                </p>
             </div>
+            <div class="w-[105px] h-[105px] flex flex-col items-center relative float-left mx-3">
+                <!-- 광주 FC -->
+                <div class="relative w-[90px] h-[90px] flex items-center justify-center">
+                    <a href="https://www.ticketlink.co.kr/sports/138/79" target="_blank">
+                        <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                            <img src="/emblem_K22.png" class="w-[50px] h-[50px] object-contain" />
+                        </div>
+                    </a>
+                </div>
 
-            <p class="text-[12px] font-light text-black text-center">
-                광주 FC
-            </p>
-        </div>
-        <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 1439.5px; top: 9.5px;">
-            <!-- 제주 SK -->
-            <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <a href="https://www.jejuskfc.com/reservation/ticketInfo" target="_blank">
-                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="/emblem_K04.png" class="w-[50px] h-[50px] object-contain" />
-                    </div>
-                </a>
+                <p class="text-[12px] font-light text-black text-center">
+                    광주 FC
+                </p>
             </div>
+            <div class="w-[105px] h-[105px] flex flex-col items-center relative float-left mx-3">
+                <!-- 제주 SK -->
+                <div class="relative w-[90px] h-[90px] flex items-center justify-center">
+                    <a href="https://www.jejuskfc.com/reservation/ticketInfo" target="_blank">
+                        <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                            <img src="/emblem_K04.png" class="w-[50px] h-[50px] object-contain" />
+                        </div>
+                    </a>
+                </div>
 
-            <p class="text-[12px] font-light text-black text-center">
-                제주 SK
-            </p>
-        </div>
-        <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 1589.5px; top: 9.5px;">
-            <!-- 수원 FC -->
-            <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <a href="https://ticket.interpark.com/Contents/Sports/GoodsInfo?SportsCode=07002&TeamCode=PS061" target="_blank">
-                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="/emblem_K29.png" class="w-[50px] h-[50px] object-contain" />
-                    </div>
-                </a>
+                <p class="text-[12px] font-light text-black text-center">
+                    제주 SK
+                </p>
             </div>
+            <div class="w-[105px] h-[105px] flex flex-col items-center relative float-left mx-3">
+                <!-- 수원 FC -->
+                <div class="relative w-[90px] h-[90px] flex items-center justify-center">
+                    <a href="https://ticket.interpark.com/Contents/Sports/GoodsInfo?SportsCode=07002&TeamCode=PS061" target="_blank">
+                        <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                            <img src="/emblem_K29.png" class="w-[50px] h-[50px] object-contain" />
+                        </div>
+                    </a>
+                </div>
 
-            <p class="text-[12px] font-light text-black text-center">
-                수원 FC
-            </p>
-        </div>
-        <div class="w-[105px] h-[105px] flex flex-col items-center absolute" style="left: 1739.5px; top: 9.5px;">
-            <!-- 김천상무프로축구단 -->
-            <div class="relative w-[90px] h-[90px] flex items-center justify-center">
-                <a href="https://www.ticketlink.co.kr/sports/138/80" target="_blank">
-                    <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                        <img src="/emblem_K35.png" class="w-[50px] h-[50px] object-contain" />
-                    </div>
-                </a>
+                <p class="text-[12px] font-light text-black text-center">
+                    수원 FC
+                </p>
             </div>
+            <div class="w-[105px] h-[105px] flex flex-col items-center relative float-left mx-3">
+                <!-- 김천상무프로축구단 -->
+                <div class="relative w-[90px] h-[90px] flex items-center justify-center">
+                    <a href="https://www.ticketlink.co.kr/sports/138/80" target="_blank">
+                        <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
+                            <img src="/emblem_K35.png" class="w-[50px] h-[50px] object-contain" />
+                        </div>
+                    </a>
+                </div>
 
-            <p class="text-[12px] font-light text-black text-center">
-                김천상무프로축구단
-            </p>
+                <p class="text-[12px] font-light text-black text-center">
+                    김천상무프로축구단
+                </p>
+            </div>
         </div>
     </div>
     <%@ include file="../common/footer.jspf" %>

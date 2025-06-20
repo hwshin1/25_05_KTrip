@@ -42,6 +42,7 @@ public class MvcConfigurer implements WebMvcConfigurer {
         ir.addPathPatterns("/review/doModify");
         ir.addPathPatterns("/review/doDelete");
         ir.addPathPatterns("/user/doLogout");
+        ir.addPathPatterns("/user/mypage");
 
         ir = registry.addInterceptor(needLogoutInterceptor);
         ir.addPathPatterns("/user/join");

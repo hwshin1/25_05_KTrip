@@ -51,6 +51,22 @@ public class Rq {
         resp.getWriter().close();
     }
 
+    public void printReplaceBack(String msg, String replaceUrl) throws IOException {
+        resp.setContentType("text/html; charset=UTF-8");
+        println("<script>");
+        if (!Ut.isEmpty(msg) && !Ut.isEmpty(replaceUrl)) {
+            println("alert('" + msg.replace("'", "\\'") + "');");
+            println("location.replace('" + replaceUrl.replace("'", "\\'") + "');");
+        }
+        if (!Ut.isEmpty(msg) && Ut.isEmpty(replaceUrl)) {
+            println("alert('" + msg.replace("'", "\\'") + "');");
+            println("history.back();");
+        }
+        println("</script>");
+        resp.getWriter().flush();
+        resp.getWriter().close();
+    }
+
     private void println(String str) throws IOException {
         print(str + "\n");
     }

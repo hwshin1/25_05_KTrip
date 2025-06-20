@@ -1,7 +1,5 @@
 package org.myproject.demo.service;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -19,7 +17,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.FileWriter;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -106,8 +103,6 @@ public class CrawlingService {
                 try {
                     String category = item.findElement(By.cssSelector("span.txt_around")).getText();
 
-                    System.out.println(category);
-
                     if (!category.contains("음식점")) {
                         continue; // 스킵
                     }
@@ -136,14 +131,6 @@ public class CrawlingService {
                     // subcategory가 없으면 무시
                 }
             }
-
-            // JSON 저장
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            try (FileWriter writer = new FileWriter("restaurants_nearby.json")) {
-                gson.toJson(restaurants, writer);
-                System.out.println(":) 음식점 정보가 저장되었습니다: restaurants_nearby.json");
-            }
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
