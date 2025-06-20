@@ -43,10 +43,11 @@ updateDate = NOW(),
 loginId = 'test1',
 loginPw = 'test1',
 `authLevel` = 3,
-`name` = 'test1',
-nickName = 'test1',
-email = 'test1@gmail.com',
-login_type = 'normal';
+`name` = '전진우',
+nickName = '포옛바라기',
+email = 'Jeon@gmail.com',
+login_type = 'normal',
+teamId = 1;
 
 INSERT INTO `user`
 SET regDate = NOW(),
@@ -54,11 +55,131 @@ updateDate = NOW(),
 loginId = 'test2',
 loginPw = 'test2',
 `authLevel` = 3,
-`name` = 'test2',
-nickName = 'test2',
-email = 'test2@gmail.com',
+`name` = '이창근',
+nickName = '신들린선방',
+email = 'Lee@gmail.com',
 login_type = 'normal',
 teamId = 2;
+
+INSERT INTO `user`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test3',
+loginPw = 'test3',
+`authLevel` = 3,
+`name` = '이동경',
+nickName = '아군대언제끝나',
+email = 'leedong@gmail.com',
+login_type = 'normal',
+teamId = 3;
+
+INSERT INTO `user`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test4',
+loginPw = 'test4',
+`authLevel` = 3,
+`name` = '김판곤',
+nickName = '우리는왕이야',
+email = 'Pangon@gmail.com',
+login_type = 'normal',
+teamId = 4;
+
+INSERT INTO `user`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test5',
+loginPw = 'test5',
+`authLevel` = 3,
+`name` = '조르지',
+nickName = '골대좀그만맞춰',
+email = 'Jo@gmail.com',
+login_type = 'normal',
+teamId = 5;
+
+INSERT INTO `user`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test6',
+loginPw = 'test6',
+`authLevel` = 3,
+`name` = '조빈',
+nickName = '이정효의축구교실',
+email = 'jobin@gmail.com',
+login_type = 'normal',
+teamId = 6;
+
+INSERT INTO `user`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test7',
+loginPw = 'test7',
+`authLevel` = 3,
+`name` = '린가드',
+nickName = '재간둥이',
+email = 'LeanGard@gmail.com',
+login_type = 'normal',
+teamId = 7;
+
+INSERT INTO `user`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test8',
+loginPw = 'test8',
+`authLevel` = 3,
+`name` = '채현우',
+nickName = '승격팀',
+email = 'cha@gmail.com',
+login_type = 'normal',
+teamId = 8;
+
+INSERT INTO `user`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test9',
+loginPw = 'test9',
+`authLevel` = 3,
+`name` = '김준하',
+nickName = '유럽가고파',
+email = 'junha@gmail.com',
+login_type = 'normal',
+teamId = 9;
+
+INSERT INTO `user`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test10',
+loginPw = 'test10',
+`authLevel` = 3,
+`name` = '이광연',
+nickName = '골킵',
+email = 'gwang@gmail.com',
+login_type = 'normal',
+teamId = 10;
+
+INSERT INTO `user`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test11',
+loginPw = 'test11',
+`authLevel` = 3,
+`name` = '김은중',
+nickName = '감독님홧팅',
+email = 'jung@gmail.com',
+login_type = 'normal',
+teamId = 11;
+
+INSERT INTO `user`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test12',
+loginPw = 'test12',
+`authLevel` = 3,
+`name` = '세징야',
+nickName = '동상세워야함',
+email = 'se@gmail.com',
+login_type = 'normal',
+teamId = 12;
 
 SELECT *
 FROM `user`

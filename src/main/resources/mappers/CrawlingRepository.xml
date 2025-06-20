@@ -19,4 +19,9 @@
         OR team_homepage = #{team_homepage}
         )
     </select>
+
+    <select id="countTeams" parameterType="int">
+        SELECT COUNT(*)
+        FROM team;
+    </select>
 </mapper>

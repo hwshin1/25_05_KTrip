@@ -72,23 +72,23 @@
         position: relative;
         align-self: stretch;
         margin-top: -1.00px;
-        font-family: "Pretendard-Bold", Helvetica;
+        font-family: 'NEXON Lv1 Gothic', sans-serif;
         font-weight: 700;
         color: #ffffff;
         font-size: 32px;
         letter-spacing: -0.80px;
-        line-height: 44.8px;
+        line-height: 45px;
     }
 
     .frame .text-wrapper-3 {
         position: relative;
         align-self: stretch;
-        font-family: "Pretendard-Regular", Helvetica;
+        font-family: 'NEXON Lv1 Gothic', sans-serif;
         font-weight: 400;
         color: #ffffff;
         font-size: 15px;
         letter-spacing: -0.38px;
-        line-height: 21.0px;
+        line-height: 20px;
     }
 
     .frame .out-of-stoke-wrapper {
@@ -109,12 +109,12 @@
         position: relative;
         width: fit-content;
         margin-top: -1.00px;
-        font-family: "Pretendard-Regular", Helvetica;
+        font-family: 'NEXON Lv1 Gothic', sans-serif;
         font-weight: 400;
         color: #111111;
         font-size: 14px;
         letter-spacing: -0.35px;
-        line-height: 19.6px;
+        line-height: 20px;
         white-space: nowrap;
     }
 
@@ -144,12 +144,12 @@
         height: 28px;
         top: 35px;
         left: 50px;
-        font-family: "NEXON Lv1 Gothic-Regular", Helvetica;
+        font-family: 'NEXON Lv1 Gothic', sans-serif;
         font-weight: 400;
         color: #111111;
         font-size: 20px;
         letter-spacing: -0.50px;
-        line-height: 28.0px;
+        line-height: 25px;
         white-space: nowrap;
     }
 
@@ -175,12 +175,12 @@
         position: relative;
         align-self: stretch;
         margin-top: -1.00px;
-        font-family: "Pretendard-SemiBold", Helvetica;
+        font-family: 'NEXON Lv1 Gothic', sans-serif;
         font-weight: 600;
         color: #000000;
         font-size: 18px;
         letter-spacing: -0.45px;
-        line-height: 25.2px;
+        line-height: 25px;
     }
 
     .frame .rectangle {
@@ -189,6 +189,16 @@
         width: 100%;
         height: 2px;
         background-color: #000000;
+    }
+
+    .div-line {
+        position: absolute;
+        align-self: stretch;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #000000;
+        transition: width 0.3s ease;
     }
 
     .frame .div-wrapper-2 {
@@ -204,12 +214,20 @@
         position: relative;
         align-self: stretch;
         margin-top: -1.00px;
-        font-family: "Pretendard-SemiBold", Helvetica;
-        font-weight: 600;
+        font-family: 'NEXON Lv1 Gothic', sans-serif;
+        font-weight: 500;
         color: #999999;
         font-size: 18px;
         letter-spacing: -0.45px;
-        line-height: 25.2px;
+        line-height: 25px;
+    }
+
+    .text-wrapper-6:hover .div-line {
+        width: 100%;
+    }
+
+    .text-wrapper-6:hover a {
+        color: #111111;
     }
 </style>
 
@@ -229,7 +247,9 @@
                         <div class="text-wrapper-3">Power Metal dfsdfsdfsdfasdfa ffffff</div>
                     </div>
                     <div class="out-of-stoke-wrapper">
-                        <div class="out-of-stoke">OUT OF STOKE</div>
+                        <div class="out-of-stoke">
+                            <a href="#">응원가 보러가기</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -240,7 +260,9 @@
                         <div class="text-wrapper-3">Power Metal dfsdfsdfsdfasdfa ffffff</div>
                     </div>
                     <div class="out-of-stoke-wrapper">
-                        <div class="out-of-stoke">OUT OF STOKE</div>
+                        <div class="out-of-stoke">
+                            <a href="#">응원가 보러가기</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -254,40 +276,100 @@
                 <div class="rectangle"></div>
             </div>
             <div class="div-wrapper-2">
-                <div class="text-wrapper-6"><a href="../intro/Seoul">FC 서울</a></div>
+                <div class="text-wrapper-6">
+                    <a href="../intro/Seoul">
+                        FC 서울
+                        <div class="div-line"></div>
+                    </a>
+                </div>
             </div>
             <div class="div-wrapper-2">
-                <div class="text-wrapper-6"><a href="../intro/Jeonju">전북현대모터스</a></div>
+                <div class="text-wrapper-6">
+                    <a href="../intro/Jeonju">
+                        전북현대모터스
+                        <div class="div-line"></div>
+                    </a>
+                </div>
             </div>
             <div class="div-wrapper-2">
-                <div class="text-wrapper-6"><a href="../intro/Ulsan">울산 HD</a></div>
+                <div class="text-wrapper-6">
+                    <a href="../intro/Ulsan">
+                        울산 HD
+                        <div class="div-line"></div>
+                    </a>
+                </div>
             </div>
             <div class="div-wrapper-2">
-                <div class="text-wrapper-6"><a href="../intro/Daejeon">대전하나시티즌</a></div>
+                <div class="text-wrapper-6">
+                    <a href="../intro/Daejeon">
+                        대전하나시티즌
+                        <div class="div-line"></div>
+                    </a>
+                </div>
             </div>
             <div class="div-wrapper-2">
-                <div class="text-wrapper-6"><a href="../intro/Daegu">대구 FC</a></div>
+                <div class="text-wrapper-6">
+                    <a href="../intro/Daegu">
+                        대구 FC
+                        <div class="div-line"></div>
+                    </a>
+                </div>
             </div>
             <div class="div-wrapper-2">
-                <div class="text-wrapper-6"><a href="../intro/Pohang">포항스틸러스</a></div>
+                <div class="text-wrapper-6">
+                    <a href="../intro/Pohang">
+                        포항스틸러스
+                        <div class="div-line"></div>
+                    </a>
+                </div>
             </div>
             <div class="div-wrapper-2">
-                <div class="text-wrapper-6"><a href="../intro/Anyang">FC 안양</a></div>
+                <div class="text-wrapper-6">
+                    <a href="../intro/Anyang">
+                        FC 안양
+                        <div class="div-line"></div>
+                    </a>
+                </div>
             </div>
             <div class="div-wrapper-2">
-                <div class="text-wrapper-6"><a href="../intro/Gangwon">강원 FC</a></div>
+                <div class="text-wrapper-6">
+                    <a href="../intro/Gangwon">
+                        강원 FC
+                        <div class="div-line"></div>
+                    </a>
+                </div>
             </div>
             <div class="div-wrapper-2">
-                <div class="text-wrapper-6"><a href="../intro/Gwangju">광주 FC</a></div>
+                <div class="text-wrapper-6">
+                    <a href="../intro/Gwangju">
+                        광주 FC
+                        <div class="div-line"></div>
+                    </a>
+                </div>
             </div>
             <div class="div-wrapper-2">
-                <div class="text-wrapper-6"><a href="../intro/Jeju">제주 SK</a></div>
+                <div class="text-wrapper-6">
+                    <a href="../intro/Jeju">
+                        제주 SK
+                        <div class="div-line"></div>
+                    </a>
+                </div>
             </div>
             <div class="div-wrapper-2">
-                <div class="text-wrapper-6"><a href="../intro/SuwonFC">수원 FC</a></div>
+                <div class="text-wrapper-6">
+                    <a href="../intro/SuwonFC">
+                        수원 FC
+                        <div class="div-line"></div>
+                    </a>
+                </div>
             </div>
             <div class="div-wrapper-2">
-                <div class="text-wrapper-6"><a href="../intro/Kimcheon">김천상무프로축구단</a></div>
+                <div class="text-wrapper-6">
+                    <a href="../intro/Kimcheon">
+                        김천상무프로축구단
+                        <div class="div-line"></div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

@@ -39,6 +39,13 @@ public class CrawlingService {
         List<Team> teamList = new ArrayList<>();
 
         try {
+            int savedTeamCount = crawlingRepository.countTeams();
+
+            if (savedTeamCount >= 12) {
+                System.out.println("이미 팀이 저장되어 있습니다.");
+                return teamList;
+            }
+
             Document doc = Jsoup.connect(TARGET_URL).get();
             Elements teamElements = doc.select("ul.f-wrap li");
 
