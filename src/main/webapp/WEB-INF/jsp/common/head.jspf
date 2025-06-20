@@ -14,13 +14,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <!-- swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
 <style>
-    .header_menu li a {
-        padding: 13px 30px;
-    }
-
     @font-face {
         font-family: 'NEXON Lv1 Gothic';
         src: url('${pageContext.request.contextPath}/resources/fonts/NEXONLv1Gothic.ttf') format('truetype');
@@ -31,28 +27,85 @@
     body {
         font-family: 'NEXON Lv1 Gothic', sans-serif;
     }
+
+    nav .line {
+        position: absolute;
+        bottom: 15px; /* 밑줄 위치 조절 */
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #9D0A0F; /* 밑줄 색상 */
+        transition: width 0.3s ease;
+    }
+
+    nav a:hover .line,
+    nav div:hover .line {
+        width: 100%;
+    }
+
+    nav li:hover > a {
+        color: #9D0A0F;
+    }
 </style>
 <body>
-<header>
-    <div class="w-full h-[70px] bg-[#F2F3F6] flex items-center justify-between px-5">
-        <div class="text-3xl uppercase w-1/5">
-            <a class="font-bold text-[#001C48]" href="/">K LEAGUE <em
-                    class="text-lg not-italic text-[#9D0A0F]">Trip</em></a>
+<header class="z-[9999]">
+    <div class="w-full h-[70px] bg-[#F5F5F5] flex items-center justify-between">
+        <div class="text-3xl uppercase w-1/5 px-5">
+            <a class="font-bold text-[#001C48]" href="/">
+                K LEAGUE
+                <em class="text-lg not-italic text-[#9D0A0F]">
+                    Trip
+                </em>
+            </a>
         </div>
-        <nav class="text-center w-3/5 header_menu relative">
-            <ul class="flex justify-center space-x-4">
-                <li class="inline"><a class="mx-1" href="../intro/home">구단 별 소개</a></li>
-                <li class="inline"><a class="mx-1" href="../review/list?boardId=1">공지사항</a></li>
-                <li class="inline"><a class="mx-1" href="../review/list">후기 글</a></li>
-                <li class="inline-block">
-                    <div class="relative hover:underline">메뉴</div>
+        <nav class="relative inline-block h-full w-3/5">
+            <ul class="flex justify-end items-center">
+                <li class="relative mx-8 text-center">
+                    <a href="../intro/home" class="block text-base leading-[70px] px-3 relative">
+                        구단 별 소개
+                        <span class="line"></span>
+                    </a>
+                </li>
+                <li class="relative mx-8 text-center">
+                    <a href="../review/list?boardId=1" class="block text-base leading-[70px] px-3 relative">
+                        공지사항
+                        <span class="line"></span>
+                    </a>
+                </li>
+                <li class="relative mx-8 text-center">
+                    <a href="../review/list" class="block text-base leading-[70px] px-3 relative">
+                        후기 글
+                        <span class="line"></span>
+                    </a>
+                </li>
+
+                <!-- 그룹 hover로 서브메뉴 제어 -->
+                <li class="relative mx-8 text-center group cursor-pointer">
+                    <a class="block text-base leading-[70px] px-3 relative">
+                        메뉴
+                        <span class="line"></span>
+                    </a>
+
+                    <!-- 서브 메뉴 -->
+                    <ul class="hidden overflow-hidden group-hover:block absolute w-[150px] top-full left-1/2 -translate-x-1/2 bg-[#F5F5F5] shadow-lg z-50 min-w-[130px] py-5 rounded-2xl">
+                        <li>
+                            <a href="../user/mypage" class="inline-block w-full text-center py-4">
+                                내 프로필
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="inline-block w-full text-center py-4">
+                                나의 팀
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
         <div class="relative w-60 h-60 mx-auto">
             <c:if test="${!rq.isLogined()}">
                 <div class="absolute inset-0 flex justify-center items-center">
-                    <a href="/user/login"
+                    <a href="../user/login"
                        class="w-24 h-10 text-center rounded-full text-base text-white bg-[#001C48] flex justify-center items-center hover:bg-[#002e70]">
                         로그인
                     </a>
@@ -60,7 +113,7 @@
             </c:if>
             <c:if test="${rq.isLogined()}">
                 <div class="absolute inset-0 flex justify-center items-center">
-                    <a href="/user/doLogout"
+                    <a href="../user/doLogout"
                        class="w-24 h-10 text-center rounded-full text-base text-white bg-[#001C48] flex justify-center items-center hover:bg-[#002e70]">
                         로그아웃
                     </a>

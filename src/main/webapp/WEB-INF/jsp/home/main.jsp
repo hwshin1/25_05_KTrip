@@ -52,8 +52,8 @@
         </p>
     </div>
     <div class="w-full h-[150px] relative overflow-hidden overflow-x-auto my-3">
-        <div class="text-center text-xl">
-            <i class="fa-solid fa-ticket text-orange-500"></i>
+        <div class="text-center text-lg">
+            <i class="fa-solid fa-ticket text-[#9D0A0F]"></i>
             티켓링크 바로가기
         </div>
         <div class="w-full flex justify-between">

@@ -1,0 +1,107 @@
+[
+  {
+    "name": "이화원",
+    "category": "중국요리",
+    "address": "대전 유성구 월드컵대로 32 대전월드컵경기장",
+    "rating": "3.4",
+    "detail_url": "https://place.map.kakao.com/11275576"
+  },
+  {
+    "name": "동신수산",
+    "category": "회",
+    "address": "대전 유성구 노은동로75번길 12",
+    "rating": "4.0",
+    "detail_url": "https://place.map.kakao.com/7839198"
+  },
+  {
+    "name": "망향비빔국수 대전유성점",
+    "category": "국수",
+    "address": "대전 유성구 노은동로75번길 74 1층",
+    "rating": "3.0",
+    "detail_url": "https://place.map.kakao.com/13600249"
+  },
+  {
+    "name": "쓰촨",
+    "category": "중국요리",
+    "address": "대전 유성구 노은동로79번길 16",
+    "rating": "3.5",
+    "detail_url": "https://place.map.kakao.com/18743937"
+  },
+  {
+    "name": "돼지집 본가순대 본점",
+    "category": "순대",
+    "address": "대전 유성구 노은동로 81",
+    "rating": "3.5",
+    "detail_url": "https://place.map.kakao.com/11787752"
+  },
+  {
+    "name": "고향흑염소",
+    "category": "육류,고기",
+    "address": "대전 유성구 한밭대로 266-11",
+    "rating": "2.7",
+    "detail_url": "https://place.map.kakao.com/24505987"
+  },
+  {
+    "name": "천년육개장",
+    "category": "한식",
+    "address": "대전 유성구 현충원로455번길 10-9",
+    "rating": "3.2",
+    "detail_url": "https://place.map.kakao.com/1116991691"
+  },
+  {
+    "name": "청송한우타운",
+    "category": "육류,고기",
+    "address": "대전 유성구 노은동로79번길 71 로얄빌딩 1,2, 4층",
+    "rating": "4.3",
+    "detail_url": "https://place.map.kakao.com/14734613"
+  },
+  {
+    "name": "두부집",
+    "category": "두부전문점",
+    "address": "대전 유성구 노은동로79번길 30",
+    "rating": "3.8",
+    "detail_url": "https://place.map.kakao.com/26405301"
+  },
+  {
+    "name": "두메산골흑염소",
+    "category": "한정식",
+    "address": "대전 유성구 노은동로79번길 12",
+    "rating": "4.2",
+    "detail_url": "https://place.map.kakao.com/25503567"
+  },
+  {
+    "name": "뜨랑한우 노은본점",
+    "category": "육류,고기",
+    "address": "대전 유성구 노은동로75번길 48 1-2층",
+    "rating": "4.1",
+    "detail_url": "https://place.map.kakao.com/678789901"
+  },
+  {
+    "name": "각시한우",
+    "category": "육류,고기",
+    "address": "대전 유성구 노은동로75번길 42 1-2층",
+    "rating": "4.6",
+    "detail_url": "https://place.map.kakao.com/16960935"
+  },
+  {
+    "name": "대전신화수산",
+    "category": "회",
+    "address": "대전 유성구 노은동로 8",
+    "rating": "2.3",
+    "detail_url": "https://place.map.kakao.com/1925447794"
+  },
+  {
+    "name": "민칼국수",
+    "category": "칼국수",
+    "address": "대전 유성구 노은동로79번길 22 1층",
+    "rating": "3.7",
+    "detail_url": "https://place.map.kakao.com/1684953274"
+  },
+  {
+    "name": "보든",
+    "category": "양식",
+    "address": "대전 유성구 월드컵대로 32 3층",
+    "rating": "5.0",
+    "detail_url": "https://place.map.kakao.com/2009764600"
+  }
+]

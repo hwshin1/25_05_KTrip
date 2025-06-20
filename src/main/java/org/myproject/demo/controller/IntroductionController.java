@@ -1,11 +1,17 @@
 package org.myproject.demo.controller;
 
+import org.myproject.demo.vo.KakaoApi;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/intro")
 public class IntroductionController {
+
+    @Autowired
+    private KakaoApi kakaoApi;
 
     @RequestMapping("/home")
     public String introHome() {
@@ -33,7 +39,11 @@ public class IntroductionController {
     }
 
     @RequestMapping("/Daejeon")
-    public String introDaejeon() {
+    public String introDaejeon(Model model) {
+        String javascript_key = kakaoApi.getJavascript_key();
+
+        model.addAttribute("javascript_key", javascript_key);
+
         return "intro/DaejeonHana";
     }
 
