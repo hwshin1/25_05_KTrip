@@ -3,377 +3,128 @@
 
 <%@ include file="../common/head.jspf" %>
 
-<style>
-    .frame {
-        display: flex;
-        flex-direction: column;
-        max-width: 1920px;
-        width: 100%;
-        align-items: flex-start;
-        position: relative;
-    }
+<title>K리그 구단 소개</title>
 
-    .frame .div {
-        display: flex;
-        flex-direction: column;
-        max-width: 1920px;
-        align-items: flex-start;
-        position: relative;
-        width: 100%;
-        flex: 0 0 auto;
-    }
-
-    .frame .div-5 {
-        display: flex;
-        height: 750px;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-    }
-
-    .frame .frame-wrapper {
-        position: relative;
-        flex: 1;
-        align-self: stretch;
-        flex-grow: 1;
-        background-color: #c0c0c0;
-        border-right-width: 1px;
-        border-right-style: solid;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-color: #111111;
-    }
-
-    .frame .div-6 {
-        display: flex;
-        flex-direction: column;
-        width: 223px;
-        align-items: flex-start;
-        gap: 32px;
-        position: relative;
-        top: 522px;
-        left: 50px;
-    }
-
-    .frame .div-7 {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        flex: 0 0 auto;
-    }
-
-    .frame .text-wrapper-2 {
-        position: relative;
-        align-self: stretch;
-        margin-top: -1.00px;
-        font-family: 'NEXON Lv1 Gothic', sans-serif;
-        font-weight: 700;
-        color: #ffffff;
-        font-size: 32px;
-        letter-spacing: -0.80px;
-        line-height: 45px;
-    }
-
-    .frame .text-wrapper-3 {
-        position: relative;
-        align-self: stretch;
-        font-family: 'NEXON Lv1 Gothic', sans-serif;
-        font-weight: 400;
-        color: #ffffff;
-        font-size: 15px;
-        letter-spacing: -0.38px;
-        line-height: 20px;
-    }
-
-    .frame .out-of-stoke-wrapper {
-        display: inline-flex;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 14px 16px;
-        position: relative;
-        flex: 0 0 auto;
-        background-color: #ffffff80;
-        border: 1px solid;
-        border-color: #ffffff33;
-        backdrop-filter: blur(5px) brightness(100%);
-        -webkit-backdrop-filter: blur(5px) brightness(100%);
-    }
-
-    .frame .out-of-stoke {
-        position: relative;
-        width: fit-content;
-        margin-top: -1.00px;
-        font-family: 'NEXON Lv1 Gothic', sans-serif;
-        font-weight: 400;
-        color: #111111;
-        font-size: 14px;
-        letter-spacing: -0.35px;
-        line-height: 20px;
-        white-space: nowrap;
-    }
-
-    .frame .frame-wrapper-2 {
-        position: relative;
-        flex: 1;
-        align-self: stretch;
-        flex-grow: 1;
-        background-color: #c0c0c0;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-color: #111111;
-    }
-
-    .frame .div-8 {
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        height: 100px;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-color: #111111;
-    }
-
-    .frame .text-wrapper-4 {
-        position: absolute;
-        height: 28px;
-        top: 35px;
-        left: 50px;
-        font-family: 'NEXON Lv1 Gothic', sans-serif;
-        font-weight: 400;
-        color: #111111;
-        font-size: 20px;
-        letter-spacing: -0.50px;
-        line-height: 25px;
-        white-space: nowrap;
-    }
-
-    .frame .div-9 {
-        display: inline-flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 24px;
-        position: absolute;
-        top: 37px;
-        left: 649px;
-    }
-
-    .frame .div-10 {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: flex-start;
-        position: relative;
-        flex: 0 0 auto;
-    }
-
-    .frame .text-wrapper-5 {
-        position: relative;
-        align-self: stretch;
-        margin-top: -1.00px;
-        font-family: 'NEXON Lv1 Gothic', sans-serif;
-        font-weight: 600;
-        color: #000000;
-        font-size: 18px;
-        letter-spacing: -0.45px;
-        line-height: 25px;
-    }
-
-    .frame .rectangle {
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        height: 2px;
-        background-color: #000000;
-    }
-
-    .div-line {
-        position: absolute;
-        align-self: stretch;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: #000000;
-        transition: width 0.3s ease;
-    }
-
-    .frame .div-wrapper-2 {
-        display: inline-flex;
-        flex-direction: column;
-        height: 25px;
-        align-items: flex-start;
-        position: relative;
-        flex: 0 0 auto;
-    }
-
-    .frame .text-wrapper-6 {
-        position: relative;
-        align-self: stretch;
-        margin-top: -1.00px;
-        font-family: 'NEXON Lv1 Gothic', sans-serif;
-        font-weight: 500;
-        color: #999999;
-        font-size: 18px;
-        letter-spacing: -0.45px;
-        line-height: 25px;
-    }
-
-    .text-wrapper-6:hover .div-line {
-        width: 100%;
-    }
-
-    .text-wrapper-6:hover a {
-        color: #111111;
-    }
-</style>
-
-<header>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" href="style.css"/>
-</header>
-
-<div class="frame">
-    <div class="div">
-        <div class="div-5">
-            <div class="frame-wrapper">
-                <div class="div-6">
-                    <div class="div-7">
-                        <div class="text-wrapper-2">Power Metal</div>
-                        <div class="text-wrapper-3">Power Metal dfsdfsdfsdfasdfa ffffff</div>
-                    </div>
-                    <div class="out-of-stoke-wrapper">
-                        <div class="out-of-stoke">
-                            <a href="#">응원가 보러가기</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="frame-wrapper-2">
-                <div class="div-6">
-                    <div class="div-7">
-                        <div class="text-wrapper-2">Power Metal</div>
-                        <div class="text-wrapper-3">Power Metal dfsdfsdfsdfasdfa ffffff</div>
-                    </div>
-                    <div class="out-of-stoke-wrapper">
-                        <div class="out-of-stoke">
-                            <a href="#">응원가 보러가기</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section class="w-full h-auto relative bg-white leading-[140%] tracking-[-2.5%]">
+    <!-- 상단 응원가 카드 -->
+    <div class="grid grid-cols-2 h-[750px]">
+        <div class="flex flex-col justify-end items-start p-10 bg-gray-500 text-white">
+            <h2 class="text-[32px] font-bold mb-3">대전 응원가 모음</h2>
+            <p class="text-[15px] mb-8">대전! 너와 함께 웃고<br>너와 함께 울고<br>항상 함께 해</p>
+            <button class="bg-white text-black px-4 py-2 text-center border rounded-full border-gray-300 hover:bg-gray-100">
+                자세히 보기
+            </button>
+        </div>
+        <div class="flex flex-col justify-end items-start p-10 bg-gray-400 text-white">
+            <h2 class="text-[32px] font-bold mb-3">전북 응원가 모음</h2>
+            <p class="text-[15px] mb-8">영원하라 전북<br>오! 우리의 전북<br>너를 위해 우리 노래해</p>
+            <button class="bg-white text-black px-4 py-2 text-center border rounded-full border-gray-300 hover:bg-gray-100">
+                자세히 보기
+            </button>
         </div>
     </div>
-    <div class="div-8">
-        <div class="text-wrapper-4">K리그 팀</div>
-        <div class="div-9">
-            <div class="div-10">
-                <div class="text-wrapper-5">ALL</div>
-                <div class="rectangle"></div>
-            </div>
-            <div class="div-wrapper-2">
-                <div class="text-wrapper-6">
-                    <a href="../intro/Seoul">
-                        FC 서울
-                        <div class="div-line"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="div-wrapper-2">
-                <div class="text-wrapper-6">
-                    <a href="../intro/Jeonju">
-                        전북현대모터스
-                        <div class="div-line"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="div-wrapper-2">
-                <div class="text-wrapper-6">
-                    <a href="../intro/Ulsan">
-                        울산 HD
-                        <div class="div-line"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="div-wrapper-2">
-                <div class="text-wrapper-6">
-                    <a href="../intro/Daejeon">
-                        대전하나시티즌
-                        <div class="div-line"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="div-wrapper-2">
-                <div class="text-wrapper-6">
-                    <a href="../intro/Daegu">
-                        대구 FC
-                        <div class="div-line"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="div-wrapper-2">
-                <div class="text-wrapper-6">
-                    <a href="../intro/Pohang">
-                        포항스틸러스
-                        <div class="div-line"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="div-wrapper-2">
-                <div class="text-wrapper-6">
-                    <a href="../intro/Anyang">
-                        FC 안양
-                        <div class="div-line"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="div-wrapper-2">
-                <div class="text-wrapper-6">
-                    <a href="../intro/Gangwon">
-                        강원 FC
-                        <div class="div-line"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="div-wrapper-2">
-                <div class="text-wrapper-6">
-                    <a href="../intro/Gwangju">
-                        광주 FC
-                        <div class="div-line"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="div-wrapper-2">
-                <div class="text-wrapper-6">
-                    <a href="../intro/Jeju">
-                        제주 SK
-                        <div class="div-line"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="div-wrapper-2">
-                <div class="text-wrapper-6">
-                    <a href="../intro/SuwonFC">
-                        수원 FC
-                        <div class="div-line"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="div-wrapper-2">
-                <div class="text-wrapper-6">
-                    <a href="../intro/Kimcheon">
-                        김천상무프로축구단
-                        <div class="div-line"></div>
-                    </a>
-                </div>
-            </div>
+
+    <!-- 팀 필터 -->
+    <div class="w-full h-[100px] border-t border-b relative text-lg leading-[140%] tracking-[-2.5%] flex items-center">
+        <div class="text-black text-xl ml-12">K 리그 팀</div>
+        <ul class="leading-[140%] tracking-[-2.5%] flex absolute left-auto right-12 gap-[20px]">
+            <li class="relative text-black">
+                ALL
+                <span class="absolute bg-black left-0 w-full h-[2px] bottom-0"></span>
+            </li>
+            <li class="relative text-gray-500 hover:text-black">
+                <a href="../intro/Seoul">FC 서울</a>
+            </li>
+            <li class="relative text-gray-500 hover:text-black">
+                <a href="../intro/Jeonju">전북현대모터스</a>
+            </li>
+            <li class="relative text-gray-500 hover:text-black">
+                <a href="../intro/Ulsan">울산 HD</a>
+            </li>
+            <li class="relative text-gray-500 hover:text-black">
+                <a href="../intro/Daejeon">대전하나시티즌</a>
+            </li>
+            <li class="relative text-gray-500 hover:text-black">
+                <a href="../intro/Daegu">대구 FC</a>
+            </li>
+            <li class="relative text-gray-500 hover:text-black">
+                <a href="../intro/Pohang">포항 스틸러스</a>
+            </li>
+            <li class="relative text-gray-500 hover:text-black">
+                <a href="../intro/Anyang">FC 안양</a>
+            </li>
+            <li class="relative text-gray-500 hover:text-black">
+                <a href="../intro/Gangwon">강원 FC</a>
+            </li>
+            <li class="relative text-gray-500 hover:text-black">
+                <a href="../intro/Jeju">제주 SK</a>
+            </li>
+            <li class="relative text-gray-500 hover:text-black">
+                <a href="../intro/Gwangju">광주 FC</a>
+            </li>
+            <li class="relative text-gray-500 hover:text-black">
+                <a href="../intro/SuwonFC">수원 FC</a>
+            </li>
+            <li class="relative text-gray-500 hover:text-black">
+                <a href="../intro/Kimcheon">김천상무프로축구단</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- 구단 카드 리스트 -->
+<div class="relative w-auto h-auto">
+    <!-- 카드 컴포넌트 -->
+    <div class="grid grid-cols-4">
+        <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+            <h3 class="text-white font-bold text-lg">FC 서울</h3>
+            <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
         </div>
+        <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+            <h3 class="text-white font-bold text-lg">전북현대모터스</h3>
+            <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+        </div>
+        <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+            <h3 class="text-white font-bold text-lg">울산 HD</h3>
+            <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+        </div>
+        <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+            <h3 class="text-white font-bold text-lg">대전하나시티즌</h3>
+            <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+        </div>
+    </div>
+    <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+        <h3 class="text-white font-bold text-lg">대구 FC</h3>
+        <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+    </div>
+    <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+        <h3 class="text-white font-bold text-lg">포항 스틸러스</h3>
+        <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+    </div>
+    <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+        <h3 class="text-white font-bold text-lg">FC 안양</h3>
+        <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+    </div>
+    <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+        <h3 class="text-white font-bold text-lg">강원 FC</h3>
+        <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+    </div>
+    <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+        <h3 class="text-white font-bold text-lg">제주 SK</h3>
+        <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+    </div>
+    <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+        <h3 class="text-white font-bold text-lg">광주 FC</h3>
+        <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+    </div>
+    <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+        <h3 class="text-white font-bold text-lg">수원 FC</h3>
+        <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+    </div>
+    <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+        <h3 class="text-white font-bold text-lg">김천상무프로축구단</h3>
+        <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
     </div>
 </div>
 
-<%@ include file="../common/footer.jspf" %>
 <%@ include file="../common/foot.jspf" %>
