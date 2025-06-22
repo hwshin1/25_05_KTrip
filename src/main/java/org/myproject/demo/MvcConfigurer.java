@@ -35,6 +35,7 @@ public class MvcConfigurer implements WebMvcConfigurer {
         ir.addPathPatterns("/favicon.ico");
         ir.excludePathPatterns("/error");
 
+        // 로그인을 해야 함
         ir = registry.addInterceptor(needLoginInterceptor);
         ir.addPathPatterns("/review/write");
         ir.addPathPatterns("/review/doWrite");
@@ -44,6 +45,7 @@ public class MvcConfigurer implements WebMvcConfigurer {
         ir.addPathPatterns("/user/doLogout");
         ir.addPathPatterns("/user/mypage");
 
+        //로그아웃을 해야 함
         ir = registry.addInterceptor(needLogoutInterceptor);
         ir.addPathPatterns("/user/join");
         ir.addPathPatterns("/user/doJoin");

@@ -13,7 +13,7 @@
                 <!-- 콘텐츠 오버레이 -->
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
                     <!-- 타이틀 -->
-                    <h1 class="text-[80px] text-[#001c48] font-bold mb-10 tracking-wide">
+                    <h1 class="text-[80px] text-[#001c48] font-bold">
                         K LEAGUE & TRIP
                     </h1>
 
@@ -22,13 +22,15 @@
                         <button class="bg-black text-white px-6 py-2 text-lg rounded">
                             <a href="../intro/Daejeon">자세히 보기</a>
                         </button>
-                        <button class="bg-white text-black px-6 py-2 text-lg rounded">사이트 보기</button>
+                        <button class="bg-white text-black px-6 py-2 text-lg rounded">
+                            <a href="https://www.dhcfc.kr/">사이트 보기</a>
+                        </button>
                     </div>
 
                     <!-- 위치 정보 -->
-                    <div class="flex items-center gap-2 text-white text-sm">
-                        <i class="fa-solid fa-map-location-dot text-[#9b2743] w-4 h-4"></i>
-                        <span>대전 월드컵 경기장</span>
+                    <div class="flex items-center gap-2 text-sm">
+                        <i class="fa-solid fa-map-location-dot w-4 h-4"></i>
+                        <span class="text-white">대전 월드컵 경기장</span>
                     </div>
                 </div>
 
@@ -59,7 +61,9 @@
                         <button class="bg-black text-white px-6 py-2 text-lg rounded">
                             <a href="../intro/Seoul">자세히 보기</a>
                         </button>
-                        <button class="bg-white text-black px-6 py-2 text-lg rounded">사이트 보기</button>
+                        <button class="bg-white text-black px-6 py-2 text-lg rounded">
+                            <a href="https://www.fcseoul.com/">사이트 보기</a>
+                        </button>
                     </div>
 
                     <!-- 위치 정보 -->
@@ -96,7 +100,9 @@
                         <button class="bg-black text-white px-6 py-2 text-lg rounded">
                             <a href="../intro/Pohang">자세히 보기</a>
                         </button>
-                        <button class="bg-white text-black px-6 py-2 text-lg rounded">사이트 보기</button>
+                        <button class="bg-white text-black px-6 py-2 text-lg rounded">
+                            <a href="https://www.steelers.co.kr/">사이트 보기</a>
+                        </button>
                     </div>
 
                     <!-- 위치 정보 -->
@@ -133,7 +139,9 @@
                         <button class="bg-black text-white px-6 py-2 text-lg rounded">
                             <a href="../intro/Jeonju">자세히 보기</a>
                         </button>
-                        <button class="bg-white text-black px-6 py-2 text-lg rounded">사이트 보기</button>
+                        <button class="bg-white text-black px-6 py-2 text-lg rounded">
+                            <a href="https://hyundai-motorsfc.com/">사이트 보기</a>
+                        </button>
                     </div>
 
                     <!-- 위치 정보 -->

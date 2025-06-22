@@ -43,10 +43,10 @@
             </div>
         </form>
         <!-- 뒤로가기 버튼 -->
-        <div class="text-center mt-5">
-            <button class="max-w-xs my-0 mx-auto text-black bg-[#eeeeee] font-semibold text-base rounded-lg"
-                    onclick="history.back();">
-                뒤로 가기
+        <div class="text-center mt-8">
+            <button onclick="history.back();"
+                    class="px-5 py-2.5 border border-gray-400 text-gray-700 text-base bg-white hover:bg-gray-100 rounded-md transition duration-200">
+                뒤로가기
             </button>
         </div>
     </div>

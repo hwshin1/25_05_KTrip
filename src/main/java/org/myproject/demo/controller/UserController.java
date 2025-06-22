@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.xml.transform.Result;
+
 @Controller
 public class UserController {
 
@@ -121,5 +123,81 @@ public class UserController {
 
         model.addAttribute("user", user);
         return "user/mypage";
+    }
+
+    @RequestMapping("/user/userInfo")
+    public String showUserInfo() {
+        return "user/userinfo";
+    }
+
+    @RequestMapping("/user/checkPw")
+    public String showCheckPw() {
+        return "user/checkPw";
+    }
+
+    @RequestMapping("/user/doCheckPw")
+    @ResponseBody
+    public String doCheckPw(String loginPw) {
+        if (Ut.isEmptyOrNull(loginPw)) {
+            return Ut.jsHistoryBack("F-1", Ut.f("비밀번호를 입력하세요."));
+        }
+
+        if (!rq.getLoginedUser().getLoginPw().equals(loginPw)) {
+            return Ut.jsHistoryBack("F-2", Ut.f("비밀번호가 틀렸습니다."));
+        }
+
+        return Ut.jsReplace("S-1", Ut.f("비밀번호 확인 성공!"), "modify");
+    }
+
+    @RequestMapping("/user/modify")
+    public String modify() {
+        return "user/modify";
+    }
+
+    @RequestMapping("/user/doModify")
+    @ResponseBody
+    public String doModify(HttpServletRequest req, String loginPw, String nickName, String email) {
+        rq = (Rq) req.getAttribute("rq");
+
+        if (Ut.isEmptyOrNull(nickName)) {
+            return Ut.jsHistoryBack("F-1", Ut.f("닉네임을 입력하세요."));
+        }
+
+        if (Ut.isEmptyOrNull(email)) {
+            return Ut.jsHistoryBack("F-2", Ut.f("이메일을 입력하세요."));
+        }
+
+        ResultData modifyRd;
+
+        if (Ut.isEmptyOrNull(loginPw)) {
+            modifyRd = userService.modifyWithoutPw(rq.getLoginedUserId(), nickName, email);
+        } else {
+            modifyRd = userService.modify(rq.getLoginedUserId(), loginPw, nickName, email);
+        }
+
+        return Ut.jsReplace(modifyRd.getResultCode(), modifyRd.getMsg(), "/user/mypage");
+    }
+
+    @RequestMapping("/user/teamCheck")
+    public String teamCheck() {
+        return "user/teamCheck";
+    }
+
+    @RequestMapping("/user/doTeamCheck")
+    @ResponseBody
+    public String doTeamCheck(HttpServletRequest req, String teamName) {
+        rq = (Rq) req.getAttribute("rq");
+
+        if (Ut.isEmptyOrNull(teamName)) {
+            return Ut.jsHistoryBack("F-1", Ut.f("팀을 선택해주세요."));
+        }
+
+        // 팀 이름으로 번호 찾기
+        int teamId = userService.getTeamIdByName(teamName);
+
+        // user 업데이트
+        ResultData teamRd = userService.getupdateTeamId(rq.getLoginedUserId(), teamId);
+
+        return Ut.jsReplace(teamRd.getResultCode(), teamRd.getMsg(), "/user/mypage");
     }
 }

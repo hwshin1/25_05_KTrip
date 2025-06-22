@@ -38,7 +38,7 @@
             </tbody>
         </table>
         <div>
-            <button type="button" onclick="history.back();">뒤로가기</button>
+            <button type="button"><a href="../review/list">뒤로가기</a></button>
             <c:if test="${review.userCanModify}">
                 <a href="../review/modify?id=${review.id }">수정</a>
             </c:if>

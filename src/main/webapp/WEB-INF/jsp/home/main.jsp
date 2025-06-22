@@ -62,7 +62,7 @@
                 <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                     <a href="https://www.ticketlink.co.kr/sports/138/65" target="_blank">
                         <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                            <img src="/emblem_K09.png" class="w-[50px] h-[50px] object-contain" />
+                            <img src="/emblem_KSeoul.png" class="w-[50px] h-[50px] object-contain" />
                         </div>
                     </a>
                 </div>
@@ -75,7 +75,7 @@
                 <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                     <a href="https://www.ticketlink.co.kr/sports/138/73" target="_blank">
                         <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                            <img src="/emblem_K05.png" class="w-[50px] h-[50px] object-contain" />
+                            <img src="/emblem_KJeonBuk.png" class="w-[50px] h-[50px] object-contain" />
                         </div>
                     </a>
                 </div>
@@ -88,7 +88,7 @@
                 <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                     <a href="https://www.ticketlink.co.kr/sports/138/66" target="_blank">
                         <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                            <img src="/emblem_K01.png" class="w-[50px] h-[50px] object-contain" />
+                            <img src="/emblem_KUlsan.png" class="w-[50px] h-[50px] object-contain" />
                         </div>
                     </a>
                 </div>
@@ -101,7 +101,7 @@
                 <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                     <a href="https://www.ticketlink.co.kr/sports/138/83" target="_blank">
                         <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                            <img src="/emblem_K10.png" class="w-[50px] h-[50px] object-contain" />
+                            <img src="/emblem_KDaejeon.png" class="w-[50px] h-[50px] object-contain" />
                         </div>
                     </a>
                 </div>
@@ -115,7 +115,7 @@
                 <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                     <a href="https://www.ticketlink.co.kr/sports/138/84" target="_blank">
                         <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                            <img src="/emblem_K17.png" class="w-[50px] h-[50px] object-contain" />
+                            <img src="/emblem_KDaegu.png" class="w-[50px] h-[50px] object-contain" />
                         </div>
                     </a>
                 </div>
@@ -129,7 +129,7 @@
                 <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                     <a href="https://www.ticketlink.co.kr/sports/138/86" target="_blank">
                         <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                            <img src="/emblem_K27.png" class="w-[50px] h-[50px] object-contain" />
+                            <img src="/emblem_KAnyang.png" class="w-[50px] h-[50px] object-contain" />
                         </div>
                     </a>
                 </div>
@@ -142,7 +142,7 @@
                 <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                     <a href="https://www.ticketlink.co.kr/sports/138/74" target="_blank">
                         <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                            <img src="/emblem_K03.png" class="w-[50px] h-[50px] object-contain" />
+                            <img src="/emblem_KPohang.png" class="w-[50px] h-[50px] object-contain" />
                         </div>
                     </a>
                 </div>
@@ -156,7 +156,7 @@
                 <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                     <a href="https://ticket.interpark.com/Contents/Sports/GoodsInfo?SportsCode=07002&TeamCode=PS014" target="_blank">
                         <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                            <img src="/emblem_K21.png" class="w-[50px] h-[50px] object-contain" />
+                            <img src="/emblem_KGangwon.png" class="w-[50px] h-[50px] object-contain" />
                         </div>
                     </a>
                 </div>
@@ -170,7 +170,7 @@
                 <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                     <a href="https://www.ticketlink.co.kr/sports/138/79" target="_blank">
                         <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                            <img src="/emblem_K22.png" class="w-[50px] h-[50px] object-contain" />
+                            <img src="/emblem_KGwangju.png" class="w-[50px] h-[50px] object-contain" />
                         </div>
                     </a>
                 </div>
@@ -184,7 +184,7 @@
                 <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                     <a href="https://www.jejuskfc.com/reservation/ticketInfo" target="_blank">
                         <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                            <img src="/emblem_K04.png" class="w-[50px] h-[50px] object-contain" />
+                            <img src="/emblem_KJeju.png" class="w-[50px] h-[50px] object-contain" />
                         </div>
                     </a>
                 </div>
@@ -198,7 +198,7 @@
                 <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                     <a href="https://ticket.interpark.com/Contents/Sports/GoodsInfo?SportsCode=07002&TeamCode=PS061" target="_blank">
                         <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                            <img src="/emblem_K29.png" class="w-[50px] h-[50px] object-contain" />
+                            <img src="/emblem_KSuwonFc.png" class="w-[50px] h-[50px] object-contain" />
                         </div>
                     </a>
                 </div>
@@ -212,7 +212,7 @@
                 <div class="relative w-[90px] h-[90px] flex items-center justify-center">
                     <a href="https://www.ticketlink.co.kr/sports/138/80" target="_blank">
                         <div class="w-[90px] h-[90px] rounded-full bg-[#F5F5F5] flex items-center justify-center">
-                            <img src="/emblem_K35.png" class="w-[50px] h-[50px] object-contain" />
+                            <img src="/emblem_KKimcheon.png" class="w-[50px] h-[50px] object-contain" />
                         </div>
                     </a>
                 </div>

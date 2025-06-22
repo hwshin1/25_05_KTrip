@@ -19,10 +19,14 @@
             <p class="text-sm text-gray-200 mt-1">${user.extra_teamName}</p>
             <!-- 버튼 -->
             <button class="mt-4 px-5 py-2 text-sm font-bold uppercase tracking-wide bg-white text-black rounded-xl hover:bg-gray-100 transition">
-                마이페이지 수정
+                <a href="../user/userInfo">내 정보 수정</a>
             </button>
         </div>
     </div>
 </div>
+<div class="box-border relative w-full h-10 bg-gray-300 shadow-xl text-center">
+    <a href="../user/teamCheck">팀 선택</a>
+</div>
 
+<%@ include file="../common/footer.jspf" %>
 <%@ include file="../common/foot.jspf" %>

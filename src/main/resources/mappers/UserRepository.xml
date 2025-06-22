@@ -44,11 +44,8 @@
     <update id="modifyWithoutPw">
         UPDATE `user`
         <set>
-            <if test="name != null">
-                name = #{name},
-            </if>
-            <if test="nickname != null">
-                nickname = #{nickname},
+            <if test="nickName != null">
+                nickName = #{nickName},
             </if>
             <if test="email != null">
                 email = #{email},
@@ -64,11 +61,8 @@
             <if test="loginPw != null">
                 loginPw = #{loginPw},
             </if>
-            <if test="name != null">
-                name = #{name},
-            </if>
-            <if test="nickname != null">
-                nickname = #{nickname},
+            <if test="nickName != null">
+                nickName = #{nickName},
             </if>
             <if test="email != null">
                 email = #{email},
@@ -86,4 +80,17 @@
         ON U.teamId = T.id
         WHERE U.id= #{loginedUserId};
     </select>
+
+    <select id="getTeamIdByName" parameterType="int"
+            resultType="org.myproject.demo.vo.User">
+        SELECT id
+        FROM team
+        WHERE team_name = #{teamName};
+    </select>
+
+    <update id="getupdateTeamId">
+        UPDATE `user`
+        SET teamId = #{teamId}
+        WHERE id = #{loginedUserId}
+    </update>
 </mapper>

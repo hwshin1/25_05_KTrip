@@ -42,16 +42,14 @@ public class UserService {
         return userRepository.getUserByLoginId(loginId);
     }
 
-    public ResultData modifyWithoutPw(int loginedUserId, String name, String nickName, String email) {
-        userRepository.modifyWithoutPw(loginedUserId, name, nickName, email);
+    public ResultData modifyWithoutPw(int loginedUserId, String nickName, String email) {
+        userRepository.modifyWithoutPw(loginedUserId, nickName, email);
 
         return ResultData.from("S-1", "회원정보 수정 완료");
     }
 
-    public ResultData modifyRd(int loginedUserId, String loginPw, String name, String nickName, String email) {
-        loginPw = Ut.sha256(loginPw);
-
-        userRepository.modify(loginedUserId, loginPw, name, nickName, email);
+    public ResultData modify(int loginedUserId, String loginPw, String nickName, String email) {
+        userRepository.modify(loginedUserId, loginPw, nickName, email);
 
         return ResultData.from("S-1", "회원정보 수정 완료");
     }
@@ -62,5 +60,17 @@ public class UserService {
 
     public User getUserTeamById(int loginedUserId) {
         return userRepository.getUserTeamById(loginedUserId);
+    }
+
+    public ResultData getupdateTeamId(int loginedUserId, int teamId) {
+        userRepository.getupdateTeamId(loginedUserId, teamId);
+
+        User user = userRepository.getUserTeamById(loginedUserId);
+
+        return ResultData.from("S-1", Ut.f("%s팀 선택 완료!", user.getExtra_teamName()));
+    }
+
+    public int getTeamIdByName(String teamName) {
+        return userRepository.getTeamIdByName(teamName);
     }
 }

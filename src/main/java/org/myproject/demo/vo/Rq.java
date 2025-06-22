@@ -2,6 +2,7 @@ package org.myproject.demo.vo;
 
 import java.io.IOException;
 
+import org.myproject.demo.service.UserService;
 import org.myproject.demo.util.Ut;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -26,7 +27,10 @@ public class Rq {
     private boolean isLogined = false;
     private int loginedUserId = 0;
 
-    public Rq(HttpServletRequest req, HttpServletResponse resp) {
+    @Getter
+    private User loginedUser;
+
+    public Rq(HttpServletRequest req, HttpServletResponse resp, UserService userService) {
         this.req = req;
         this.resp = resp;
         this.session = req.getSession();
@@ -34,6 +38,7 @@ public class Rq {
         if (session.getAttribute("loginedUserId") != null) {
             isLogined = true;
             loginedUserId = (int) session.getAttribute("loginedUserId");
+            loginedUser = userService.getUserById(loginedUserId);
         }
 
         this.req.setAttribute("rq", this);
@@ -77,10 +82,12 @@ public class Rq {
 
     public void logout() {
         session.removeAttribute("loginedUserId");
+        session.removeAttribute("loginedUser");
     }
 
     public void login(User user) {
         session.setAttribute("loginedUserId", user.getId());
+        session.setAttribute("loginedUser", user);
     }
 
     public void initBeforeActionInterceptor() {

@@ -14,11 +14,15 @@ public interface UserRepository {
 
     int getLastInsertId();
 
-    void modifyWithoutPw(int loginedUserId, String name, String nickName, String email);
+    void modifyWithoutPw(int loginedUserId, String nickName, String email);
 
-    void modify(int loginedUserId, String loginPw, String name, String nickName, String email);
+    void modify(int loginedUserId, String loginPw, String nickName, String email);
 
     User getUserById(int loginedUserId);
 
     User getUserTeamById(int loginedUserId);
+
+    void getupdateTeamId(int loginedUserId, int teamId);
+
+    int getTeamIdByName(String teamName);
 }
