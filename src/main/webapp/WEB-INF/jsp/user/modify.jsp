@@ -17,9 +17,7 @@
                 alert('비밀번호가 일치하지 않습니다.');
                 return;
             }
-
         }
-
         form.submit();
     }
 </script>
@@ -76,6 +74,12 @@
                                type="text" placeholder="이메일을 입력해" value="${rq.loginedUser.email }"/>
                     </td>
 
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        <a href="../user/teamCheck">팀 선택</a>
+                    </td>
                 </tr>
                 <tr>
                     <th></th>

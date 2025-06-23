@@ -30,6 +30,7 @@ public class ReviewController {
 
     @Autowired
     private BoardService boardService;
+
     @Autowired
     private UserService userService;
 

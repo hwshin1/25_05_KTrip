@@ -75,54 +75,82 @@
     <div class="relative w-auto h-auto">
         <!-- 카드 컴포넌트 -->
         <div class="grid grid-cols-4">
-            <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+            <div class="bg-gray-300 h-[750px] bg-[url(/fcseoulpic.png)] border-t border-r flex flex-col justify-end p-4">
                 <h3 class="text-white font-bold text-lg">FC 서울</h3>
-                <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+                <button class="mt-2 opacity-50 bg-white text-black px-3 py-1 text-sm w-[120px] h-[48px]">
+                    <a href="../intro/Seoul">자세히 보기</a>
+                </button>
             </div>
-            <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+            <div class="bg-gray-300 h-[750px] bg-[url(/jeonbukpic.png)] border-t border-r flex flex-col justify-end p-4">
                 <h3 class="text-white font-bold text-lg">전북현대모터스</h3>
-                <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+                <button class="mt-2 opacity-50 bg-white text-black px-3 py-1 text-sm w-[120px] h-[48px]">
+                    <a href="../intro/Jeonju">자세히 보기</a>
+                </button>
             </div>
-            <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+            <div class="bg-gray-300 h-[750px] bg-[url(/ulsanpic.png)] border-t border-r flex flex-col justify-end p-4">
                 <h3 class="text-white font-bold text-lg">울산 HD</h3>
-                <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+                <button class="mt-2 opacity-50 bg-white text-black px-3 py-1 text-sm w-[120px] h-[48px]">
+                    <a href="../intro/Ulsan">자세히 보기</a>
+                </button>
             </div>
-            <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
+            <div class="bg-gray-300 h-[750px] bg-[url(/daejeonpic.png)] border-t border-r flex flex-col justify-end p-4">
                 <h3 class="text-white font-bold text-lg">대전하나시티즌</h3>
-                <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+                <button class="mt-2 opacity-50 bg-white text-black px-3 py-1 text-sm w-[120px] h-[48px]">
+                    <a href="../intro/Daejeon">자세히 보기</a>
+                </button>
             </div>
         </div>
-        <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
-            <h3 class="text-white font-bold text-lg">대구 FC</h3>
-            <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+        <div class="grid grid-cols-4">
+            <div class="bg-gray-300 h-[750px] bg-[url(/daegupic.png)] border-t border-r flex flex-col justify-end p-4">
+                <h3 class="text-white font-bold text-lg">대구 FC</h3>
+                <button class="mt-2 opacity-50 bg-white text-black px-3 py-1 text-sm w-[120px] h-[48px]">
+                    <a href="../intro/Daegu">자세히 보기</a>
+                </button>
+            </div>
+            <div class="bg-gray-300 h-[750px] bg-[url(/Anyangpic.png)] border-t border-r flex flex-col justify-end p-4">
+                <h3 class="text-white font-bold text-lg">FC 안양</h3>
+                <button class="mt-2 opacity-50 bg-white text-black px-3 py-1 text-sm w-[120px] h-[48px]">
+                    <a href="../intro/Anyang">자세히 보기</a>
+                </button>
+            </div>
+            <div class="bg-gray-300 h-[750px] bg-[url(/pohangpic.png)] border-t border-r flex flex-col justify-end p-4">
+                <h3 class="text-white font-bold text-lg">포항 스틸러스</h3>
+                <button class="mt-2 opacity-50 bg-white text-black px-3 py-1 text-sm w-[120px] h-[48px]">
+                    <a href="../intro/Pohang">자세히 보기</a>
+                </button>
+            </div>
+            <div class="bg-gray-300 h-[750px] bg-[url(/gangwonpic.png)] border-t border-r flex flex-col justify-end p-4">
+                <h3 class="text-white font-bold text-lg">강원 FC</h3>
+                <button class="mt-2 opacity-50 bg-white text-black px-3 py-1 text-sm w-[120px] h-[48px]">
+                    <a href="../intro/Gangwon">자세히 보기</a>
+                </button>
+            </div>
         </div>
-        <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
-            <h3 class="text-white font-bold text-lg">포항 스틸러스</h3>
-            <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
-        </div>
-        <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
-            <h3 class="text-white font-bold text-lg">FC 안양</h3>
-            <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
-        </div>
-        <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
-            <h3 class="text-white font-bold text-lg">강원 FC</h3>
-            <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
-        </div>
-        <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
-            <h3 class="text-white font-bold text-lg">제주 SK</h3>
-            <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
-        </div>
-        <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
-            <h3 class="text-white font-bold text-lg">광주 FC</h3>
-            <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
-        </div>
-        <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
-            <h3 class="text-white font-bold text-lg">수원 FC</h3>
-            <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
-        </div>
-        <div class="bg-gray-300 h-64 flex flex-col justify-end p-4">
-            <h3 class="text-white font-bold text-lg">김천상무프로축구단</h3>
-            <button class="mt-2 bg-white text-black px-3 py-1 text-sm">자세히 보기</button>
+        <div class="grid grid-cols-4">
+            <div class="bg-gray-300 h-[750px] bg-[url(/jejupic.png)] border-t border-r flex flex-col justify-end p-4">
+                <h3 class="text-white font-bold text-lg">제주 SK</h3>
+                <button class="mt-2 opacity-50 bg-white text-black px-3 py-1 text-sm w-[120px] h-[48px]">
+                    <a href="../intro/Jeju">자세히 보기</a>
+                </button>
+            </div>
+            <div class="bg-gray-300 h-[750px] bg-[url(/gwangjupic.png)] border-t border-r flex flex-col justify-end p-4">
+                <h3 class="text-white font-bold text-lg">광주 FC</h3>
+                <button class="mt-2 opacity-50 bg-white text-black px-3 py-1 text-sm w-[120px] h-[48px]">
+                    <a href="../intro/Gwangju">자세히 보기</a>
+                </button>
+            </div>
+            <div class="bg-gray-300 h-[750px] bg-[url(/suwonfcpic.png)] border-t border-r flex flex-col justify-end p-4">
+                <h3 class="text-white font-bold text-lg">수원 FC</h3>
+                <button class="mt-2 opacity-50 bg-white text-black px-3 py-1 text-sm w-[120px] h-[48px]">
+                    <a href="../intro/SuwonFC">자세히 보기</a>
+                </button>
+            </div>
+            <div class="bg-gray-300 h-[750px] bg-[url(/kimcheonpic.png)] border-t border-r flex flex-col justify-end p-4">
+                <h3 class="text-white font-bold text-lg">김천상무프로축구단</h3>
+                <button class="mt-2 opacity-50 bg-white text-black px-3 py-1 text-sm w-[120px] h-[48px]">
+                    <a href="../intro/Kimcheon">자세히 보기</a>
+                </button>
+            </div>
         </div>
     </div>
 

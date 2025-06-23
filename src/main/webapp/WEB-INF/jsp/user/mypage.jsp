@@ -24,9 +24,6 @@
         </div>
     </div>
 </div>
-<div class="box-border relative w-full h-10 bg-gray-300 shadow-xl text-center">
-    <a href="../user/teamCheck">팀 선택</a>
-</div>
 
 <%@ include file="../common/footer.jspf" %>
 <%@ include file="../common/foot.jspf" %>

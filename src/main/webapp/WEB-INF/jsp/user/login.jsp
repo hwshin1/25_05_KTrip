@@ -2,8 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ include file="../common/head.jspf" %>
-<h1 class="text-center">The Login Page</h1>
-<section>
+<section class="mt-40">
+    <h1 class="text-center">The Login Page</h1>
     <div style="margin-left: auto; margin-right: auto;">
         <form action="../user/doLogin" method="POST">
             <div style="width: 100%; display: flex; justify-content: center; align-items: center; background: #fff;">

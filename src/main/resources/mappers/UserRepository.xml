@@ -82,7 +82,7 @@
     </select>
 
     <select id="getTeamIdByName" parameterType="int"
-            resultType="org.myproject.demo.vo.User">
+            resultType="org.myproject.demo.vo.Team">
         SELECT id
         FROM team
         WHERE team_name = #{teamName};
