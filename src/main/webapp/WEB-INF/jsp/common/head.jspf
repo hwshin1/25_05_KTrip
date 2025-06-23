@@ -87,14 +87,14 @@
                     </a>
 
                     <!-- 서브 메뉴 -->
-                    <ul class="hidden overflow-hidden group-hover:block absolute w-[150px] top-[72px] left-1/2 -translate-x-1/2 bg-[#F5F5F5] shadow-lg z-50 min-w-[130px] py-5 rounded-3xl">
+                    <ul class="absolute w-[150px] top-[72px] left-1/2 -translate-x-1/2 bg-[#F5F5F5] shadow-lg z-50 min-w-[130px] py-5 rounded-3xl hidden group-hover:block">
                         <li>
-                            <a href="../user/mypage" class="inline-block w-full text-center py-4">
+                            <a href="../user/mypage" class="block w-full text-center py-4">
                                 내 프로필
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="inline-block w-full text-center py-4">
+                            <a href="#" class="block w-full text-center py-4">
                                 나의 팀
                             </a>
                         </li>

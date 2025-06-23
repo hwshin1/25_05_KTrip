@@ -81,8 +81,8 @@
         WHERE U.id= #{loginedUserId};
     </select>
 
-    <select id="getTeamIdByName" parameterType="int"
-            resultType="org.myproject.demo.vo.Team">
+    <select id="getTeamIdByName" parameterType="String"
+            resultType="int">
         SELECT id
         FROM team
         WHERE team_name = #{teamName};
