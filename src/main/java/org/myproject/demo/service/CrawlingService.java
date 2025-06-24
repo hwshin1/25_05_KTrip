@@ -113,8 +113,6 @@ public class CrawlingService {
                 try {
                     String category = item.findElement(By.cssSelector("span.subcategory")).getText();
 
-                    System.out.println(category);
-
                     Map<String, String> data = new LinkedHashMap<>();
                     data.put("name", item.findElement(By.cssSelector("a.link_name")).getText());
                     data.put("category", category);

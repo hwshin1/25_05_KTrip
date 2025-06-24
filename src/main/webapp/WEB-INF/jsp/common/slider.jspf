@@ -29,7 +29,7 @@
 
                     <!-- 위치 정보 -->
                     <div class="flex items-center gap-2 text-sm">
-                        <i class="fa-solid fa-map-location-dot w-4 h-4"></i>
+                        <i class="fa-solid fa-map-location-dot w-4 h-4 text-[#9b2743]"></i>
                         <span class="text-white">대전 월드컵 경기장</span>
                     </div>
                 </div>
