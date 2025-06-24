@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ include file="../common/head.jspf" %>
+<%@ include file="../../common/head.jspf" %>
 
 <%-- 지도 음식점 --%>
 <style>
@@ -50,7 +50,7 @@
         <div class="option">
             <div>
                 <form onsubmit="searchPlaces(); return false;">
-                    키워드 : <input type="text" value="서울월드컵경기장 음식점" id="keyword" size="15">
+                    키워드 : <input type="text" value="광주월드컵경기장 음식점" id="keyword" size="15">
                     <button type="submit">검색하기</button>
                 </form>
             </div>
@@ -281,4 +281,4 @@
     }
 </script>
 
-<%@ include file="../common/foot.jspf" %>
+<%@ include file="../../common/foot.jspf" %>

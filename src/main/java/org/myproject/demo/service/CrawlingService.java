@@ -101,40 +101,58 @@ public class CrawlingService {
 
         try {
             //페이지 접속
-            driver.get("https://map.kakao.com/link/search/대전월드컵경기장음식점");
+            driver.get("https://map.kakao.com/link/search/대전 음식점");
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul#info\\.search\\.place\\.list")));
 
-            List<WebElement> items = driver.findElements(By.cssSelector("ul#info\\.search\\.place\\.list > li.PlaceItem"));
             List<Map<String, String>> restaurants = new ArrayList<>();
 
-            for (WebElement item : items) {
+            while (true) {
+                List<WebElement> items = driver.findElements(By.cssSelector("ul#info\\.search\\.place\\.list > li.PlaceItem"));
+
+                for (WebElement item : items) {
+                    try {
+                        String category = item.findElement(By.cssSelector("span.subcategory")).getText();
+
+                        Map<String, String> data = new LinkedHashMap<>();
+                        data.put("name", item.findElement(By.cssSelector("a.link_name")).getText());
+                        data.put("category", category);
+                        data.put("address", item.findElement(By.cssSelector("div.addr > p[title]")).getAttribute("title"));
+
+                        try {
+                            String rating = item.findElement(By.cssSelector("em.num")).getText();
+                            data.put("rating", rating);
+                        } catch (Exception e) {
+                            data.put("rating", "없음");
+                        }
+
+                        try {
+                            String detailUrl = item.findElement(By.cssSelector("a.moreview")).getAttribute("href");
+                            data.put("detail_url", detailUrl);
+                        } catch (Exception e) {
+                            data.put("detail_url", "없음");
+                        }
+
+                        restaurants.add(data);
+                    } catch (NoSuchElementException e) {
+                        // subcategory가 없으면 무시
+                    }
+                }
+
+                // 다음 페이지 버튼 확인 및 클릭
                 try {
-                    String category = item.findElement(By.cssSelector("span.subcategory")).getText();
+                    WebElement nextBtn = driver.findElement(By.cssSelector("a#info\\.search\\.page\\.next"));
 
-                    Map<String, String> data = new LinkedHashMap<>();
-                    data.put("name", item.findElement(By.cssSelector("a.link_name")).getText());
-                    data.put("category", category);
-                    data.put("address", item.findElement(By.cssSelector("div.addr > p[title]")).getAttribute("title"));
-
-                    try {
-                        String rating = item.findElement(By.cssSelector("em.num")).getText();
-                        data.put("rating", rating);
-                    } catch (Exception e) {
-                        data.put("rating", "없음");
+                    // 비활성화 상태인지 확인
+                    if (nextBtn.getAttribute("class").contains("off")) {
+                        break; // 마지막 페이지라면 종료
+                    } else {
+                        nextBtn.click(); // 다음 페이지로 이동
+                        Thread.sleep(2000); // 페이지 로딩 기다리기
                     }
-
-                    try {
-                        String detailUrl = item.findElement(By.cssSelector("a.moreview")).getAttribute("href");
-                        data.put("detail_url", detailUrl);
-                    } catch (Exception e) {
-                        data.put("detail_url", "없음");
-                    }
-
-                    restaurants.add(data);
                 } catch (NoSuchElementException e) {
-                    // subcategory가 없으면 무시
+                    break; // 다음 버튼이 없으면 종료
                 }
             }
 

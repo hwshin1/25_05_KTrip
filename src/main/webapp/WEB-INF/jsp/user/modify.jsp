@@ -25,22 +25,19 @@
 <section class="mt-24 text-xl px-4">
     <div class="mx-auto">
         <form onsubmit="MemberModify__submit(this); return false;" action="../user/doModify" method="POST">
-            <table class="table" border="1" cellspacing="0" cellpadding="5"
-                   style="width: 100%; border-collapse: collapse;">
+            <table class="w-full border-collapse">
                 <tbody>
                 <tr>
                     <th>가입일</th>
-                    <td style="text-align: center;">${rq.loginedUser.regDate }</td>
-
+                    <td class="text-center">${rq.loginedUser.regDate }</td>
                 </tr>
                 <tr>
                     <th>아이디</th>
-                    <td style="text-align: center;">${rq.loginedUser.loginId }</td>
-
+                    <td class="text-center">${rq.loginedUser.loginId }</td>
                 </tr>
                 <tr>
                     <th>새 비밀번호</th>
-                    <td style="text-align: center;">
+                    <td class="text-center">
                         <input class="input input-bordered input-primary input-sm w-full max-w-xs" name="loginPw"
                                autocomplete="off"
                                type="text" placeholder="새 비밀번호를 입력해"/>
@@ -48,32 +45,30 @@
                 </tr>
                 <tr>
                     <th>새 비밀번호 확인</th>
-                    <td style="text-align: center;">
+                    <td class="text-center">
                         <input class="input input-bordered input-primary input-sm w-full max-w-xs" name="loginPwConfirm"
                                autocomplete="off" type="text" placeholder="새 비밀번호확인을 입력해"/>
                     </td>
                 </tr>
                 <tr>
                     <th>이름</th>
-                    <td style="text-align: center;">${rq.loginedUser.name }</td>
+                    <td class="text-center">${rq.loginedUser.name }</td>
                 </tr>
                 <tr>
                     <th>닉네임</th>
-                    <td style="text-align: center;">
+                    <td class="text-center">
                         <input class="input input-bordered input-primary input-sm w-full max-w-xs" name="nickName"
                                autocomplete="off"
                                type="text" placeholder="닉네임 입력해" value="${rq.loginedUser.nickName }"/>
                     </td>
-
                 </tr>
                 <tr>
                     <th>이메일</th>
-                    <td style="text-align: center;">
+                    <td class="text-center">
                         <input class="input input-bordered input-primary input-sm w-full max-w-xs" name="email"
                                autocomplete="off"
                                type="text" placeholder="이메일을 입력해" value="${rq.loginedUser.email }"/>
                     </td>
-
                 </tr>
                 <tr>
                     <th></th>
@@ -83,7 +78,7 @@
                 </tr>
                 <tr>
                     <th></th>
-                    <td style="text-align: center;">
+                    <td class="text-center">
                         <button class="btn btn-primary">수정</button>
                     </td>
                 </tr>

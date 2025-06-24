@@ -8,7 +8,7 @@
 <section class="w-full h-auto relative bg-white tracking-wide">
     <!-- 상단 응원가 카드 -->
     <div class="grid grid-cols-2 h-[750px]">
-        <div class="flex flex-col justify-end items-start p-10 text-white bg-gray-500 border-r border-black">
+        <div class="flex flex-col justify-end items-start p-10 text-white bg-black/30 border-r border-black">
             <iframe width="100%;" height="100%;" src="https://www.youtube.com/embed/kpBBzOly-Vw?si=W5egq8EE81nCEuQv"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -17,11 +17,11 @@
                 <h2 class="text-[32px] font-bold mb-3">대전 응원가 모음</h2>
                 <p class="text-[15px] mb-8">대전! 너와 함께 웃고<br>너와 함께 울고<br>항상 함께 해</p>
                 <button class="bg-white text-black px-4 py-2 text-center border rounded-full border-gray-300 hover:bg-gray-100">
-                    자세히 보기
+                    <a href="https://www.youtube.com/watch?v=kpBBzOly-Vw" class="block">자세히 보기</a>
                 </button>
             </div>
         </div>
-        <div class="flex flex-col justify-end items-start p-10 bg-gray-500 text-white">
+        <div class="flex flex-col justify-end items-start p-10 bg-black/30 text-white">
             <iframe width="100%;" height="100%;" src="https://www.youtube.com/embed/XDuc_OTRfoE?si=mDVw_NxerpH-KGiB"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -30,7 +30,7 @@
                 <h2 class="text-[32px] font-bold mb-3">전북 응원가 모음</h2>
                 <p class="text-[15px] mb-8">영원하라 전북<br>오! 우리의 전북<br>너를 위해 우리 노래해</p>
                 <button class="bg-white text-black px-4 py-2 text-center border rounded-full border-gray-300 hover:bg-gray-100">
-                    자세히 보기
+                    <a href="https://www.youtube.com/watch?v=XDuc_OTRfoE" class="block">자세히 보기</a>
                 </button>
             </div>
         </div>

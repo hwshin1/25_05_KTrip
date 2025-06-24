@@ -1,76 +1,228 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ include file="../common/head.jspf"%>
+<%@ include file="../common/head.jspf" %>
 <style>
-    .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
-    .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
-    .map_wrap {position:relative;width:100%;height:500px;}
-    #menu_wrap {position:absolute;top:0;left:0;bottom:0;width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
-    .bg_white {background:#fff;}
-    #menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
-    #menu_wrap .option{text-align: center;}
-    #menu_wrap .option p {margin:10px 0;}
-    #menu_wrap .option button {margin-left:5px;}
-    #placesList li {list-style: none;}
-    #placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
-    #placesList .item span {display: block;margin-top:4px;}
-    #placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
-    #placesList .item .info{padding:10px 0 10px 55px;}
-    #placesList .info .gray {color:#8a8a8a;}
-    #placesList .info .jibun {padding-left:26px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;}
-    #placesList .info .tel {color:#009900;}
-    #placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
-    #placesList .item .marker_1 {background-position: 0 -10px;}
-    #placesList .item .marker_2 {background-position: 0 -56px;}
-    #placesList .item .marker_3 {background-position: 0 -102px}
-    #placesList .item .marker_4 {background-position: 0 -148px;}
-    #placesList .item .marker_5 {background-position: 0 -194px;}
-    #placesList .item .marker_6 {background-position: 0 -240px;}
-    #placesList .item .marker_7 {background-position: 0 -286px;}
-    #placesList .item .marker_8 {background-position: 0 -332px;}
-    #placesList .item .marker_9 {background-position: 0 -378px;}
-    #placesList .item .marker_10 {background-position: 0 -423px;}
-    #placesList .item .marker_11 {background-position: 0 -470px;}
-    #placesList .item .marker_12 {background-position: 0 -516px;}
-    #placesList .item .marker_13 {background-position: 0 -562px;}
-    #placesList .item .marker_14 {background-position: 0 -608px;}
-    #placesList .item .marker_15 {background-position: 0 -654px;}
-    #pagination {margin:10px auto;text-align: center;}
-    #pagination a {display:inline-block;margin-right:10px;}
-    #pagination .on {font-weight: bold; cursor: default;color:#777;}
+    .map_wrap, .map_wrap * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+        font-size: 12px;
+    }
+
+    .map_wrap a, .map_wrap a:hover, .map_wrap a:active {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .map_wrap {
+        position: relative;
+        width: 100%;
+        height: 500px;
+    }
+
+    #menu_wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 250px;
+        margin: 10px 0 30px 10px;
+        padding: 5px;
+        overflow-y: auto;
+        background: rgba(255, 255, 255, 0.7);
+        z-index: 1;
+        font-size: 12px;
+        border-radius: 10px;
+    }
+
+    .bg_white {
+        background: #fff;
+    }
+
+    #menu_wrap hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 2px solid #5F5F5F;
+        margin: 3px 0;
+    }
+
+    #menu_wrap .option {
+        text-align: center;
+    }
+
+    #menu_wrap .option p {
+        margin: 10px 0;
+    }
+
+    #menu_wrap .option button {
+        margin-left: 5px;
+    }
+
+    #placesList li {
+        list-style: none;
+    }
+
+    #placesList .item {
+        position: relative;
+        border-bottom: 1px solid #888;
+        overflow: hidden;
+        cursor: pointer;
+        min-height: 65px;
+    }
+
+    #placesList .item span {
+        display: block;
+        margin-top: 4px;
+    }
+
+    #placesList .item h5, #placesList .item .info {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    #placesList .item .info {
+        padding: 10px 0 10px 55px;
+    }
+
+    #placesList .info .gray {
+        color: #8a8a8a;
+    }
+
+    #placesList .info .jibun {
+        padding-left: 26px;
+        background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;
+    }
+
+    #placesList .info .tel {
+        color: #009900;
+    }
+
+    #placesList .item .markerbg {
+        float: left;
+        position: absolute;
+        width: 36px;
+        height: 37px;
+        margin: 10px 0 0 10px;
+        background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;
+    }
+
+    #placesList .item .marker_1 {
+        background-position: 0 -10px;
+    }
+
+    #placesList .item .marker_2 {
+        background-position: 0 -56px;
+    }
+
+    #placesList .item .marker_3 {
+        background-position: 0 -102px
+    }
+
+    #placesList .item .marker_4 {
+        background-position: 0 -148px;
+    }
+
+    #placesList .item .marker_5 {
+        background-position: 0 -194px;
+    }
+
+    #placesList .item .marker_6 {
+        background-position: 0 -240px;
+    }
+
+    #placesList .item .marker_7 {
+        background-position: 0 -286px;
+    }
+
+    #placesList .item .marker_8 {
+        background-position: 0 -332px;
+    }
+
+    #placesList .item .marker_9 {
+        background-position: 0 -378px;
+    }
+
+    #placesList .item .marker_10 {
+        background-position: 0 -423px;
+    }
+
+    #placesList .item .marker_11 {
+        background-position: 0 -470px;
+    }
+
+    #placesList .item .marker_12 {
+        background-position: 0 -516px;
+    }
+
+    #placesList .item .marker_13 {
+        background-position: 0 -562px;
+    }
+
+    #placesList .item .marker_14 {
+        background-position: 0 -608px;
+    }
+
+    #placesList .item .marker_15 {
+        background-position: 0 -654px;
+    }
+
+    #pagination {
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    #pagination a {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    #pagination .on {
+        font-weight: bold;
+        cursor: default;
+        color: #777;
+    }
 </style>
 
-<section class="py-10">
+<section class="py-10 bg-[#e5e5e5]">
     <div class="container mx-auto px-4">
         <!-- Heading Row -->
         <div class="flex flex-col lg:flex-row items-center mb-16 space-y-6 lg:space-y-0 lg:space-x-8">
             <div class="lg:w-7/12">
-                <img class="rounded w-full h-auto" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." />
+                <img class="rounded w-full h-auto" src="https://i.namu.wiki/i/n8KUrQKEqHntwq72v9YhcR6LHpFeyoKPoB08cjjMJ0or6M-aFa_-vHAtyq0V-OroNPuxNKORuFf8EHoT9sgo3tBKusOezOY2mBgn4G5RSizLffIl8g3KdLQlfsR7nj64BXVWzmzGgqoUZXM7QL8McA.webp"/>
             </div>
             <div class="lg:w-5/12">
                 <h1 class="text-3xl font-light mb-4">대전하나시티즌</h1>
                 <p class="text-gray-700 mb-4">
-                    This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
+                    1997년에 창단된 대전광역시를 연고로 하는 K리그1 소속의 프로 축구단!
                 </p>
-                <a class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition" href="https://www.dhcfc.kr/">Call to Action!</a>
+                <p class="text-gray-700 mb-2">
+                    1997년 대전/충남 연고 기업인 계룡건설, 동아건설, 동양백화점, 충청은행의 컨소시엄 형태의 기업구단으로 창단. 하지만 1998년 IMF 구제금융 위기로 컨소시엄을 구성했던 기업들 중 동아건설, 동양백화점, 충청은행이 파산하고 2006년 구단 운영의 재정적 한계로 인해 계룡건설이 구단을 대전광역시에 매각하면서 시민구단으로 전환되었다. 2020년 하나금융그룹이 대전광역시로부터 구단을 인수하면서 다시 기업구단으로 전환되었다.
+                </p>
+                <a class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+                   href="https://www.dhcfc.kr/">Call to Action!</a>
             </div>
         </div>
 
         <!-- Call to Action Card -->
-        <div class="bg-gray-700 text-white text-center py-6 px-4 rounded mb-16">
-            <p class="text-white text-lg">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
+        <div class="bg-gray-700 text-white text-center py-4 px-4 rounded mb-16">
+            <p class="text-lg w-full h-auto">대전 응원가</p>
         </div>
 
         <!-- Content Row (Cards) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <!-- Card One -->
             <div class="bg-white shadow rounded flex flex-col h-full">
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">Card One</h2>
-                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
+                        numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
                 </div>
                 <div class="bg-gray-100 px-6 py-4 text-right">
-                    <a class="text-sm bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" href="#!">More Info</a>
+                    <a class="text-sm bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" href="#!">More
+                        Info</a>
                 </div>
             </div>
 
@@ -78,10 +230,13 @@
             <div class="bg-white shadow rounded flex flex-col h-full">
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">Card Two</h2>
-                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex
+                        natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore
+                        voluptates quos eligendi labore.</p>
                 </div>
                 <div class="bg-gray-100 px-6 py-4 text-right">
-                    <a class="text-sm bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" href="#!">More Info</a>
+                    <a class="text-sm bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" href="#!">More
+                        Info</a>
                 </div>
             </div>
 
@@ -89,36 +244,43 @@
             <div class="bg-white shadow rounded flex flex-col h-full">
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">Card Three</h2>
-                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
+                        numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
                 </div>
                 <div class="bg-gray-100 px-6 py-4 text-right">
-                    <a class="text-sm bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" href="#!">More Info</a>
+                    <a class="text-sm bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" href="#!">More
+                        Info</a>
                 </div>
+            </div>
+        </div>
+
+        <%-- 지도 맵 --%>
+        <div class="map_wrap flex flex-col mx-auto">
+            <div id="map" style="width:650px ; height:650px;"></div>
+
+            <div id="menu_wrap" class="bg_white">
+                <div class="option">
+                    <div>
+                        <form onsubmit="searchPlaces(); return false;">
+                            <c:if test="${text != null}">
+                                키워드 : <input type="text" value="${text} 음식점" id="keyword" size="15">
+                            </c:if>
+
+                            키워드 : <input type="text" value="대전 맛집" id="keyword" size="15">
+                            <button type="submit">검색하기</button>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+                <ul id="placesList"></ul>
+                <div id="pagination"></div>
             </div>
         </div>
     </div>
 </section>
 
-<%-- 지도 맵 --%>
-<div class="map_wrap flex flex-col">
-    <div id="map" style="width:650px ; height:650px;"></div>
-
-    <div id="menu_wrap" class="bg_white">
-        <div class="option">
-            <div>
-                <form onsubmit="searchPlaces(); return false;">
-                    키워드 : <input type="text" value="대전월드컵경기장 음식점" id="keyword" size="15">
-                    <button type="submit">검색하기</button>
-                </form>
-            </div>
-        </div>
-        <hr>
-        <ul id="placesList"></ul>
-        <div id="pagination"></div>
-    </div>
-</div>
-
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${javascript_key}&libraries=services"></script>
+<script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${javascript_key}&libraries=services"></script>
 <script>
     // 마커를 담을 배열입니다
     var markers = [];
@@ -136,7 +298,7 @@
     var ps = new kakao.maps.services.Places();
 
     // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
-    var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+    var infowindow = new kakao.maps.InfoWindow({zIndex: 1});
 
     // 키워드로 장소를 검색합니다
     searchPlaces();
@@ -152,7 +314,7 @@
         }
 
         // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-        ps.keywordSearch( keyword, placesSearchCB);
+        ps.keywordSearch(keyword, placesSearchCB);
     }
 
     // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
@@ -194,7 +356,7 @@
         // 지도에 표시되고 있는 마커를 제거합니다
         removeMarker();
 
-        for ( var i=0; i<places.length; i++ ) {
+        for (var i = 0; i < places.length; i++) {
 
             // 마커를 생성하고 지도에 표시합니다
             var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
@@ -208,20 +370,20 @@
             // 마커와 검색결과 항목에 mouseover 했을때
             // 해당 장소에 인포윈도우에 장소명을 표시합니다
             // mouseout 했을 때는 인포윈도우를 닫습니다
-            (function(marker, title) {
-                kakao.maps.event.addListener(marker, 'mouseover', function() {
+            (function (marker, title) {
+                kakao.maps.event.addListener(marker, 'mouseover', function () {
                     displayInfowindow(marker, title);
                 });
 
-                kakao.maps.event.addListener(marker, 'mouseout', function() {
+                kakao.maps.event.addListener(marker, 'mouseout', function () {
                     infowindow.close();
                 });
 
-                itemEl.onmouseover =  function () {
+                itemEl.onmouseover = function () {
                     displayInfowindow(marker, title);
                 };
 
-                itemEl.onmouseout =  function () {
+                itemEl.onmouseout = function () {
                     infowindow.close();
                 };
             })(marker, places[i].place_name);
@@ -241,18 +403,18 @@
     function getListItem(index, places) {
 
         var el = document.createElement('li'),
-            itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
+            itemStr = '<span class="markerbg marker_' + (index + 1) + '"></span>' +
                 '<div class="info">' +
                 '   <h5>' + places.place_name + '</h5>';
 
         if (places.road_address_name) {
             itemStr += '    <span>' + places.road_address_name + '</span>' +
-                '   <span class="jibun gray">' +  places.address_name  + '</span>';
+                '   <span class="jibun gray">' + places.address_name + '</span>';
         } else {
-            itemStr += '    <span>' +  places.address_name  + '</span>';
+            itemStr += '    <span>' + places.address_name + '</span>';
         }
 
-        itemStr += '  <span class="tel">' + places.phone  + '</span>' +
+        itemStr += '  <span class="tel">' + places.phone + '</span>' +
             '</div>';
 
         el.innerHTML = itemStr;
@@ -265,9 +427,9 @@
     function addMarker(position, idx, title) {
         var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
             imageSize = new kakao.maps.Size(36, 37),  // 마커 이미지의 크기
-            imgOptions =  {
-                spriteSize : new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기
-                spriteOrigin : new kakao.maps.Point(0, (idx*46)+10), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
+            imgOptions = {
+                spriteSize: new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기
+                spriteOrigin: new kakao.maps.Point(0, (idx * 46) + 10), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
                 offset: new kakao.maps.Point(13, 37) // 마커 좌표에 일치시킬 이미지 내에서의 좌표
             },
             markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
@@ -284,7 +446,7 @@
 
     // 지도 위에 표시되고 있는 마커를 모두 제거합니다
     function removeMarker() {
-        for ( var i = 0; i < markers.length; i++ ) {
+        for (var i = 0; i < markers.length; i++) {
             markers[i].setMap(null);
         }
         markers = [];
@@ -298,19 +460,19 @@
 
         // 기존에 추가된 페이지번호를 삭제합니다
         while (paginationEl.hasChildNodes()) {
-            paginationEl.removeChild (paginationEl.lastChild);
+            paginationEl.removeChild(paginationEl.lastChild);
         }
 
-        for (i=1; i<=pagination.last; i++) {
+        for (i = 1; i <= pagination.last; i++) {
             var el = document.createElement('a');
             el.href = "#";
             el.innerHTML = i;
 
-            if (i===pagination.current) {
+            if (i === pagination.current) {
                 el.className = 'on';
             } else {
-                el.onclick = (function(i) {
-                    return function() {
+                el.onclick = (function (i) {
+                    return function () {
                         pagination.gotoPage(i);
                     }
                 })(i);
@@ -333,7 +495,7 @@
     // 검색결과 목록의 자식 Element를 제거하는 함수입니다
     function removeAllChildNods(el) {
         while (el.hasChildNodes()) {
-            el.removeChild (el.lastChild);
+            el.removeChild(el.lastChild);
         }
     }
 </script>

@@ -16,8 +16,10 @@ public class MapTest {
     public String showMap(Model model) {
 
         String javascript_key = kakaoApi.getJavascript_key();
+        String text = "대전월드컵경기장";
 
         model.addAttribute("javascript_key", javascript_key);
+        model.addAttribute("text", text);
 
         return "home/map";
     }

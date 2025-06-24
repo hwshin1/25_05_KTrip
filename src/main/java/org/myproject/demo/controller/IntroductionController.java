@@ -1,10 +1,19 @@
 package org.myproject.demo.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.myproject.demo.vo.KakaoApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.Reader;
+import java.lang.reflect.Type;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/intro")
@@ -25,7 +34,7 @@ public class IntroductionController {
 
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/FCSeoul";
+        return "intro/Seoul/FCSeoul";
     }
 
     @RequestMapping("/Anyang")
@@ -35,7 +44,7 @@ public class IntroductionController {
 
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/FCAnyang";
+        return "intro/Anyang/FCAnyang";
     }
 
     @RequestMapping("/SuwonFC")
@@ -45,7 +54,7 @@ public class IntroductionController {
 
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/SuwonFC";
+        return "intro/SuwonFC/SuwonFC";
     }
 
     @RequestMapping("/Gangwon")
@@ -55,7 +64,7 @@ public class IntroductionController {
 
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/GangwonFC";
+        return "intro/Gangwon/GangwonFC";
     }
 
     @RequestMapping("/Daejeon")
@@ -65,7 +74,24 @@ public class IntroductionController {
 
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/DaejeonHana";
+        return "intro/Daejeon/DaejeonHana";
+    }
+
+    @RequestMapping("/Daejeon/restaurant")
+    public String showDaejeon(Model model) throws FileNotFoundException {
+
+        String javascript_key = kakaoApi.getJavascript_key();
+
+        Gson gson = new Gson();
+        Reader reader = new FileReader("restaurants_nearby.json");
+        Type type = new TypeToken<List<Map<String, String>>>() {}.getType();
+
+        List<Map<String, String>> restaurants = gson.fromJson(reader, type);
+
+        model.addAttribute("restaurants", restaurants);
+        model.addAttribute("javascript_key", javascript_key);
+
+        return "intro/Daejeon/DaejeonHanaRestaurant";
     }
 
     @RequestMapping("/Kimcheon")
@@ -75,7 +101,7 @@ public class IntroductionController {
 
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/KimcheonSangmu";
+        return "intro/Kimcheon/KimcheonSangmu";
     }
 
     @RequestMapping("/Daegu")
@@ -85,7 +111,7 @@ public class IntroductionController {
 
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/DaeguFC";
+        return "intro/Daegu/DaeguFC";
     }
 
     @RequestMapping("/Jeonju")
@@ -95,7 +121,7 @@ public class IntroductionController {
 
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/JeonBukHyunDai";
+        return "intro/Jeonju/JeonBukHyunDai";
     }
 
     @RequestMapping("/Pohang")
@@ -105,7 +131,7 @@ public class IntroductionController {
 
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/PohangSteel";
+        return "intro/Pohang/PohangSteel";
     }
 
     @RequestMapping("/Ulsan")
@@ -115,7 +141,7 @@ public class IntroductionController {
 
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/UlsanHD";
+        return "intro/Ulsan/UlsanHD";
     }
 
     @RequestMapping("/Jeju")
@@ -125,7 +151,7 @@ public class IntroductionController {
 
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/JejuSK";
+        return "intro/Jeju/JejuSK";
     }
 
     @RequestMapping("/Gwangju")
@@ -135,6 +161,6 @@ public class IntroductionController {
 
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/GwangjuFC";
+        return "intro/Gwangju/GwangjuFC";
     }
 }
