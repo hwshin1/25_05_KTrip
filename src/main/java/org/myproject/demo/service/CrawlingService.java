@@ -155,14 +155,6 @@ public class CrawlingService {
                     break; // 다음 버튼이 없으면 종료
                 }
             }
-
-            // JSON 저장
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            try (FileWriter writer = new FileWriter("restaurants_nearby.json")) {
-                gson.toJson(restaurants, writer);
-                System.out.println(":) 음식점 정보가 저장되었습니다: restaurants_nearby.json");
-            }
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

@@ -105,7 +105,7 @@
         <div class="relative w-60 h-60 mx-auto">
             <c:if test="${!rq.isLogined()}">
                 <div class="absolute inset-0 flex justify-center items-center">
-                    <a href="../user/login"
+                    <a href="/user/login"
                        class="w-24 h-10 text-center rounded-full text-base text-white bg-[#001C48] flex justify-center items-center hover:bg-[#002e70]">
                         로그인
                     </a>
@@ -113,7 +113,7 @@
             </c:if>
             <c:if test="${rq.isLogined()}">
                 <div class="absolute inset-0 flex justify-center items-center">
-                    <a href="../user/doLogout"
+                    <a href="/user/doLogout"
                        class="w-24 h-10 text-center rounded-full text-base text-white bg-[#001C48] flex justify-center items-center hover:bg-[#002e70]">
                         로그아웃
                     </a>

@@ -38,13 +38,25 @@ public class IntroductionController {
     }
 
     @RequestMapping("/Anyang")
-    public String introAnyang(Model model) {
+    public String introAnyang() {
+        return "intro/Anyang/FCAnyang";
+    }
+
+    @RequestMapping("/Anyang/restaurant")
+    public String showAnyang(Model model) throws FileNotFoundException {
 
         String javascript_key = kakaoApi.getJavascript_key();
 
+        Gson gson = new Gson();
+        Reader reader = new FileReader("restaurants_nearby.json");
+        Type type = new TypeToken<List<Map<String, String>>>() {}.getType();
+
+        List<Map<String, String>> restaurants = gson.fromJson(reader, type);
+
+        model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/Anyang/FCAnyang";
+        return "intro/Anyang/FCAnyangRestaurant";
     }
 
     @RequestMapping("/SuwonFC")
@@ -58,22 +70,46 @@ public class IntroductionController {
     }
 
     @RequestMapping("/Gangwon")
-    public String introGangwon(Model model) {
-
-        String javascript_key = kakaoApi.getJavascript_key();
-
-        model.addAttribute("javascript_key", javascript_key);
-
+    public String introGangwon() {
         return "intro/Gangwon/GangwonFC";
     }
 
-    @RequestMapping("/Daejeon")
-    public String introDaejeon(Model model) {
+    @RequestMapping("/Gangwon/restaurant")
+    public String showGangwon(Model model) throws FileNotFoundException {
 
         String javascript_key = kakaoApi.getJavascript_key();
 
+        Gson gson = new Gson();
+        Reader reader = new FileReader("restaurants_nearby.json");
+        Type type = new TypeToken<List<Map<String, String>>>() {}.getType();
+
+        List<Map<String, String>> restaurants = gson.fromJson(reader, type);
+
+        model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
+        return "intro/Gangwon/GangwonFCRestaurant";
+    }
+
+    @RequestMapping("/Gangwon/restaurant2")
+    public String showGangwon2(Model model) throws FileNotFoundException {
+
+        String javascript_key = kakaoApi.getJavascript_key();
+
+        Gson gson = new Gson();
+        Reader reader = new FileReader("restaurants_nearby.json");
+        Type type = new TypeToken<List<Map<String, String>>>() {}.getType();
+
+        List<Map<String, String>> restaurants = gson.fromJson(reader, type);
+
+        model.addAttribute("restaurants", restaurants);
+        model.addAttribute("javascript_key", javascript_key);
+
+        return "intro/Gangwon/GangwonFCRestaurant2";
+    }
+
+    @RequestMapping("/Daejeon")
+    public String introDaejeon() {
         return "intro/Daejeon/DaejeonHana";
     }
 
@@ -105,13 +141,25 @@ public class IntroductionController {
     }
 
     @RequestMapping("/Daegu")
-    public String introDaegu(Model model) {
+    public String introDaegu() {
+        return "intro/Daegu/DaeguFC";
+    }
+
+    @RequestMapping("/Daegu/restaurant")
+    public String showDaegu(Model model) throws FileNotFoundException {
 
         String javascript_key = kakaoApi.getJavascript_key();
 
+        Gson gson = new Gson();
+        Reader reader = new FileReader("restaurants_nearby.json");
+        Type type = new TypeToken<List<Map<String, String>>>() {}.getType();
+
+        List<Map<String, String>> restaurants = gson.fromJson(reader, type);
+
+        model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "intro/Daegu/DaeguFC";
+        return "intro/Daegu/DaeguFCRestaurant";
     }
 
     @RequestMapping("/Jeonju")
@@ -122,6 +170,23 @@ public class IntroductionController {
         model.addAttribute("javascript_key", javascript_key);
 
         return "intro/Jeonju/JeonBukHyunDai";
+    }
+
+    @RequestMapping("/Jeonju/restaurant")
+    public String showJeonju(Model model) throws FileNotFoundException {
+
+        String javascript_key = kakaoApi.getJavascript_key();
+
+        Gson gson = new Gson();
+        Reader reader = new FileReader("restaurants_nearby.json");
+        Type type = new TypeToken<List<Map<String, String>>>() {}.getType();
+
+        List<Map<String, String>> restaurants = gson.fromJson(reader, type);
+
+        model.addAttribute("restaurants", restaurants);
+        model.addAttribute("javascript_key", javascript_key);
+
+        return "intro/Jeonju/JeonBukHyunDaiRestaurant";
     }
 
     @RequestMapping("/Pohang")
@@ -154,13 +219,42 @@ public class IntroductionController {
         return "intro/Jeju/JejuSK";
     }
 
-    @RequestMapping("/Gwangju")
-    public String introGwangju(Model model) {
+    @RequestMapping("/Jeju/restaurant")
+    public String showJeju(Model model) throws FileNotFoundException {
 
         String javascript_key = kakaoApi.getJavascript_key();
 
+        Gson gson = new Gson();
+        Reader reader = new FileReader("restaurants_nearby.json");
+        Type type = new TypeToken<List<Map<String, String>>>() {}.getType();
+
+        List<Map<String, String>> restaurants = gson.fromJson(reader, type);
+
+        model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
+        return "intro/Jeju/JejuSKResutaurant";
+    }
+
+    @RequestMapping("/Gwangju")
+    public String introGwangju() {
         return "intro/Gwangju/GwangjuFC";
+    }
+
+    @RequestMapping("/Gwangju/restaurant")
+    public String showGwangju(Model model) throws FileNotFoundException {
+
+        String javascript_key = kakaoApi.getJavascript_key();
+
+        Gson gson = new Gson();
+        Reader reader = new FileReader("restaurants_nearby.json");
+        Type type = new TypeToken<List<Map<String, String>>>() {}.getType();
+
+        List<Map<String, String>> restaurants = gson.fromJson(reader, type);
+
+        model.addAttribute("restaurants", restaurants);
+        model.addAttribute("javascript_key", javascript_key);
+
+        return "intro/Gwangju/GwangjuFCRestaurant";
     }
 }
