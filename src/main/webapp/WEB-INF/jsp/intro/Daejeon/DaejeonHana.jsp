@@ -8,7 +8,7 @@
         <!-- Heading Row -->
         <div class="flex flex-col lg:flex-row items-center mb-16 space-y-6 lg:space-y-0 lg:space-x-8">
             <div class="lg:w-7/12">
-                <img class="rounded w-full h-auto" src="https://i.namu.wiki/i/n8KUrQKEqHntwq72v9YhcR6LHpFeyoKPoB08cjjMJ0or6M-aFa_-vHAtyq0V-OroNPuxNKORuFf8EHoT9sgo3tBKusOezOY2mBgn4G5RSizLffIl8g3KdLQlfsR7nj64BXVWzmzGgqoUZXM7QL8McA.webp"/>
+                <img class="rounded w-full h-auto" src="/VideoCapture_20250626-202416.jpg"/>
             </div>
             <div class="lg:w-5/12">
                 <img src="/emblem_KDaejeon.png" class="mb-2">
