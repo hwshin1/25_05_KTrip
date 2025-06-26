@@ -62,6 +62,7 @@
             kakao.maps.event.addListener(marker, 'mouseout', function () {
                 infowindow.close();
             });
+            map.setCenter(coords);
         }
     });
     </c:forEach>
