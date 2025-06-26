@@ -79,8 +79,8 @@
         </div>
 
         <div class="bg-gray-100 px-6 py-4 text-center">
-            <a class="text-sm bg-[#444] text-white px-4 py-2 rounded hover:bg-[#333] transition" href="../intro/Gangwon/restaurant">춘천 구장 지도 보기</a>
-            <a class="text-sm bg-[#444] text-white px-4 py-2 rounded hover:bg-[#333] transition" href="../intro/Gangwon/restaurant2">강릉 구장 지도 보기</a>
+            <a class="text-sm bg-[#444] text-white px-4 py-2 rounded hover:bg-[#333] transition" href="../intro/GangwonCh/restaurant">춘천 구장 지도 보기</a>
+            <a class="text-sm bg-[#444] text-white px-4 py-2 rounded hover:bg-[#333] transition" href="../intro/GangwonG/restaurant">강릉 구장 지도 보기</a>
         </div>
     </div>
 </section>

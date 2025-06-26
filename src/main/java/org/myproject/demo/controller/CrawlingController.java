@@ -1,21 +1,14 @@
 package org.myproject.demo.controller;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import org.myproject.demo.service.CrawlingService;
 import org.myproject.demo.vo.KakaoApi;
 import org.myproject.demo.vo.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
-import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Map;
 
@@ -35,22 +28,33 @@ public class CrawlingController {
         System.out.println(teams);
     }
 
-    @GetMapping("/notice")
-    @ResponseBody
-    public void showHomePage() {
-        crawlingService.crawlingNotice();
-    }
-
-    @GetMapping("/restaurants")
-    public String showRestaurants(Model model) throws IOException {
+    @RequestMapping("/{teamName}/restaurants")
+    public String showRestaurants(@PathVariable String teamName, Model model) {
         String javascript_key = kakaoApi.getJavascript_key();
-        Gson gson = new Gson();
-        Reader reader = new FileReader("restaurants_nearby.json");
-        Type type = new TypeToken<List<Map<String, String>>>() {}.getType();
+        String region = getRegionByTeam(teamName);
 
-        List<Map<String, String>> restaurants = gson.fromJson(reader, type);
+        List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
         return "home/restaurantList"; // restaurantList.jsp로 이동
+    }
+
+    private String getRegionByTeam(String teamName) {
+        return switch (teamName.toLowerCase()) {
+            case "gwangju" -> "광주 월드컵 경기장 근처";
+            case "seoul" -> "서울 월드컵 경기장 근처";
+            case "daegu" -> "대구 IM 뱅크 파크 근처";
+            case "ulsan" -> "울산 문수 축구 경기장 근처";
+            case "jeju" -> "제주 월드컵 경기장 근처";
+            case "pohang" -> "포항 스틸야드 근처";
+            case "jeonju" -> "전주 월드컵 경기장 근처";
+            case "suwonfc" -> "수원 종합 운동장 근처";
+            case "anyang" -> "안양 종합 운동장 근처";
+            case "daejeon" -> "대전 월드컵 경기장 근처";
+            case "gangwonch" -> "춘천 송암 스포츠 타운 근처";
+            case "gangwong" -> "강릉 하이원 아레나 근처";
+            case "kimcheon" -> "김천 종합 운동장 근처";
+            default -> "";
+        };
     }
 }

@@ -3,50 +3,62 @@
 
 <%@ include file="../common/head.jspf" %>
 
-<section class="mt-8 text-xl px-4">
-    <div class="mx-auto">
-        <table border="1" cellspacing="0" cellpadding="5">
+<section class="mt-8 px-4 text-lg">
+    <div class="mx-auto p-10 overflow-x-auto">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900 text-center">후기 상세보기</h2>
+
+        <table class="w-full table-auto border-collapse border border-gray-300 text-gray-800">
             <tbody>
-            <tr>
-                <th>번호</th>
-                <td>${review.id }</td>
+            <tr class="border-b border-gray-300 bg-gray-50">
+                <th class="text-left px-4 py-3 font-semibold w-1/3">번호</th>
+                <td class="px-4 py-3">${review.id}</td>
+            </tr>
+            <tr class="border-b border-gray-300">
+                <th class="text-left px-4 py-3 font-semibold bg-gray-50">작성날짜</th>
+                <td class="px-4 py-3">${review.regDate}</td>
+            </tr>
+            <tr class="border-b border-gray-300">
+                <th class="text-left px-4 py-3 font-semibold bg-gray-50">수정날짜</th>
+                <td class="px-4 py-3">${review.updateDate}</td>
+            </tr>
+            <tr class="border-b border-gray-300">
+                <th class="text-left px-4 py-3 font-semibold bg-gray-50">작성자</th>
+                <td class="px-4 py-3">${review.userId}</td>
+            </tr>
+            <tr class="border-b border-gray-300">
+                <th class="text-left px-4 py-3 font-semibold bg-gray-50">제목</th>
+                <td class="px-4 py-3">${review.title}</td>
             </tr>
             <tr>
-                <th>작성날짜</th>
-                <td>${review.regDate }</td>
-            </tr>
-            <tr>
-                <th>수정날짜</th>
-                <td>${review.updateDate }</td>
-            </tr>
-            <tr>
-                <th>작성자</th>
-                <td>${review.userId }</td>
-            </tr>
-            <tr>
-                <th>제목</th>
-                <td>${review.title }</td>
-            </tr>
-            <tr>
-                <th>내용</th>
-                <td>${review.body }</td>
-            </tr>
-            <tr>
-                <th>별점</th>
-                <td>${review.rating }</td>
+                <th class="text-left px-4 py-3 font-semibold bg-gray-50 align-top">내용</th>
+                <td class="px-4 py-3 whitespace-pre-wrap">${review.body}</td>
             </tr>
             </tbody>
         </table>
-        <div>
-            <button type="button"><a href="../review/list">뒤로가기</a></button>
+
+        <div class="mt-8 flex justify-center space-x-4">
+            <button type="button"
+                    onclick="history.back();"
+                    class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition">
+                뒤로가기
+            </button>
+
             <c:if test="${review.userCanModify}">
-                <a href="../review/modify?id=${review.id }">수정</a>
+                <a href="../review/modify?id=${review.id}"
+                   class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                    수정
+                </a>
             </c:if>
+
             <c:if test="${review.userCanDelete}">
-                <a href="../review/doDelete?id=${review.id }">삭제</a>
+                <a href="../review/doDelete?id=${review.id}"
+                   class="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
+                   onclick="return confirm('정말 삭제하시겠습니까?');">
+                    삭제
+                </a>
             </c:if>
         </div>
     </div>
 </section>
 
-<%@ include file="../common/foot.jspf"%>
+<%@ include file="../common/foot.jspf" %>

@@ -68,7 +68,7 @@ public class IntroductionController {
         return "intro/Gangwon/GangwonFC";
     }
 
-    @RequestMapping("/Gangwon/restaurant")
+    @RequestMapping("/GangwonCh/restaurant")
     public String showGangwon(Model model) {
 
         String javascript_key = kakaoApi.getJavascript_key();
@@ -78,7 +78,7 @@ public class IntroductionController {
         return "intro/Gangwon/GangwonFCRestaurant";
     }
 
-    @RequestMapping("/Gangwon/restaurant2")
+    @RequestMapping("/GangwonG/restaurant")
     public String showGangwon2(Model model) {
 
         String javascript_key = kakaoApi.getJavascript_key();

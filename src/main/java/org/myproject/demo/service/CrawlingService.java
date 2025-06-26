@@ -20,6 +20,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.FileWriter;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -91,22 +93,21 @@ public class CrawlingService {
     }
 
     // map 크롤링
-    public void crawlingNotice() {
+    public List<Map<String, String>> crawlingNotice(String regionName) {
+        List<Map<String, String>> restaurants = new ArrayList<>();
+
         System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 
-        // 크롬 옵션 설정
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         WebDriver driver = new ChromeDriver(options);
 
         try {
-            //페이지 접속
-            driver.get("https://map.kakao.com/link/search/대전 음식점");
+            String searchKeyword = regionName + " 음식점";
+            driver.get("https://map.kakao.com/link/search/" + URLEncoder.encode(searchKeyword, StandardCharsets.UTF_8));
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul#info\\.search\\.place\\.list")));
-
-            List<Map<String, String>> restaurants = new ArrayList<>();
 
             while (true) {
                 List<WebElement> items = driver.findElements(By.cssSelector("ul#info\\.search\\.place\\.list > li.PlaceItem"));
@@ -136,32 +137,26 @@ public class CrawlingService {
 
                         restaurants.add(data);
                     } catch (NoSuchElementException e) {
-                        // subcategory가 없으면 무시
+                        // 항목 누락 시 무시
                     }
                 }
 
-                // 다음 페이지 버튼 확인 및 클릭
                 try {
                     WebElement nextBtn = driver.findElement(By.cssSelector("a#info\\.search\\.page\\.next"));
-
-                    // 비활성화 상태인지 확인
-                    if (nextBtn.getAttribute("class").contains("off")) {
-                        break; // 마지막 페이지라면 종료
-                    } else {
-                        nextBtn.click(); // 다음 페이지로 이동
-                        Thread.sleep(2000); // 페이지 로딩 기다리기
-                    }
+                    if (nextBtn.getAttribute("class").contains("off")) break;
+                    nextBtn.click();
+                    Thread.sleep(2000);
                 } catch (NoSuchElementException e) {
-                    break; // 다음 버튼이 없으면 종료
+                    break;
                 }
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             driver.quit();
         }
 
-        // WebDriver 종료
-        driver.quit();
+        return restaurants;
     }
 }

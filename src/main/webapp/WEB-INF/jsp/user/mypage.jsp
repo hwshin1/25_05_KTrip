@@ -12,15 +12,17 @@
             <!-- 프로필 사진 -->
             <img src="${user.extra_teamLogo}"
                  alt="Profile"
-                 class="w-24 h-24 rounded-full border-4 border-white shadow-lg mb-4">
+                 class="w-24 h-24 rounded-full border-4 border-white shadow-lg mb-10">
             <!-- 닉네임 -->
-            <h2 class="text-2xl font-bold">${user.nickName}</h2>
-            <!-- 좋아하는 팀 -->
-            <p class="text-sm text-gray-200 mt-1">${user.extra_teamName}</p>
-            <!-- 버튼 -->
-            <button class="mt-4 px-5 py-2 text-sm font-bold uppercase tracking-wide bg-white text-black rounded-xl hover:bg-gray-100 transition">
-                <a href="../user/userInfo">내 정보 수정</a>
-            </button>
+            <h2 class="text-2xl font-bold mb-10">${user.nickName}</h2>
+            <div>
+                <!-- 좋아하는 팀 -->
+                <p class="text-sm text-center text-gray-200">${user.extra_teamName}</p>
+                <!-- 버튼 -->
+                <button class="mt-4 px-5 py-2 text-sm font-bold uppercase tracking-wide bg-white text-black rounded-xl hover:bg-gray-100 transition">
+                    <a href="../user/userInfo">내 정보 수정</a>
+                </button>
+            </div>
         </div>
     </div>
 </div>
