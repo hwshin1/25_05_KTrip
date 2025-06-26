@@ -8,27 +8,31 @@
         <!-- Heading Row -->
         <div class="flex flex-col lg:flex-row items-center mb-16 space-y-6 lg:space-y-0 lg:space-x-8">
             <div class="lg:w-7/12">
-                <img class="rounded w-full h-auto" src="https://hyundai-motorsfc.com/img/img_stadium_3.099b2392.png"/>
+                <img class="rounded w-full h-auto" src="/VideoCapture_20250625-102831.jpg"/>
             </div>
             <div class="lg:w-5/12">
-                <img src="/emblem_KJeonBuk.png" class="mb-2 w-[139px] h-[180px]">
-                <h1 class="text-3xl mb-4">전북현대모터스</h1>
+                <img src="/emblem_KUlsan.png" class="mb-2">
+                <h1 class="text-3xl mb-4">울산 HD</h1>
                 <p class="text-gray-700 mb-4">
-                    전북특별자치도를 연고로 하는 K리그1 소속의 프로 축구단
+                    울산광역시를 연고로 하는 K리그1 소속의 프로 축구단
                 </p>
                 <p class="text-gray-700 mb-2">
-                    K리그1 9회 최다 우승(2009, 2011, 2014, 2015, 2017, 2018, 2019, 2020, 2021)과 최다 연속 우승(2017~2021, 5연패), 코리아컵 5회 우승(2000, 2003, 2005, 2020, 2022), 슈퍼컵 1회 우승(2004), AFC 챔피언스 리그 엘리트 2회 우승(2006, 2016) 타이틀을 가지고 있다. ACLE 우승팀 자격으로 2006년과 2016년 FIFA 클럽 월드컵에 참가한 이력도 보유하고 있다.<br>
-                    올해 epl 감독 출신인 거스 포옛을 감독으로 선임하고 현재 1위를 달리고 있다.
+                    1983년에 창단했다.<br>
+                    K리그를 넘어 아시아에서도 손꼽히는 명문 클럽이다.<br>
+                    AFC 챔피언스 리그 엘리트 2회 우승과 아시아 유일의 ACLE 2회 무패 우승, K리그1 5회 우승과 10회 최다 준우승, 코리아컵 1회 우승과 4회 최다 준우승 타이틀을 가지고 있다. K리그에서 수원 삼성 블루윙즈, 전북 현대 모터스, FC 서울과 함께 가장 많은 인기를 차지하고 있는 구단 중 하나다.
+                    <br>
+                    <br>
+                    또한 4년제 FIFA 클럽 월드컵 32자리에 들어가는데 성공한 K리그 최초 구단이기도 하다.
                 </p>
                 <a class="inline-block bg-[#444] text-white px-6 py-2 rounded hover:bg-[#333] transition"
-                   href="https://hyundai-motorsfc.com/" target="_blank">
+                   href="https://www.uhdfc.com/" target="_blank">
                     구단 보러가기!
                 </a>
             </div>
         </div>
 
         <!-- Call to Action Card -->
-        <div class="bg-[#00523D] text-white text-center py-4 px-4 rounded mb-16">
+        <div class="bg-[#003F98] text-white text-center py-4 px-4 rounded mb-16">
             <p class="text-lg w-full h-auto">구단 상세</p>
         </div>
 
@@ -39,13 +43,14 @@
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">구단 색상</h2>
                     <p class="text-gray-600">
-                        메인 컬러: 초록색
+                        메인 컬러 : 파랑색, 노랑색
                     </p>
                     <p class="text-gray-600">
-                        초록색 : R0 / G82 / B61
+                        파랑색 : R0 / G63 / B152 <br>
+                        노랑색 : R245 / G189 / B19
                     </p>
-                    <div class="container flex h-14 bg-[#00523D] rounded">
-                    </div>
+                    <div class="container flex h-14 bg-[#003F98] rounded mb-1"></div>
+                    <div class="container flex h-14 bg-[#F5BD13] rounded"></div>
                 </div>
                 <div class="bg-gray-100 px-8 py-6 text-right"></div>
             </div>
@@ -55,11 +60,11 @@
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">경기장</h2>
                     <p class="text-gray-600">
-                        전주 월드컵 경기장
+                        울산 문수 축구 경기장
                         <br>
-                        별칭은 전주성이라고 부른다. 정면에서 봤을때 성처럼 보인다고 해서 붙여진 이름
+                        별칭은 빅크라운
                     </p>
-                    <img src="/20240301_155059.jpg" class="flex">
+                    <img src="/ulsanStadium.webp" class="flex">
                 </div>
                 <div class="bg-gray-100 px-8 py-6 text-right"></div>
             </div>
@@ -69,7 +74,8 @@
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">라이벌</h2>
                     <p class="text-gray-600">
-
+                        포항 : 동해안 더비 <br>
+                        전북현대 : 현대가 더비
                     </p>
                 </div>
                 <div class="bg-gray-100 px-8 py-6 text-right"></div>
@@ -77,9 +83,10 @@
         </div>
 
         <div class="bg-gray-100 px-6 py-4 text-center">
-            <a class="text-sm bg-[#444] text-white px-4 py-2 rounded hover:bg-[#333] transition" href="../intro/Jeonju/restaurant">지도 보기</a>
+            <a class="text-sm bg-[#444] text-white px-4 py-2 rounded hover:bg-[#333] transition" href="../intro/Ulsan/restaurant">지도 보기</a>
         </div>
     </div>
 </section>
 
+<%@ include file="../../common/footer.jspf" %>
 <%@ include file="../../common/foot.jspf" %>

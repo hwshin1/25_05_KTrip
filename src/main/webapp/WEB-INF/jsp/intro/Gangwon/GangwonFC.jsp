@@ -55,7 +55,8 @@
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">경기장</h2>
                     <p class="text-gray-600">
-                        춘천 송암 스포츠 타운, 강릉 하이원 아레나<br>강원도민 구단이라 춘천과 강릉을 왔다갔다 한다.
+                        춘천 송암 스포츠 타운, 강릉 하이원 아레나<br>
+                        3월~5월 초, 9월 이후 홈경기는 춘천에서, 5월 중순~8월 홈경기는 강릉에서 개최.
                     </p>
                     <p>춘천 송암 스포츠 타운</p>
                     <img src="https://i.namu.wiki/i/pqgZ4YqKeD2riP_yLbUNqFvWbwS_4IzpsVGWG1-e2PiG3xjn9QYKKLLgv7xB0Pj-Wns9Eg_NqsumnyBFPNhgSoJpRPydXpEzhuLb_0oU38YH3aNS70yjIfJOQ9DIeXZ8fevsyzoYd6ko4MDLJKTcAw.webp" class="w-full">

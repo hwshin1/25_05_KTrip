@@ -87,7 +87,7 @@
     <div class="relative max-w-full h-auto">
         <div class="grid grid-cols-4">
             <!-- FC 서울 -->
-            <div class="relative h-[750px] bg-[url(/fcseoulpic.png)] bg-center group overflow-hidden border border-white">
+            <div class="relative h-[750px] bg-[url(/fcseoulpic.png)] bg-center group overflow-hidden border border-white rounded-3xl">
                 <!-- 오버레이 -->
                 <div class="absolute inset-0 group-hover:bg-black/20 transition duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
@@ -99,7 +99,7 @@
             </div>
 
             <!-- 전북현대모터스 -->
-            <div class="relative h-[750px] bg-[url(/jeonbukpic.png)] bg-center group overflow-hidden border border-white">
+            <div class="relative h-[750px] bg-[url(/jeonbukpic.png)] bg-center group overflow-hidden border border-white rounded-3xl">
                 <!-- 오버레이 -->
                 <div class="absolute inset-0 group-hover:bg-black/20 transition duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
@@ -111,7 +111,7 @@
             </div>
 
             <!-- 울산 HD -->
-            <div class="relative h-[750px] bg-[url(/ulsanpic.png)] bg-center group overflow-hidden border border-white">
+            <div class="relative h-[750px] bg-[url(/ulsanpic.png)] bg-center group overflow-hidden border border-white rounded-3xl">
                 <!-- 오버레이 -->
                 <div class="absolute inset-0 group-hover:bg-black/20 transition duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
@@ -123,7 +123,7 @@
             </div>
 
             <!-- 대전하나시티즌 -->
-            <div class="relative h-[750px] bg-[url(/daejeonpic.png)] group overflow-hidden border border-white">
+            <div class="relative h-[750px] bg-[url(/daejeonpic.png)] group overflow-hidden border border-white rounded-3xl">
                 <!-- 오버레이 -->
                 <div class="absolute inset-0 group-hover:bg-black/20 transition duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
@@ -138,7 +138,7 @@
     <div class="relative w-auto h-auto">
         <div class="grid grid-cols-4">
             <%-- 대구 FC --%>
-            <div class="relative h-[750px] bg-[url(/daegupic.png)] group overflow-hidden border border-white">
+            <div class="relative h-[750px] bg-[url(/daegupic.png)] group overflow-hidden border border-white rounded-3xl">
                 <!-- 오버레이 -->
                 <div class="absolute inset-0 group-hover:bg-black/20 transition duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
@@ -150,7 +150,7 @@
             </div>
 
             <%-- FC 안양 --%>
-            <div class="relative h-[750px] bg-[url(/Anyangpic.png)] group overflow-hidden border border-white">
+            <div class="relative h-[750px] bg-[url(/Anyangpic.png)] group overflow-hidden border border-white rounded-3xl">
                 <!-- 오버레이 -->
                 <div class="absolute inset-0 group-hover:bg-black/20 transition duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
@@ -162,7 +162,7 @@
             </div>
 
             <%-- 포항 스틸러스 --%>
-            <div class="relative h-[750px] bg-[url(/pohangpic.png)] group overflow-hidden border border-white">
+            <div class="relative h-[750px] bg-[url(/pohangpic.png)] group overflow-hidden border border-white rounded-3xl">
                 <!-- 오버레이 -->
                 <div class="absolute inset-0 group-hover:bg-black/20 transition duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
@@ -174,7 +174,7 @@
             </div>
 
             <%-- 강원 FC --%>
-            <div class="relative h-[750px] bg-[url(/gangwonpic.png)] group overflow-hidden border border-white">
+            <div class="relative h-[750px] bg-[url(/gangwonpic.png)] group overflow-hidden border border-white rounded-3xl">
                 <!-- 오버레이 -->
                 <div class="absolute inset-0 group-hover:bg-black/20 transition duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
@@ -189,7 +189,7 @@
     <div class="relative max-w-full h-auto">
         <div class="grid grid-cols-4">
             <%-- 제주 SK --%>
-            <div class="relative h-[750px] bg-[url(/jejupic.png)] group overflow-hidden border border-white">
+            <div class="relative h-[750px] bg-[url(/jejupic.png)] group overflow-hidden border border-white rounded-3xl">
                 <!-- 오버레이 -->
                 <div class="absolute inset-0 group-hover:bg-black/20 transition duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
@@ -201,7 +201,7 @@
             </div>
 
             <%-- 광주 FC --%>
-            <div class="relative h-[750px] bg-[url(/gwangjupic.png)] group overflow-hidden border border-white">
+            <div class="relative h-[750px] bg-[url(/gwangjupic.png)] group overflow-hidden border border-white rounded-3xl">
                 <!-- 오버레이 -->
                 <div class="absolute inset-0 group-hover:bg-black/20 transition duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
@@ -213,7 +213,7 @@
             </div>
 
             <%-- 수원 FC --%>
-            <div class="relative h-[750px] bg-[url(/suwonfcpic.png)] group overflow-hidden border border-white">
+            <div class="relative h-[750px] bg-[url(/suwonfcpic.png)] group overflow-hidden border border-white rounded-3xl">
                 <!-- 오버레이 -->
                 <div class="absolute inset-0 group-hover:bg-black/20 transition duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
@@ -225,7 +225,7 @@
             </div>
 
             <%-- 김천상무 --%>
-            <div class="relative h-[750px] bg-[url(/kimcheonpic.png)] group overflow-hidden border border-white">
+            <div class="relative h-[750px] bg-[url(/kimcheonpic.png)] group overflow-hidden border border-white rounded-3xl">
                 <!-- 오버레이 -->
                 <div class="absolute inset-0 group-hover:bg-black/20 transition duration-300"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">

@@ -66,7 +66,10 @@
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">라이벌</h2>
                     <p class="text-gray-600">
-
+                        서울 : 연고지 더비
+                        수원 삼성 : 지지대 더비
+                        (수원과 안양 사이에 지지대 고개가 있다)
+                        수원 FC : 1호선 더비
                     </p>
                 </div>
                 <div class="bg-gray-100 px-8 py-6 text-right"></div>

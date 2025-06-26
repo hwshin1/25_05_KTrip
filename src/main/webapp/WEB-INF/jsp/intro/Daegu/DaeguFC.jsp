@@ -67,7 +67,7 @@
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">라이벌</h2>
                     <p class="text-gray-600">
-
+                        광주 : 달빛더비
                     </p>
                 </div>
                 <div class="bg-gray-100 px-8 py-6 text-right"></div>

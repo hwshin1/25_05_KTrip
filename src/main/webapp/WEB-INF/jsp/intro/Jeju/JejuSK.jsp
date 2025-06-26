@@ -77,7 +77,8 @@
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">라이벌</h2>
                     <p class="text-gray-600">
-
+                        부천 : 연고이전 더비
+                        (부천 SK 였다가 제주로 이전하고 나서 갈등 시작)
                     </p>
                 </div>
                 <div class="bg-gray-100 px-8 py-6 text-right"></div>
@@ -85,7 +86,7 @@
         </div>
 
         <div class="bg-gray-100 px-6 py-4 text-center">
-            <a class="text-sm bg-[#444] text-white px-4 py-2 rounded hover:bg-[#333] transition" href="../intro/Gwangju/restaurant">지도 보기</a>
+            <a class="text-sm bg-[#444] text-white px-4 py-2 rounded hover:bg-[#333] transition" href="../intro/Jeju/restaurant">지도 보기</a>
         </div>
     </div>
 </section>

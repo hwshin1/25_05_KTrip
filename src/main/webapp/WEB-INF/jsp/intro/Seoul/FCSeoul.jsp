@@ -8,27 +8,29 @@
         <!-- Heading Row -->
         <div class="flex flex-col lg:flex-row items-center mb-16 space-y-6 lg:space-y-0 lg:space-x-8">
             <div class="lg:w-7/12">
-                <img class="rounded w-full h-auto" src="https://hyundai-motorsfc.com/img/img_stadium_3.099b2392.png"/>
+                <img class="rounded w-full h-auto" src="https://files.fcseoul.com/multi01/Imgs/mainIndex/1688102197560.png"/>
             </div>
             <div class="lg:w-5/12">
-                <img src="/emblem_KJeonBuk.png" class="mb-2 w-[139px] h-[180px]">
-                <h1 class="text-3xl mb-4">전북현대모터스</h1>
+                <img src="/emblem_KSeoul.png" class="mb-2">
+                <h1 class="text-3xl mb-4">FC 서울</h1>
                 <p class="text-gray-700 mb-4">
-                    전북특별자치도를 연고로 하는 K리그1 소속의 프로 축구단
+                    서울특별시를 연고지로 하고 있는 K리그1 소속 프로 축구단
                 </p>
                 <p class="text-gray-700 mb-2">
-                    K리그1 9회 최다 우승(2009, 2011, 2014, 2015, 2017, 2018, 2019, 2020, 2021)과 최다 연속 우승(2017~2021, 5연패), 코리아컵 5회 우승(2000, 2003, 2005, 2020, 2022), 슈퍼컵 1회 우승(2004), AFC 챔피언스 리그 엘리트 2회 우승(2006, 2016) 타이틀을 가지고 있다. ACLE 우승팀 자격으로 2006년과 2016년 FIFA 클럽 월드컵에 참가한 이력도 보유하고 있다.<br>
-                    올해 epl 감독 출신인 거스 포옛을 감독으로 선임하고 현재 1위를 달리고 있다.
+                    1983년 럭키금성에서 창단했다. 이후에 금성이 LG로 되고 LG 에서 GS가 또 분리되어 LG는 야구, 농구단으로 가고 GS가 여자 배구와 축구단을 맡았다.<br>
+                    1990년 K리그 우승을 통해 프로 스포츠 서울 연고 구단 중 최초 우승 기록을 세웠으며 , K리그1 6회 우승(1985, 1990, 2000, 2010, 2012, 2016), 코리아컵 2회 우승(1998, 2015), 리그컵 2회 우승(2006, 2010) 타이틀을 가지고 있다. 1980년대, 1990년대, 2000년대, 2010년대까지 매 10년대마다 한 번 이상 리그 우승컵을 들어올렸다.
+                    <br>
+                    대한민국 프로 스포츠 단일 경기 역대 최다 관중 기록과 K리그 단일 시즌 역대 최다 승점 기록을 보유하고 있다.
                 </p>
                 <a class="inline-block bg-[#444] text-white px-6 py-2 rounded hover:bg-[#333] transition"
-                   href="https://hyundai-motorsfc.com/" target="_blank">
+                   href="https://www.fcseoul.com/" target="_blank">
                     구단 보러가기!
                 </a>
             </div>
         </div>
 
         <!-- Call to Action Card -->
-        <div class="bg-[#00523D] text-white text-center py-4 px-4 rounded mb-16">
+        <div class="bg-[#b5191a] text-white text-center py-4 px-4 rounded mb-16">
             <p class="text-lg w-full h-auto">구단 상세</p>
         </div>
 
@@ -39,12 +41,14 @@
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">구단 색상</h2>
                     <p class="text-gray-600">
-                        메인 컬러: 초록색
+                        메인 컬러 : 빨강색, 검은색
                     </p>
                     <p class="text-gray-600">
-                        초록색 : R0 / G82 / B61
+                        빨강색 : R181 / G25 / B26
+                        <br>
+                        검은색 : R0 / G0 / B0
                     </p>
-                    <div class="container flex h-14 bg-[#00523D] rounded">
+                    <div class="container flex h-14 bg-linear-65 from-[#b5191a] to-[#000000] rounded">
                     </div>
                 </div>
                 <div class="bg-gray-100 px-8 py-6 text-right"></div>
@@ -55,11 +59,9 @@
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">경기장</h2>
                     <p class="text-gray-600">
-                        전주 월드컵 경기장
-                        <br>
-                        별칭은 전주성이라고 부른다. 정면에서 봤을때 성처럼 보인다고 해서 붙여진 이름
+                        서울 월드컵 경기장
                     </p>
-                    <img src="/20240301_155059.jpg" class="flex">
+                    <img src="/VideoCapture_20250625-102859.jpg" class="flex">
                 </div>
                 <div class="bg-gray-100 px-8 py-6 text-right"></div>
             </div>
@@ -69,7 +71,9 @@
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">라이벌</h2>
                     <p class="text-gray-600">
-
+                        수원 삼성 : 슈퍼매치(가장 뜨거운 매치)<br>
+                        전북 현대 : 전설매치<br>
+                        인천 : 경인 더비
                     </p>
                 </div>
                 <div class="bg-gray-100 px-8 py-6 text-right"></div>
@@ -77,9 +81,10 @@
         </div>
 
         <div class="bg-gray-100 px-6 py-4 text-center">
-            <a class="text-sm bg-[#444] text-white px-4 py-2 rounded hover:bg-[#333] transition" href="../intro/Jeonju/restaurant">지도 보기</a>
+            <a class="text-sm bg-[#444] text-white px-4 py-2 rounded hover:bg-[#333] transition" href="../intro/Seoul/restaurant">지도 보기</a>
         </div>
     </div>
 </section>
 
+<%@ include file="../../common/footer.jspf" %>
 <%@ include file="../../common/foot.jspf" %>

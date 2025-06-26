@@ -68,7 +68,8 @@
                 <div class="p-6 flex-1">
                     <h2 class="text-xl font-semibold mb-3">라이벌</h2>
                     <p class="text-gray-600">
-
+                        수원 삼성 : 축구 수도 더비
+                        강원 : 볼보이 더비 (볼보이 사건으로 인해 감정이 격해짐)
                     </p>
                 </div>
                 <div class="bg-gray-100 px-8 py-6 text-right"></div>
