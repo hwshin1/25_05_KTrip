@@ -93,7 +93,7 @@
                                 내 프로필
                             </a>
                         </li>
-                        <c:if test="${not empty region}">
+                        <c:if test="${rq.isLogined()}">
                             <li>
                                 <a href="/intro/${region}" class="block w-full text-center py-4">
                                     나의 팀
