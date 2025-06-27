@@ -2,8 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ include file="../common/head.jspf" %>
-<section class="mt-28">
-    <h1 class="text-center">THE JOIN PAGE</h1>
+<section class="h-screen flex flex-col justify-center items-center">
     <div style="margin-left: auto; margin-right: auto;">
         <form action="../user/doJoin" method="POST">
             <div style="width: 100%; display: flex; justify-content: center; align-items: center; background: #fff;">

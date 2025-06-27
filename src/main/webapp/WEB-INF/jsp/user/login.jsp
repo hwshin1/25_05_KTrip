@@ -2,9 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ include file="../common/head.jspf" %>
-<section class="mt-40">
-    <h1 class="text-center">The Login Page</h1>
-    <div style="margin-left: auto; margin-right: auto;">
+<section class="h-screen flex flex-col justify-center items-center">
+    <div class="mx-auto">
         <form action="../user/doLogin" method="POST">
             <div style="width: 100%; display: flex; justify-content: center; align-items: center; background: #fff;">
                 <div style="width: 360px; padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); background: #fdfdfd;">

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div class="w-full h-[500px] relative bg-white flex flex-col items-center justify-center text-[#000]">
+<div class="w-full h-[500px] relative bg-[#f5f5f5] flex flex-col items-center justify-center text-black">
     <!-- 두 개의 칼럼을 위한 영역 -->
     <div class="flex flex-col md:flex-row gap-20 mb-10">
         <!-- 첫 번째 칼럼 -->
@@ -15,18 +15,30 @@
 
         <!-- 두 번째 칼럼 -->
         <div class="text-left">
-            <p class="text-[20px] mb-2">사이트 제작</p>
-            <p class="text-[14px] text-[#666]">웹표준 사이트</p>
-            <p class="text-[14px] text-[#666]">반응형 사이트</p>
-            <p class="text-[14px] text-[#666]">패럴랙스 사이트</p>
-            <p class="text-[14px] text-[#666]">포트폴리오 사이트</p>
-            <p class="text-[14px] text-[#666]">코더 사이트</p>
+            <p class="text-[20px] mb-2">구단 바로가기</p>
+            <p class="text-[14px] text-[#666]"><a href="/intro/Seoul">FC 서울</a></p>
+            <p class="text-[14px] text-[#666]"><a href="/intro/Jeonju">전북현대모터스</a></p>
+            <p class="text-[14px] text-[#666]"><a href="/intro/Ulsan">울산 HD</a></p>
+            <p class="text-[14px] text-[#666]"><a href="/intro/Daejeon">대전하나시티즌</a></p>
+            <p class="text-[14px] text-[#666]"><a href="/intro/Daegu">대구 FC</a></p>
+            <p class="text-[14px] text-[#666]"><a href="/intro/Anyang">FC 안양</a></p>
+        </div>
+
+        <!-- 세번째 칼럼 -->
+        <div class="text-left">
+            <p class="text-[20px] mb-2">구단 바로가기</p>
+            <p class="text-[14px] text-[#666]"><a href="/intro/Pohang">포항 스틸러스</a></p>
+            <p class="text-[14px] text-[#666]"><a href="/intro/Gangwon">강원 FC</a></p>
+            <p class="text-[14px] text-[#666]"><a href="/intro/Gwangju">광주 FC</a></p>
+            <p class="text-[14px] text-[#666]"><a href="/intro/Jeju">제주 SK</a></p>
+            <p class="text-[14px] text-[#666]"><a href="/intro/SuwonFC">수원 FC</a></p>
+            <p class="text-[14px] text-[#666]"><a href="/intro/Kimcheon">김천상무프로축구단</a></p>
         </div>
     </div>
 
     <!-- 구분선 -->
     <svg width="80%" height="3" viewBox="0 0 1160 3" fill="none" xmlns="http://www.w3.org/2000/svg" class="my-4">
-        <line y1="1.5" x2="1160" y2="1.5" stroke="#D9D9D9" stroke-width="3"></line>
+        <line y1="1.5" x2="1160" y2="1.5" stroke="#666" stroke-width="3"></line>
     </svg>
 
     <!-- 하단 텍스트 -->

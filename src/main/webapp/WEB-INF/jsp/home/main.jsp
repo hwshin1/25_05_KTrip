@@ -38,17 +38,19 @@
             </div>
         </div>
     </div>
-    <div class="w-full h-[600px] relative text-white bg-[url(/bennel.png)] bg-cover bg-center flex flex-col items-center justify-center text-center space-y-6">
-        <p class="text-[50px] font-bold">
-            재미있는 축구 직관
-        </p>
-        <p class="text-[22px] leading-relaxed">
-            <span class="block">직관 가기 위해 놀러 간다!</span>
-            <span class="block">경기 보기 전에 어디에 가있지?</span>
-        </p>
-        <p class="text-[22px]">
-            카페, 음식점, 지역 내 가볼만한 곳
-        </p>
+    <div class="w-full h-[600px] relative text-white bg-[url(/VideoCapture_20250521-202515.jpg)] bg-cover bg-center">
+        <div class="relative w-full h-full flex flex-col items-center justify-center text-center space-y-6 bg-black/40">
+            <p class="text-[50px] font-bold">
+                재미있는 축구 직관
+            </p>
+            <p class="text-[22px] leading-relaxed">
+                <span class="block">직관 가기 위해 놀러 간다!</span>
+                <span class="block">경기 보기 전에 어디에 가있지?</span>
+            </p>
+            <p class="text-[22px]">
+                카페, 음식점, 지역 내 가볼만한 곳
+            </p>
+        </div>
     </div>
     <div class="w-full h-[150px] relative overflow-hidden overflow-x-auto my-3">
         <div class="text-center text-lg">
