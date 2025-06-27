@@ -94,7 +94,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="block w-full text-center py-4">
+                            <a href="/intro/${region}" class="block w-full text-center py-4">
                                 나의 팀
                             </a>
                         </li>
