@@ -2,7 +2,6 @@ package org.myproject.demo.controller;
 
 import org.myproject.demo.service.CrawlingService;
 import org.myproject.demo.vo.KakaoApi;
-import org.myproject.demo.vo.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,9 +22,7 @@ public class CrawlingController {
     private KakaoApi kakaoApi;
 
     public void team() {
-        List<Team> teams = crawlingService.webCrawling();
-
-        System.out.println(teams);
+        crawlingService.webCrawling();
     }
 
     @RequestMapping("/{teamName}/restaurants")

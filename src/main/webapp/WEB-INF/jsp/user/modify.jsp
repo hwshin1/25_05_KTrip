@@ -72,6 +72,12 @@
                 </tr>
                 <tr>
                     <th></th>
+                    <td>
+                        <a href="../user/teamCheck">팀 선택</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
                     <td class="text-center">
                         <button class="btn btn-primary">수정</button>
                     </td>

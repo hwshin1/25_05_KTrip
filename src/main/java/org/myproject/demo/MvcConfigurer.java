@@ -44,7 +44,6 @@ public class MvcConfigurer implements WebMvcConfigurer {
         ir.addPathPatterns("/review/doDelete");
         ir.addPathPatterns("/user/doLogout");
         ir.addPathPatterns("/user/mypage");
-        ir.addPathPatterns("/intro/");
 
         //로그아웃을 해야 함
         ir = registry.addInterceptor(needLogoutInterceptor);

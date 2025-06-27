@@ -93,11 +93,13 @@
                                 내 프로필
                             </a>
                         </li>
-                        <li>
-                            <a href="/intro/${region}" class="block w-full text-center py-4">
-                                나의 팀
-                            </a>
-                        </li>
+                        <c:if test="${not empty region}">
+                            <li>
+                                <a href="/intro/${region}" class="block w-full text-center py-4">
+                                    나의 팀
+                                </a>
+                            </li>
+                        </c:if>
                     </ul>
                 </li>
             </ul>

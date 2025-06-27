@@ -32,16 +32,22 @@ public class HomeController {
 
         if (user != null) {
             String team_name = user.getExtra_teamName();
-            String region = getRegion(team_name);
 
-            model.addAttribute("region", region);
+            if (team_name != null && !team_name.isBlank()) {
+                String region = getRegion(team_name);
+                model.addAttribute("region", region);
+            }
         }
 
         return "home/main";
     }
 
-    private String getRegion(String teamName) {
-        return switch (teamName.toLowerCase()) {
+    private String getRegion(String team_name) {
+        if (team_name == null || team_name.isBlank()) {
+            return "";
+        }
+
+        return switch (team_name.toLowerCase()) {
             case "전북" -> "Jeonju";
             case "대전" -> "Daejeon";
             case "김천" -> "Kimcheon";

@@ -30,6 +30,9 @@ public class Rq {
     @Getter
     private User loginedUser;
 
+    @Getter
+    private User loginedUserTeam;
+
     public Rq(HttpServletRequest req, HttpServletResponse resp, UserService userService) {
         this.req = req;
         this.resp = resp;
@@ -39,6 +42,7 @@ public class Rq {
             isLogined = true;
             loginedUserId = (int) session.getAttribute("loginedUserId");
             loginedUser = userService.getUserById(loginedUserId);
+            loginedUserTeam = userService.getUserTeamById(loginedUserId);
         }
 
         this.req.setAttribute("rq", this);
