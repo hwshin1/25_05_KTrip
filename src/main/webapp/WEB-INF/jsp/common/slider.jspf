@@ -175,7 +175,7 @@
 <script>
     const swiper = new Swiper('.swiper', {
         slidesPerView: 1,
-        spaceBetween: 20,
+        spaceBetween: 0,
         loop: true,
         autoHeight: false,
         pagination: {

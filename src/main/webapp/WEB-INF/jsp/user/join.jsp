@@ -59,4 +59,5 @@
     </div>
 </section>
 
+<%@ include file="../common/footer.jspf" %>
 <%@ include file="../common/foot.jspf" %>
