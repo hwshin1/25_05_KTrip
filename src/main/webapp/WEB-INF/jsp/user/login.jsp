@@ -36,8 +36,9 @@
                     </div>
 
                     <!-- 카카오 로그인 -->
-                    <img src="/kakao_login_medium_narrow.png" alt="카카오 로그인"
-                         style="margin-left: auto; margin-right: auto; object-fit: cover; cursor: pointer;">
+                    <a href="${sendURL}">
+                        <img src="/kakao_login_medium_narrow.png" alt="카카오 로그인" class="mx-auto">
+                    </a>
                 </div>
             </div>
         </form>

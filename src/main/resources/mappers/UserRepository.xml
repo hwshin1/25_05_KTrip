@@ -17,6 +17,16 @@
         login_type = 'normal'
     </insert>
 
+    <insert id="kakaoJoin" parameterType="map">
+        INSERT INTO kakao
+        SET kakao_id = #{kakao_id},
+        kakao_createAt = #{kakao_createAt},
+        kakao_nickName = #{kakao_nickName},
+        kakao_email = #{kakao_email},
+        access_token = #{access_token},
+        refresh_token = #{refresh_token};
+    </insert>
+
     <select id="getUserByLoginId" parameterType="String" resultType="org.myproject.demo.vo.User">
         SELECT *
         FROM `user`
@@ -93,4 +103,24 @@
         SET teamId = #{teamId}
         WHERE id = #{loginedUserId}
     </update>
+
+    <select id="getUserByEmailAndLoginType" parameterType="map"
+            resultType="org.myproject.demo.vo.User">
+        SELECT * FROM `user`
+        WHERE email = #{kakao_email}
+        AND login_type = #{login_type}
+    </select>
+
+    <insert id="doJoinKakao" parameterType="map">
+        INSERT INTO `user`
+        SET regDate = NOW(),
+        updateDate = NOW(),
+        loginId = #{loginId},
+        loginPw = #{loginPw},
+        `authLevel` = 3,
+        `name` = #{name},
+        nickName = #{nickName},
+        email = #{email},
+        login_type = #{login_type}
+    </insert>
 </mapper>

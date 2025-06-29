@@ -1,12 +1,10 @@
 package org.myproject.demo.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
+import org.myproject.demo.service.KakaoService;
 import org.myproject.demo.service.UserService;
 import org.myproject.demo.util.Ut;
-import org.myproject.demo.vo.KakaoApi;
-import org.myproject.demo.vo.ResultData;
-import org.myproject.demo.vo.Rq;
-import org.myproject.demo.vo.User;
+import org.myproject.demo.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.xml.transform.Result;
+import java.time.LocalDateTime;
 
 @Controller
 public class UserController {
@@ -24,6 +23,9 @@ public class UserController {
 
     @Autowired
     private KakaoApi kakaoApi;
+
+    @Autowired
+    private KakaoService kakaoService;
 
     @Autowired
     private UserService userService;
@@ -36,6 +38,35 @@ public class UserController {
         model.addAttribute("sendURL", sendURL);
 
         return "user/join";
+    }
+
+    @GetMapping("/login/demoshw/oauth")
+    @ResponseBody
+    public String callBack(HttpServletRequest req, String code) {
+        rq = (Rq) req.getAttribute("rq");
+
+        Kakao kakao = kakaoService.getAccessToken(code);
+
+        long kakao_id = kakao.getKakao_id();
+        LocalDateTime kakao_createAt = kakao.getKakao_createAt();
+        String kakao_nickName = kakao.getKakao_nickName();
+        String kakao_email = kakao.getKakao_email();
+        String access_token = kakao.getAccess_token();
+        String refresh_token = kakao.getRefresh_token();
+
+        ResultData kakaoJoinRd = userService.kakaoJoin(kakao_id, kakao_createAt, kakao_nickName, kakao_email, access_token, refresh_token);
+
+        if (kakaoJoinRd.isFail()) {
+            return Ut.jsHistoryBack(kakaoJoinRd.getResultCode(), kakaoJoinRd.getMsg());
+        }
+
+        User user = userService.getUserByEmailAndLoginType(kakao_email, "kakao");
+
+        if (user == null) {
+            return Ut.jsHistoryBack("F-2", "카카오 회원 정보를 찾을 수 없습니다.");
+        }
+
+        return Ut.jsReplace(kakaoJoinRd.getResultCode(), kakaoJoinRd.getMsg(), "/");
     }
 
     @RequestMapping("/user/doJoin")
@@ -71,7 +102,12 @@ public class UserController {
     }
 
     @RequestMapping("/user/login")
-    public String login() {
+    public String login(Model model) {
+        String sendURL = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="
+                + kakaoApi.getRestapi_key() + "&redirect_uri="+ kakaoApi.getRedirect_url();
+
+        model.addAttribute("sendURL", sendURL);
+
         return "user/login";
     }
 

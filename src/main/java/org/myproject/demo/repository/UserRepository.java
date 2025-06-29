@@ -3,6 +3,8 @@ package org.myproject.demo.repository;
 import org.apache.ibatis.annotations.Mapper;
 import org.myproject.demo.vo.User;
 
+import java.time.LocalDateTime;
+
 @Mapper
 public interface UserRepository {
 
@@ -25,4 +27,10 @@ public interface UserRepository {
     void getupdateTeamId(int loginedUserId, int teamId);
 
     int getTeamIdByName(String teamName);
+
+    int kakaoJoin(long kakao_id, LocalDateTime kakao_createAt, String kakao_nickName, String kakao_email, String access_token, String refresh_token);
+
+    User getUserByEmailAndLoginType(String kakao_email, String login_type);
+
+    int doJoinKakao(String loginId, String loginPw, String name, String nickName, String email, String login_type);
 }
