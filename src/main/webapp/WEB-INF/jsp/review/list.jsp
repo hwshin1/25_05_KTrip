@@ -3,7 +3,7 @@
 
 <%@ include file="../common/head.jspf" %>
 
-<section class="mt-16 px-4 text-sm text-gray-800">
+<section class="mt-16 px-4 text-sm text-gray-800 h-screen">
     <div class="max-w-6xl mx-auto">
         <!-- 상단 정보 및 검색 -->
         <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">

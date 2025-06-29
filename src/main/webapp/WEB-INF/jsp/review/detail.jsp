@@ -3,7 +3,7 @@
 
 <%@ include file="../common/head.jspf" %>
 
-<section class="mt-8 px-4 text-lg">
+<section class="mt-8 px-4 text-lg h-screen">
     <div class="mx-auto p-10 overflow-x-auto">
         <h2 class="text-3xl font-bold mb-8 text-gray-900 text-center">후기 상세보기</h2>
 
