@@ -22,7 +22,7 @@
     }
 </script>
 
-<section class="flex justify-center items-start mt-24 px-4">
+<section class="h-screen flex justify-center items-start mt-24 px-4">
     <div class="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-8">
         <h2 class="text-2xl font-semibold text-center mb-8">회원정보 수정</h2>
 
