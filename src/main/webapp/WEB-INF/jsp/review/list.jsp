@@ -16,7 +16,7 @@
                 </c:if>
             </div>
 
-            <form action="../review/list" class="flex flex-wrap gap-2 items-center">
+            <form action="/review/list" class="flex flex-wrap gap-2 items-center">
                 <input type="hidden" name="boardId" value="${param.boardId}"/>
                 <select name="searchKeywordTypeCode"
                         class="border border-gray-300 bg-white rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
@@ -101,7 +101,7 @@
 
         <!-- 글쓰기 버튼 -->
         <div class="flex justify-end mt-8">
-            <a href="../review/write"
+            <a href="/review/write"
                class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm shadow-md transition">
                 <i class="fa-solid fa-pen text-sm"></i>
                 글쓰기
