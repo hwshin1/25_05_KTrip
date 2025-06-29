@@ -234,6 +234,6 @@ public class UserController {
         // user 업데이트
         ResultData teamRd = userService.getupdateTeamId(rq.getLoginedUserId(), teamId);
 
-        return Ut.jsReplace(teamRd.getResultCode(), teamRd.getMsg(), "/user/mypage");
+        return Ut.jsReplace(teamRd.getResultCode(), teamRd.getMsg(), "/user/modify");
     }
 }
