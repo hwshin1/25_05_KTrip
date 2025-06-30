@@ -37,9 +37,9 @@
         </table>
 
         <div class="mt-8 flex justify-center space-x-4">
-            <button type="button"
+            <button type="button" onclick="history.back();"
                     class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition">
-                    <a href="/review/list?boardId=2">뒤로가기</a>
+                    뒤로가기
             </button>
 
             <c:if test="${review.userCanModify}">
