@@ -17,7 +17,7 @@
     .map_wrap {
         position: relative;
         width: 100%;
-        height: 500px;
+        height: 100%;
     }
 
     #menu_wrap {
@@ -199,7 +199,6 @@
 <div class="flex h-screen">
     <!-- 왼쪽: 음식점 정보 (1/3) -->
     <div class="w-1/3 overflow-y-scroll p-6 bg-white">
-        <h2 class="text-2xl font-bold mb-4">대전 음식점 목록</h2>
         <c:forEach var="restaurant" items="${restaurants}">
             <div class="mb-6 p-4 bg-gray-100 rounded shadow">
                 <h3 class="text-lg font-semibold">${restaurant.name}</h3>

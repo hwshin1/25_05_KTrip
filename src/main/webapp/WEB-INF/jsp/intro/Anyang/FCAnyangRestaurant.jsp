@@ -20,7 +20,7 @@
     .map_wrap {
         position: relative;
         width: 100%;
-        height: 500px;
+        height: 100%;
     }
 
     #menu_wrap {
@@ -188,21 +188,38 @@
     }
 </style>
 
-<div class="map_wrap">
-    <div id="map" style="width:70% ; height:500px;"></div>
-
-    <div id="menu_wrap" class="bg_white">
-        <div class="option">
-            <div>
-                <form onsubmit="searchPlaces(); return false;">
-                    키워드 : <input type="text" value="안양종합운동장 근처 음식점" id="keyword" size="15">
-                    <button type="submit">검색하기</button>
-                </form>
+<div class="flex h-screen">
+    <!-- 왼쪽: 음식점 정보 (1/3) -->
+    <div class="w-1/3 overflow-y-scroll p-6 bg-white">
+        <c:forEach var="restaurant" items="${restaurants}">
+            <div class="mb-6 p-4 bg-gray-100 rounded shadow">
+                <h3 class="text-lg font-semibold">${restaurant.name}</h3>
+                <p class="text-sm text-gray-600 mb-1">카테고리: ${restaurant.category}</p>
+                <p class="text-sm text-gray-600 mb-1">주소: ${restaurant.address}</p>
+                <p class="text-sm text-gray-600 mb-1">평점: ${restaurant.rating}</p>
+                <c:if test="${restaurant.detail_url ne '없음'}">
+                    <a class="text-blue-600 underline text-sm" href="${restaurant.detail_url}" target="_blank">상세 보기</a>
+                </c:if>
             </div>
+        </c:forEach>
+    </div>
+    <!-- 오른쪽: 지도 (2/3) -->
+    <div class="w-2/3 relative map_wrap">
+        <div id="map" class="absolute top-0 left-0 right-0 bottom-0"></div>
+
+        <div id="menu_wrap" class="bg_white">
+            <div class="option">
+                <div>
+                    <form onsubmit="searchPlaces(); return false;">
+                        키워드 : <input type="text" value="안양종합운동장 근처 음식점" id="keyword" size="15">
+                        <button type="submit">검색하기</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <ul id="placesList"></ul>
+            <div id="pagination"></div>
         </div>
-        <hr>
-        <ul id="placesList"></ul>
-        <div id="pagination"></div>
     </div>
 </div>
 
