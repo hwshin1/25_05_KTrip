@@ -90,10 +90,12 @@ public class CrawlingService {
     public List<Map<String, String>> crawlingNotice(String regionName) {
         Set<Map<String, String>> restaurantSet = new LinkedHashSet<>();
 
-        System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
-
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
         WebDriver driver = new ChromeDriver(options);
 
         try {

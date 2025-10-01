@@ -1,4 +1,4 @@
-package org.myproject.demo;
+package org.myproject.demo.config;
 
 import org.myproject.demo.interceptor.BeforeInterceptor;
 import org.myproject.demo.interceptor.NeedLoginInterceptor;
