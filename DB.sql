@@ -6,8 +6,8 @@ USE
 KLEAGUE;
 
 # 유저 테이블 생성
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user`
+DROP TABLE IF EXISTS `member`;
+CREATE TABLE `member`
 (
     id          INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     loginId     VARCHAR(30) NOT NULL,
@@ -23,10 +23,10 @@ CREATE TABLE `user`
 );
 
 SELECT *
-FROM `user`
+FROM `member`
 ORDER BY id DESC;
 
-INSERT INTO `user`
+INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'admin',
@@ -37,7 +37,7 @@ nickName = 'admin',
 email = 'admin@naver.com',
 login_type = 'normal';
 
-INSERT INTO `user`
+INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test1',
@@ -49,7 +49,7 @@ email = 'Jeon@gmail.com',
 login_type = 'normal',
 teamId = 1;
 
-INSERT INTO `user`
+INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test2',
@@ -61,7 +61,7 @@ email = 'Lee@gmail.com',
 login_type = 'normal',
 teamId = 2;
 
-INSERT INTO `user`
+INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test3',
@@ -73,7 +73,7 @@ email = 'leedong@gmail.com',
 login_type = 'normal',
 teamId = 3;
 
-INSERT INTO `user`
+INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test4',
@@ -85,7 +85,7 @@ email = 'Pangon@gmail.com',
 login_type = 'normal',
 teamId = 4;
 
-INSERT INTO `user`
+INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test5',
@@ -97,7 +97,7 @@ email = 'Jo@gmail.com',
 login_type = 'normal',
 teamId = 5;
 
-INSERT INTO `user`
+INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test6',
@@ -109,7 +109,7 @@ email = 'jobin@gmail.com',
 login_type = 'normal',
 teamId = 6;
 
-INSERT INTO `user`
+INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test7',
@@ -121,7 +121,7 @@ email = 'LeanGard@gmail.com',
 login_type = 'normal',
 teamId = 7;
 
-INSERT INTO `user`
+INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test8',
@@ -133,7 +133,7 @@ email = 'cha@gmail.com',
 login_type = 'normal',
 teamId = 8;
 
-INSERT INTO `user`
+INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test9',
@@ -145,7 +145,7 @@ email = 'junha@gmail.com',
 login_type = 'normal',
 teamId = 9;
 
-INSERT INTO `user`
+INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test10',
@@ -157,7 +157,7 @@ email = 'gwang@gmail.com',
 login_type = 'normal',
 teamId = 10;
 
-INSERT INTO `user`
+INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test11',
@@ -169,7 +169,7 @@ email = 'jung@gmail.com',
 login_type = 'normal',
 teamId = 11;
 
-INSERT INTO `user`
+INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test12',
@@ -182,16 +182,16 @@ login_type = 'normal',
 teamId = 12;
 
 SELECT *
-FROM `user`
+FROM `member`
 WHERE loginId = 'test2';
 
 SELECT *
-FROM `user`
+FROM `member`
 WHERE `name` = 'test2'
   AND email = 'test2@gmail.com';
 
 SELECT *
-FROM `user`
+FROM `member`
 ORDER BY id DESC;
 
 # 팀(구단) 테이블 생성
@@ -220,7 +220,7 @@ OR team_homepage = 'https://www.dhcfc.kr/'
 
 SELECT U.*, T.team_name AS extra_teamName,
 T.team_logo AS extra_teamLogo
-FROM `user` AS U
+FROM `member` AS U
 LEFT JOIN team AS T
 ON U.teamId = T.id
 WHERE U.id= 3;
@@ -276,7 +276,7 @@ ORDER BY id DESC;
 
 SELECT R.*, U.nickName AS extra_write
 FROM review AS R
-INNER JOIN `user` AS U
+INNER JOIN `member` AS U
 ON R.userId = U.id
 WHERE R.id = 2;
 

@@ -7,7 +7,7 @@
     <div class="w-full max-w-lg bg-white shadow-xl rounded-2xl p-8">
         <h2 class="text-2xl font-semibold text-center mb-6">비밀번호 확인</h2>
 
-        <form action="../user/doCheckPw" method="POST" class="space-y-6">
+        <form action="../member/doCheckPw" method="POST" class="space-y-6">
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">아이디</label>
                 <div class="w-full p-2 bg-gray-100 rounded-md text-gray-800">

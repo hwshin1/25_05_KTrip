@@ -10,7 +10,7 @@
             <p class="text-[14px] text-[#666]"><a href="/intro/home">구단 소개</a></p>
             <p class="text-[14px] text-[#666]"><a href="/review/list?boardId=1">공지사항</a></p>
             <p class="text-[14px] text-[#666]"><a href="/review/list?boardId=2">후기 글</a></p>
-            <p class="text-[14px] text-[#666]"><a href="/user/mypage">내 프로필</a></p>
+            <p class="text-[14px] text-[#666]"><a href="/member/mypage">내 프로필</a></p>
         </div>
 
         <!-- 두 번째 칼럼 -->

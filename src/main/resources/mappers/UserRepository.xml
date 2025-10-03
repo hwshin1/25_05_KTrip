@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.myproject.demo.repository.UserRepository">
+<mapper namespace="org.myproject.demo.repository.MemberRepository">
     <insert id="doJoin" parameterType="map">
-        INSERT INTO `user`
+        INSERT INTO `member`
         SET regDate = NOW(),
         updateDate = NOW(),
         loginId = #{loginId},
@@ -27,15 +27,15 @@
         refresh_token = #{refresh_token};
     </insert>
 
-    <select id="getUserByLoginId" parameterType="String" resultType="org.myproject.demo.vo.User">
+    <select id="getUserByLoginId" parameterType="String" resultType="org.myproject.demo.vo.Member">
         SELECT *
-        FROM `user`
+        FROM `member`
         WHERE loginId = #{loginId};
     </select>
 
     <select id="getUserByNameAndEmail">
         SELECT *
-        FROM `user`
+        FROM `member`
         WHERE `name` = #{name}
         AND email = #{email}
     </select>
@@ -46,13 +46,13 @@
     </select>
 
     <select id="getUserById" parameterType="int"
-            resultType="org.myproject.demo.vo.User">
-        SELECT * FROM `user`
+            resultType="org.myproject.demo.vo.Member">
+        SELECT * FROM `member`
         WHERE id = #{loginedUserId}
     </select>
 
     <update id="modifyWithoutPw">
-        UPDATE `user`
+        UPDATE `member`
         <set>
             <if test="nickName != null">
                 nickName = #{nickName},
@@ -66,7 +66,7 @@
     </update>
 
     <update id="modify">
-        UPDATE `user`
+        UPDATE `member`
         <set>
             <if test="loginPw != null">
                 loginPw = #{loginPw},
@@ -83,9 +83,9 @@
     </update>
 
     <select id="getUserTeamById" parameterType="int"
-            resultType="org.myproject.demo.vo.User">
+            resultType="org.myproject.demo.vo.Member">
         SELECT U.*, T.team_name AS extra_teamName, T.team_logo AS extra_teamLogo
-        FROM `user` AS U
+        FROM `member` AS U
         LEFT JOIN team AS T
         ON U.teamId = T.id
         WHERE U.id= #{loginedUserId};
@@ -99,20 +99,20 @@
     </select>
 
     <update id="getupdateTeamId">
-        UPDATE `user`
+        UPDATE `member`
         SET teamId = #{teamId}
         WHERE id = #{loginedUserId}
     </update>
 
     <select id="getUserByEmailAndLoginType" parameterType="map"
-            resultType="org.myproject.demo.vo.User">
-        SELECT * FROM `user`
+            resultType="org.myproject.demo.vo.Member">
+        SELECT * FROM `member`
         WHERE email = #{kakao_email}
         AND login_type = #{login_type}
     </select>
 
     <insert id="doJoinKakao" parameterType="map">
-        INSERT INTO `user`
+        INSERT INTO `member`
         SET regDate = NOW(),
         updateDate = NOW(),
         loginId = #{loginId},

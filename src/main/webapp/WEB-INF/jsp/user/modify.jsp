@@ -26,7 +26,7 @@
     <div class="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-8">
         <h2 class="text-2xl font-semibold text-center mb-8">회원정보 수정</h2>
 
-        <form onsubmit="MemberModify__submit(this); return false;" action="../user/doModify" method="POST" class="space-y-6">
+        <form onsubmit="MemberModify__submit(this); return false;" action="../member/doModify" method="POST" class="space-y-6">
             <!-- 가입일 & 아이디 -->
             <div class="grid grid-cols-2 gap-6">
                 <div>
@@ -70,7 +70,7 @@
 
             <!-- 팀 선택 -->
             <div class="flex justify-start">
-                <a href="../user/teamCheck" class="text-blue-600 hover:underline text-sm">팀 선택</a>
+                <a href="../member/teamCheck" class="text-blue-600 hover:underline text-sm">팀 선택</a>
             </div>
 
             <!-- 버튼 -->

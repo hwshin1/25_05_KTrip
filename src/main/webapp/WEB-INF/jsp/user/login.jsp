@@ -4,7 +4,7 @@
 <%@ include file="../common/head.jspf" %>
 <section class="h-screen flex flex-col justify-center items-center">
     <div class="mx-auto">
-        <form action="../user/doLogin" method="POST">
+        <form action="../member/doLogin" method="POST">
             <div style="width: 100%; display: flex; justify-content: center; align-items: center; background: #fff;">
                 <div style="width: 360px; padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); background: #fdfdfd;">
                     <h2 style="text-align: center; margin-bottom: 24px; color: #333;">로그인</h2>
@@ -24,7 +24,7 @@
 
                     <!-- 회원가입 하러가기 버튼 -->
                     <button style="border: none; color: white; font-size: 14px; cursor: pointer; width: 100%; height: 40px; margin-top: 1rem; border-radius: 20px; background-color: #333;">
-                        <a style="display: block; width: 100%;" href="../user/join">회원가입
+                        <a style="display: block; width: 100%;" href="../member/join">회원가입
                             하러가기</a>
                     </button>
 

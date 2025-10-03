@@ -4,7 +4,7 @@
 <%@ include file="../common/head.jspf" %>
 <section class="h-screen flex flex-col justify-center items-center">
     <div style="margin-left: auto; margin-right: auto;">
-        <form action="../user/doJoin" method="POST">
+        <form action="../member/doJoin" method="POST">
             <div style="width: 100%; display: flex; justify-content: center; align-items: center; background: #fff;">
                 <div style="width: 360px; padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); background: #fdfdfd;">
                     <h2 style="text-align: center; margin-bottom: 24px; color: #333;">회원가입</h2>

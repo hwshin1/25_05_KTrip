@@ -1,4 +1,13 @@
+server:
+  port: 8099
+
 spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
   mvc:
     view:
       prefix: /WEB-INF/jsp/
@@ -8,13 +17,26 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/KTrip?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul
     username: root
     password: 1234
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 80MB
+
+logging:
+  level:
+    org.myproject.demo: DEBUG
 
 mybatis:
   type-aliases-package: org.myproject.demo.vo
   mapper-locations: classpath:/mappers/**/*.xml
-
-server:
-  port: 8099
 
 kakao:
   restapi_key: 493573b251c629cab49ffc76ab14ea28

@@ -2,7 +2,7 @@ package org.myproject.demo.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.myproject.demo.service.KakaoService;
-import org.myproject.demo.service.UserService;
+import org.myproject.demo.service.MemberService;
 import org.myproject.demo.util.Ut;
 import org.myproject.demo.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.xml.transform.Result;
 import java.time.LocalDateTime;
 
 @Controller
-public class UserController {
+public class MemberController {
 
     @Autowired
     private Rq rq;
@@ -28,7 +27,7 @@ public class UserController {
     private KakaoService kakaoService;
 
     @Autowired
-    private UserService userService;
+    private MemberService memberService;
 
     @GetMapping("/user/join")
     public String Join(Model model) {
@@ -54,15 +53,15 @@ public class UserController {
         String access_token = kakao.getAccess_token();
         String refresh_token = kakao.getRefresh_token();
 
-        ResultData kakaoJoinRd = userService.kakaoJoin(kakao_id, kakao_createAt, kakao_nickName, kakao_email, access_token, refresh_token);
+        ResultData kakaoJoinRd = memberService.kakaoJoin(kakao_id, kakao_createAt, kakao_nickName, kakao_email, access_token, refresh_token);
 
         if (kakaoJoinRd.isFail()) {
             return Ut.jsHistoryBack(kakaoJoinRd.getResultCode(), kakaoJoinRd.getMsg());
         }
 
-        User user = userService.getUserByEmailAndLoginType(kakao_email, "kakao");
+        Member member = memberService.getUserByEmailAndLoginType(kakao_email, "kakao");
 
-        if (user == null) {
+        if (member == null) {
             return Ut.jsHistoryBack("F-2", "카카오 회원 정보를 찾을 수 없습니다.");
         }
 
@@ -92,7 +91,7 @@ public class UserController {
             return Ut.jsHistoryBack("F-5", Ut.f("이메일 입력"));
         }
 
-        ResultData joinRd = userService.doJoin(loginId, loginPw, name, nickName, email);
+        ResultData joinRd = memberService.doJoin(loginId, loginPw, name, nickName, email);
 
         if (joinRd.isFail()) {
             return Ut.jsHistoryBack(joinRd.getResultCode(), joinRd.getMsg());
@@ -125,19 +124,19 @@ public class UserController {
             return Ut.jsHistoryBack("F-2", Ut.f("비밀번호 입력"));
         }
 
-        User user = userService.getUserByLoginId(loginId);
+        Member member = memberService.getUserByLoginId(loginId);
 
-        if (user == null) {
+        if (member == null) {
             return Ut.jsHistoryBack("F-3", Ut.f("%s는 없는 아이디 입니다.", loginId));
         }
 
-        if (!user.getLoginPw().equals(loginPw)) {
+        if (!member.getLoginPw().equals(loginPw)) {
             return Ut.jsHistoryBack("F-4", Ut.f("비밀번호가 일치하지 않습니다."));
         }
 
-        rq.login(user);
+        rq.login(member);
 
-        return Ut.jsReplace("S-1", Ut.f("%s님 환영합니다!", user.getNickName()), "/");
+        return Ut.jsReplace("S-1", Ut.f("%s님 환영합니다!", member.getNickName()), "/");
     }
 
     @RequestMapping("/user/doLogout")
@@ -155,9 +154,9 @@ public class UserController {
     public String mypage(HttpServletRequest req, Model model) {
         rq = (Rq) req.getAttribute("rq");
 
-        User user = userService.getUserTeamById(rq.getLoginedUserId());
+        Member member = memberService.getUserTeamById(rq.getLoginedUserId());
 
-        model.addAttribute("user", user);
+        model.addAttribute("user", member);
         return "user/mypage";
     }
 
@@ -178,7 +177,7 @@ public class UserController {
             return Ut.jsHistoryBack("F-1", Ut.f("비밀번호를 입력하세요."));
         }
 
-        if (!rq.getLoginedUser().getLoginPw().equals(loginPw)) {
+        if (!rq.getLoginedMember().getLoginPw().equals(loginPw)) {
             return Ut.jsHistoryBack("F-2", Ut.f("비밀번호가 틀렸습니다."));
         }
 
@@ -206,9 +205,9 @@ public class UserController {
         ResultData modifyRd;
 
         if (Ut.isEmptyOrNull(loginPw)) {
-            modifyRd = userService.modifyWithoutPw(rq.getLoginedUserId(), nickName, email);
+            modifyRd = memberService.modifyWithoutPw(rq.getLoginedUserId(), nickName, email);
         } else {
-            modifyRd = userService.modify(rq.getLoginedUserId(), loginPw, nickName, email);
+            modifyRd = memberService.modify(rq.getLoginedUserId(), loginPw, nickName, email);
         }
 
         return Ut.jsReplace(modifyRd.getResultCode(), modifyRd.getMsg(), "/user/mypage");
@@ -229,10 +228,10 @@ public class UserController {
         }
 
         // 팀 이름으로 번호 찾기
-        int teamId = userService.getTeamIdByName(teamName);
+        int teamId = memberService.getTeamIdByName(teamName);
 
         // user 업데이트
-        ResultData teamRd = userService.getupdateTeamId(rq.getLoginedUserId(), teamId);
+        ResultData teamRd = memberService.getupdateTeamId(rq.getLoginedUserId(), teamId);
 
         return Ut.jsReplace(teamRd.getResultCode(), teamRd.getMsg(), "/user/modify");
     }

@@ -1,88 +1,88 @@
 package org.myproject.demo.service;
 
-import org.myproject.demo.repository.UserRepository;
+import org.myproject.demo.repository.MemberRepository;
 import org.myproject.demo.util.Ut;
 import org.myproject.demo.vo.Kakao;
+import org.myproject.demo.vo.Member;
 import org.myproject.demo.vo.ResultData;
-import org.myproject.demo.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
 @Service
-public class UserService {
+public class MemberService {
 
     @Autowired
-    private UserRepository userRepository;
+    private MemberRepository memberRepository;
 
     public ResultData<Integer> doJoin(String loginId, String loginPw,
                                       String name, String nickName, String email) {
-        User user = getUserByLoginId(loginId);
+        Member member = getUserByLoginId(loginId);
 
-        if (user != null) {
+        if (member != null) {
             return ResultData.from("F-A", Ut.f("이미 가입된 아이디", loginId));
         }
 
-        user = getUserByNameAndEmail(name, email);
+        member = getUserByNameAndEmail(name, email);
 
-        if (user != null) {
+        if (member != null) {
            return ResultData.from("F-B", Ut.f("이미 사용중인 이름과 이메일", name, email));
         }
 
-        userRepository.doJoin(loginId, loginPw, name, nickName, email);
+        memberRepository.doJoin(loginId, loginPw, name, nickName, email);
 
-        int id = userRepository.getLastInsertId();
+        int id = memberRepository.getLastInsertId();
 
         return ResultData.from("S-1", Ut.f("회원가입 성공!"), "가입 성공 id", id);
     }
 
-    private User getUserByNameAndEmail(String name, String email) {
-        return userRepository.getUserByNameAndEmail(name, email);
+    private Member getUserByNameAndEmail(String name, String email) {
+        return memberRepository.getUserByNameAndEmail(name, email);
     }
 
-    public User getUserByLoginId(String loginId) {
-        return userRepository.getUserByLoginId(loginId);
+    public Member getUserByLoginId(String loginId) {
+        return memberRepository.getUserByLoginId(loginId);
     }
 
     public ResultData modifyWithoutPw(int loginedUserId, String nickName, String email) {
-        userRepository.modifyWithoutPw(loginedUserId, nickName, email);
+        memberRepository.modifyWithoutPw(loginedUserId, nickName, email);
 
         return ResultData.from("S-1", "회원정보 수정 완료");
     }
 
     public ResultData modify(int loginedUserId, String loginPw, String nickName, String email) {
-        userRepository.modify(loginedUserId, loginPw, nickName, email);
+        memberRepository.modify(loginedUserId, loginPw, nickName, email);
 
         return ResultData.from("S-1", "회원정보 수정 완료");
     }
 
-    public User getUserById(int loginedUserId) {
-        return userRepository.getUserById(loginedUserId);
+    public Member getUserById(int loginedUserId) {
+        return memberRepository.getUserById(loginedUserId);
     }
 
-    public User getUserTeamById(int loginedUserId) {
-        return userRepository.getUserTeamById(loginedUserId);
+    public Member getUserTeamById(int loginedUserId) {
+        return memberRepository.getUserTeamById(loginedUserId);
     }
 
     public ResultData getupdateTeamId(int loginedUserId, int teamId) {
-        userRepository.getupdateTeamId(loginedUserId, teamId);
+        memberRepository.getupdateTeamId(loginedUserId, teamId);
 
-        User user = userRepository.getUserTeamById(loginedUserId);
+        Member member = memberRepository.getUserTeamById(loginedUserId);
 
-        return ResultData.from("S-1", Ut.f("%s팀 선택 완료!", user.getExtra_teamName()));
+        return ResultData.from("S-1", Ut.f("%s팀 선택 완료!", member.getExtra_teamName()));
     }
 
     public int getTeamIdByName(String teamName) {
-        return userRepository.getTeamIdByName(teamName);
+        return memberRepository.getTeamIdByName(teamName);
     }
 
     public ResultData<Kakao> kakaoJoin(long kakao_id, LocalDateTime kakao_createAt, String kakao_nickName, String kakao_email, String access_token, String refresh_token) {
-        userRepository.kakaoJoin(kakao_id, kakao_createAt, kakao_nickName, kakao_email, access_token, refresh_token);
+        memberRepository.kakaoJoin(kakao_id, kakao_createAt, kakao_nickName, kakao_email, access_token, refresh_token);
 
-        User user = userRepository.getUserByEmailAndLoginType(kakao_email, "kakao");
+        Member member = memberRepository.getUserByEmailAndLoginType(kakao_email, "kakao");
 
-        if (user == null) {
+        if (member == null) {
             String loginId = "kakao_" + kakao_id;
             String loginPw = "";
             String name = "";
@@ -90,7 +90,7 @@ public class UserService {
             String email = kakao_email;
             String login_type = "kakao";
 
-            userRepository.doJoinKakao(loginId, loginPw, name, nickName, email, login_type);
+            memberRepository.doJoinKakao(loginId, loginPw, name, nickName, email, login_type);
         }
 
         Kakao kakao = new Kakao(kakao_id, kakao_createAt, kakao_nickName, kakao_email, access_token, refresh_token);
@@ -98,7 +98,7 @@ public class UserService {
         return ResultData.from("S-1", Ut.f("%s님 카카오 로그인 성공", kakao.getKakao_nickName()));
     }
 
-    public User getUserByEmailAndLoginType(String kakao_email, String login_type) {
-        return userRepository.getUserByEmailAndLoginType(kakao_email, login_type);
+    public Member getUserByEmailAndLoginType(String kakao_email, String login_type) {
+        return memberRepository.getUserByEmailAndLoginType(kakao_email, login_type);
     }
 }

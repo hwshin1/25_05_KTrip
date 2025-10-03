@@ -4,7 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.myproject.demo.interceptor.BeforeInterceptor;
 import org.myproject.demo.service.BoardService;
 import org.myproject.demo.service.ReviewService;
-import org.myproject.demo.service.UserService;
+import org.myproject.demo.service.MemberService;
 import org.myproject.demo.util.Ut;
 import org.myproject.demo.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ public class ReviewController {
     private BoardService boardService;
 
     @Autowired
-    private UserService userService;
+    private MemberService memberService;
 
     ReviewController(BeforeInterceptor beforeInterceptor) {
         this.beforeInterceptor = beforeInterceptor;
@@ -74,9 +74,9 @@ public class ReviewController {
     public String write(HttpServletRequest req, Model model) {
         rq = (Rq) req.getAttribute("rq");
 
-        User user = userService.getUserById(rq.getLoginedUserId());
+        Member member = memberService.getUserById(rq.getLoginedUserId());
 
-        model.addAttribute("user", user);
+        model.addAttribute("user", member);
 
         return "review/write";
     }
@@ -98,9 +98,9 @@ public class ReviewController {
             return Ut.jsHistoryBack("F-3", Ut.f("게시판을 선택하세요."));
         }
 
-        User user = userService.getUserById(rq.getLoginedUserId());
+        Member member = memberService.getUserById(rq.getLoginedUserId());
 
-        if (user.getAuthLevel() != User.AUTH_LEVEL_ADMIN && boardId.equals("1")) {
+        if (member.getAuthLevel() != Member.AUTH_LEVEL_ADMIN && boardId.equals("1")) {
             return Ut.jsHistoryBack("F-4", Ut.f("공지사항은 관리자만 작성 가능합니다."));
         }
 

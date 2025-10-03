@@ -4,7 +4,7 @@
 <%@ include file="../common/head.jspf" %>
 
 <div class="fixed inset-0 bg-black bg-opacity-40 z-50 flex justify-center items-center">
-    <form action="../user/doTeamCheck" method="POST">
+    <form action="../member/doTeamCheck" method="POST">
         <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-5xl">
             <h2 class="text-2xl font-bold text-center mb-6">응원할 팀을 선택해주세요</h2>
 

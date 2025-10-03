@@ -89,7 +89,7 @@
                     <!-- 서브 메뉴 -->
                     <ul class="absolute w-[150px] top-[72px] left-1/2 -translate-x-1/2 bg-[#F5F5F5] shadow-lg z-50 min-w-[130px] py-5 rounded-3xl hidden group-hover:block">
                         <li>
-                            <a href="/user/mypage" class="block w-full text-center py-4">
+                            <a href="/member/mypage" class="block w-full text-center py-4">
                                 내 프로필
                             </a>
                         </li>
@@ -107,7 +107,7 @@
         <div class="relative w-60 h-60 mx-auto">
             <c:if test="${!rq.isLogined()}">
                 <div class="absolute inset-0 flex justify-center items-center">
-                    <a href="/user/login"
+                    <a href="/member/login"
                        class="w-24 h-10 text-center rounded-full text-base text-white bg-[#001C48] flex justify-center items-center hover:bg-[#002e70]">
                         로그인
                     </a>
@@ -115,7 +115,7 @@
             </c:if>
             <c:if test="${rq.isLogined()}">
                 <div class="absolute inset-0 flex justify-center items-center">
-                    <a href="/user/doLogout"
+                    <a href="/member/doLogout"
                        class="w-24 h-10 text-center rounded-full text-base text-white bg-[#001C48] flex justify-center items-center hover:bg-[#002e70]">
                         로그아웃
                     </a>

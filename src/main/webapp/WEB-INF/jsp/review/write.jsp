@@ -14,7 +14,7 @@
         <select id="boardId" name="boardId" required
                 class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
           <option value="" disabled selected>게시판을 선택해주세요</option>
-          <c:if test="${user.authLevel == 7}">
+          <c:if test="${member.authLevel == 7}">
             <option value="1">공지사항</option>
           </c:if>
           <option value="2">후기</option>

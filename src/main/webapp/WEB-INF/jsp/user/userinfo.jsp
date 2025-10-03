@@ -32,7 +32,7 @@
             <tr>
                 <th class="py-3 font-medium text-gray-700">회원정보 수정</th>
                 <td class="py-3 text-right">
-                    <a href="../user/checkPw" class="text-blue-600 hover:underline">수정하기</a>
+                    <a href="../member/checkPw" class="text-blue-600 hover:underline">수정하기</a>
                 </td>
             </tr>
             </tbody>

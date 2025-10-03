@@ -1,8 +1,8 @@
 package org.myproject.demo.controller;
 
-import org.myproject.demo.service.UserService;
+import org.myproject.demo.service.MemberService;
+import org.myproject.demo.vo.Member;
 import org.myproject.demo.vo.Rq;
-import org.myproject.demo.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,7 +15,7 @@ public class GlobalModelAdvice {
     private Rq rq;
 
     @Autowired
-    private UserService userService;
+    private MemberService memberService;
 
     @ModelAttribute("region")
     public String showRegion() {
@@ -23,13 +23,13 @@ public class GlobalModelAdvice {
             return null;
         }
 
-        User user = userService.getUserTeamById(rq.getLoginedUserId());
+        Member member = memberService.getUserTeamById(rq.getLoginedUserId());
 
-        if (user == null) {
+        if (member == null) {
             return null;
         }
 
-        String team_name = user.getExtra_teamName();
+        String team_name = member.getExtra_teamName();
         if (team_name == null || team_name.isBlank()) {
             return "";
         }

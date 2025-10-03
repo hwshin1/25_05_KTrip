@@ -1,18 +1,18 @@
 package org.myproject.demo.repository;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.myproject.demo.vo.User;
+import org.myproject.demo.vo.Member;
 
 import java.time.LocalDateTime;
 
 @Mapper
-public interface UserRepository {
+public interface MemberRepository {
 
     int doJoin(String loginId, String loginPw, String name, String nickName, String email);
 
-    User getUserByLoginId(String loginId);
+    Member getUserByLoginId(String loginId);
 
-    User getUserByNameAndEmail(String name, String email);
+    Member getUserByNameAndEmail(String name, String email);
 
     int getLastInsertId();
 
@@ -20,9 +20,9 @@ public interface UserRepository {
 
     void modify(int loginedUserId, String loginPw, String nickName, String email);
 
-    User getUserById(int loginedUserId);
+    Member getUserById(int loginedUserId);
 
-    User getUserTeamById(int loginedUserId);
+    Member getUserTeamById(int loginedUserId);
 
     void getupdateTeamId(int loginedUserId, int teamId);
 
@@ -30,7 +30,7 @@ public interface UserRepository {
 
     int kakaoJoin(long kakao_id, LocalDateTime kakao_createAt, String kakao_nickName, String kakao_email, String access_token, String refresh_token);
 
-    User getUserByEmailAndLoginType(String kakao_email, String login_type);
+    Member getUserByEmailAndLoginType(String kakao_email, String login_type);
 
     int doJoinKakao(String loginId, String loginPw, String name, String nickName, String email, String login_type);
 }

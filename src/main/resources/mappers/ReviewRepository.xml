@@ -50,7 +50,7 @@
             resultType="org.myproject.demo.vo.Review">
         SELECT R.*, U.nickname AS extra_writer
         FROM review AS R
-        INNER JOIN `user` AS U
+        INNER JOIN `member` AS U
         ON R.userId = U.id
         WHERE R.id = #{id}
     </select>
@@ -59,7 +59,7 @@
             resultType="org.myproject.demo.vo.Review">
         SELECT R.*, U.nickname AS extra_writer
         FROM review AS R
-        INNER JOIN `user` AS U
+        INNER JOIN `member` AS U
         ON R.userId = U.id
         WHERE 1
         <if test="boardId != 0">
@@ -95,7 +95,7 @@
     <select id="getReviewCount" parameterType="int">
         SELECT COUNT(*), U.nickname AS extra_writer
         FROM review AS R
-        INNER JOIN `user` AS U
+        INNER JOIN `member` AS U
         ON R.userId = U.id
         WHERE 1
         <if test="boardId != 0">
