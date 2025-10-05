@@ -1,8 +1,8 @@
 package org.myproject.demo.controller;
 
 import org.myproject.demo.service.CrawlingService;
-import org.myproject.demo.vo.KakaoApi;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +14,8 @@ import java.util.Map;
 @RequestMapping("/intro")
 public class IntroductionController {
 
-    @Autowired
-    private KakaoApi kakaoApi;
+    @Value("${kakao.javascript_key}")
+    private String kakaoApiJavaScriptKey;
 
     @Autowired
     private CrawlingService crawlingService;
@@ -36,7 +36,7 @@ public class IntroductionController {
         String teamName = "Seoul";
 
         String region = getRegionByTeam(teamName);
-        String javascript_key = kakaoApi.getJavascript_key();
+        String javascript_key = kakaoApiJavaScriptKey;
 
         List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
 
@@ -57,7 +57,7 @@ public class IntroductionController {
         String teamName = "Anyang";
 
         String region = getRegionByTeam(teamName);
-        String javascript_key = kakaoApi.getJavascript_key();
+        String javascript_key = kakaoApiJavaScriptKey;
 
         List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
 
@@ -78,7 +78,7 @@ public class IntroductionController {
         String teamName = "SuwonFC";
 
         String region = getRegionByTeam(teamName);
-        String javascript_key = kakaoApi.getJavascript_key();
+        String javascript_key = kakaoApiJavaScriptKey;
 
         List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
 
@@ -99,7 +99,7 @@ public class IntroductionController {
         String teamName = "GangwonCh";
 
         String region = getRegionByTeam(teamName);
-        String javascript_key = kakaoApi.getJavascript_key();
+        String javascript_key = kakaoApiJavaScriptKey;
 
         List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
 
@@ -115,7 +115,7 @@ public class IntroductionController {
         String teamName = "GangwonG";
 
         String region = getRegionByTeam(teamName);
-        String javascript_key = kakaoApi.getJavascript_key();
+        String javascript_key = kakaoApiJavaScriptKey;
 
         List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
 
@@ -136,7 +136,7 @@ public class IntroductionController {
         String teamName = "Daejeon";
 
         String region = getRegionByTeam(teamName);
-        String javascript_key = kakaoApi.getJavascript_key();
+        String javascript_key = kakaoApiJavaScriptKey;
 
         List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
 
@@ -157,7 +157,7 @@ public class IntroductionController {
         String teamName = "Kimcheon";
 
         String region = getRegionByTeam(teamName);
-        String javascript_key = kakaoApi.getJavascript_key();
+        String javascript_key = kakaoApiJavaScriptKey;
 
         List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
 
@@ -178,7 +178,7 @@ public class IntroductionController {
         String teamName = "Daegu";
 
         String region = getRegionByTeam(teamName);
-        String javascript_key = kakaoApi.getJavascript_key();
+        String javascript_key = kakaoApiJavaScriptKey;
 
         List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
 
@@ -199,7 +199,7 @@ public class IntroductionController {
         String teamName = "Jeonju";
 
         String region = getRegionByTeam(teamName);
-        String javascript_key = kakaoApi.getJavascript_key();
+        String javascript_key = kakaoApiJavaScriptKey;
 
         List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
 
@@ -220,7 +220,7 @@ public class IntroductionController {
         String teamName = "Pohang";
 
         String region = getRegionByTeam(teamName);
-        String javascript_key = kakaoApi.getJavascript_key();
+        String javascript_key = kakaoApiJavaScriptKey;
 
         List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
 
@@ -241,7 +241,7 @@ public class IntroductionController {
         String teamName = "Ulsan";
 
         String region = getRegionByTeam(teamName);
-        String javascript_key = kakaoApi.getJavascript_key();
+        String javascript_key = kakaoApiJavaScriptKey;
 
         List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
 
@@ -262,7 +262,7 @@ public class IntroductionController {
         String teamName = "Jeju";
 
         String region = getRegionByTeam(teamName);
-        String javascript_key = kakaoApi.getJavascript_key();
+        String javascript_key = kakaoApiJavaScriptKey;
 
         List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
 
@@ -283,7 +283,7 @@ public class IntroductionController {
         String teamName = "Gwangju";
 
         String region = getRegionByTeam(teamName);
-        String javascript_key = kakaoApi.getJavascript_key();
+        String javascript_key = kakaoApiJavaScriptKey;
 
         List<Map<String, String>> restaurants = crawlingService.crawlingNotice(region);
 

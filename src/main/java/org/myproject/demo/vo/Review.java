@@ -1,16 +1,18 @@
 package org.myproject.demo.vo;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Entity;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-@Data
+@Entity
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Review {
-    private int id;
-    private String regDate;
-    private String updateDate;
+@SuperBuilder
+@ToString(callSuper = true)
+public class Review extends BaseEntity {
+
     private int userId;
     private int boardId;
     private String title;

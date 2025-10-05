@@ -3,10 +3,10 @@ package org.myproject.demo.service;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.myproject.demo.vo.Kakao;
-import org.myproject.demo.vo.KakaoApi;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -21,12 +21,15 @@ import java.time.format.DateTimeFormatter;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class KakaoService {
 
-    @Autowired
-    private KakaoApi kakaoApi;
+    @Value("${kakao.restapi_key}")
+    private String kakaoRestApiKey;
 
-    @Autowired
+    @Value("${kakao.redirect_url}")
+    private String kakaoRedirectUrl;
+
     private Kakao kakao;
 
     public Kakao getAccessToken(String code) {
@@ -45,8 +48,8 @@ public class KakaoService {
             StringBuilder sb = new StringBuilder();
 
             sb.append("grant_type=authorization_code");
-            sb.append("&client_id=").append(kakaoApi.getRestapi_key());
-            sb.append("&redirect_uri=").append(kakaoApi.getRedirect_url());
+            sb.append("&client_id=").append(kakaoRestApiKey);
+            sb.append("&redirect_uri=").append(kakaoRedirectUrl);
             sb.append("&code=").append(code);
 
             bw.write(sb.toString());

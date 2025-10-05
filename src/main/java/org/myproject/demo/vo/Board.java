@@ -1,18 +1,20 @@
 package org.myproject.demo.vo;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Entity;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 
-@Data
+@Entity
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Board {
-    private int id;
-    private LocalDateTime regDate;
-    private LocalDateTime updateDate;
+@SuperBuilder
+@ToString(callSuper = true)
+public class Board extends BaseEntity {
+
     private String code;
     private String name;
     private boolean delStatus;

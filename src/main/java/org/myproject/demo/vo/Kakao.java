@@ -1,17 +1,26 @@
 package org.myproject.demo.vo;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 
-@Data
+import static jakarta.persistence.GenerationType.IDENTITY;
+
+@Entity
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Component
+@SuperBuilder
+@ToString(callSuper = true)
 public class Kakao {
+
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
     private int id;
     private long kakao_id;
     private LocalDateTime kakao_createAt;

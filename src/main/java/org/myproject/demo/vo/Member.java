@@ -1,14 +1,9 @@
 package org.myproject.demo.vo;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-
-import java.time.LocalDateTime;
-
-import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
 @AllArgsConstructor
@@ -17,20 +12,30 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class Member {
+public class Member extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
-    private int id;
-    private LocalDateTime regDate;
-    private LocalDateTime updateDate;
+    @Column(name = "loginId")
     private String loginId;
+
+    @Column(name = "loginPw")
     private String loginPw;
+
+    @Column(name = "authLevel")
     private int authLevel;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "nickName")
     private String nickName;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "login_type")
     private String login_type;
+
+    @Column(name = "teamId")
     private int teamId;
 
     private String extra_writer;
