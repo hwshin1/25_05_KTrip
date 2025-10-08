@@ -1,12 +1,11 @@
 package org.myproject.demo.repository;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.myproject.demo.vo.Member;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDateTime;
 
-@Mapper
-public interface MemberRepository {
+public interface MemberRepository extends JpaRepository<Member, Integer> {
 
     int doJoin(String loginId, String loginPw, String name, String nickName, String email);
 

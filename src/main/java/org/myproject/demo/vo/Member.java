@@ -2,6 +2,7 @@ package org.myproject.demo.vo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Transient;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -38,8 +39,11 @@ public class Member extends BaseEntity {
     @Column(name = "teamId")
     private int teamId;
 
+    @Transient
     private String extra_writer;
+    @Transient
     private String extra_teamName;
+    @Transient
     private String extra_teamLogo;
 
     // 권한 레벨 상수

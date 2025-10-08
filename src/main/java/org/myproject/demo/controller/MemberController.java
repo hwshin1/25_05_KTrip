@@ -6,6 +6,7 @@ import org.myproject.demo.service.MemberService;
 import org.myproject.demo.util.Ut;
 import org.myproject.demo.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +21,11 @@ public class MemberController {
     @Autowired
     private Rq rq;
 
-    @Autowired
-    private KakaoApi kakaoApi;
+    @Value("${kakao.restapi_key}")
+    private String kakaoRestApiKey;
+
+    @Value("${kakao.redirect_url}")
+    private String kakaoRedirectUri;
 
     @Autowired
     private KakaoService kakaoService;
@@ -32,7 +36,7 @@ public class MemberController {
     @GetMapping("/user/join")
     public String Join(Model model) {
         String sendURL = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="
-                + kakaoApi.getRestapi_key() + "&redirect_uri="+ kakaoApi.getRedirect_url();
+                + kakaoRestApiKey + "&redirect_uri="+ kakaoRedirectUri;
 
         model.addAttribute("sendURL", sendURL);
 
@@ -103,7 +107,7 @@ public class MemberController {
     @RequestMapping("/user/login")
     public String login(Model model) {
         String sendURL = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="
-                + kakaoApi.getRestapi_key() + "&redirect_uri="+ kakaoApi.getRedirect_url();
+                + kakaoRestApiKey + "&redirect_uri="+ kakaoRedirectUri;
 
         model.addAttribute("sendURL", sendURL);
 

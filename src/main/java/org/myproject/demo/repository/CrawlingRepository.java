@@ -1,9 +1,9 @@
 package org.myproject.demo.repository;
 
-import org.apache.ibatis.annotations.Mapper;
+import org.myproject.demo.vo.Team;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Mapper
-public interface CrawlingRepository {
+public interface CrawlingRepository extends JpaRepository<Team, Long> {
 
     int webCrawling(String team_logo, String team_name, String team_homepage);
 

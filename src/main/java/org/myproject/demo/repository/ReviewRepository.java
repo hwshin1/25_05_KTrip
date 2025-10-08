@@ -1,12 +1,11 @@
 package org.myproject.demo.repository;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.myproject.demo.vo.Review;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-@Mapper
-public interface ReviewRepository {
+public interface ReviewRepository extends JpaRepository<Review, Integer> {
 
     int doWrite(int userId, String title, String body, String boardId);
 

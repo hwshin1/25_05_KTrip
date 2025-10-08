@@ -1,20 +1,20 @@
 package org.myproject.demo.service;
 
+import lombok.RequiredArgsConstructor;
 import org.myproject.demo.repository.MemberRepository;
 import org.myproject.demo.util.Ut;
 import org.myproject.demo.vo.Kakao;
 import org.myproject.demo.vo.Member;
 import org.myproject.demo.vo.ResultData;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
 @Service
+@RequiredArgsConstructor
 public class MemberService {
 
-    @Autowired
-    private MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     public ResultData<Integer> doJoin(String loginId, String loginPw,
                                       String name, String nickName, String email) {

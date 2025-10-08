@@ -1,5 +1,6 @@
 package org.myproject.demo.service;
 
+import lombok.RequiredArgsConstructor;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,7 +15,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.net.URLEncoder;
@@ -23,10 +23,10 @@ import java.time.Duration;
 import java.util.*;
 
 @Service
+@RequiredArgsConstructor
 public class CrawlingService {
 
-    @Autowired
-    private CrawlingRepository crawlingRepository;
+    private final CrawlingRepository crawlingRepository;
 
     private static final String BASE_URL = "https://www.kleague.com";
     private static final String TARGET_URL = BASE_URL + "/index.do";

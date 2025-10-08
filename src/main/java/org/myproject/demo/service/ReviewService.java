@@ -1,19 +1,19 @@
 package org.myproject.demo.service;
 
+import lombok.RequiredArgsConstructor;
 import org.myproject.demo.repository.ReviewRepository;
 import org.myproject.demo.util.Ut;
 import org.myproject.demo.vo.ResultData;
 import org.myproject.demo.vo.Review;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class ReviewService {
 
-    @Autowired
-    private ReviewRepository reviewRepository;
+    private final ReviewRepository reviewRepository;
 
     public ResultData doWrite(int userId, String title, String body, String boardId) {
         reviewRepository.doWrite(userId, title, body, boardId);

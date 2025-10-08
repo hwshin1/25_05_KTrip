@@ -1,9 +1,8 @@
 package org.myproject.demo.repository;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.myproject.demo.vo.Board;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Mapper
-public interface BoardRepository {
+public interface BoardRepository extends JpaRepository<Board, Integer> {
     Board getBoardById(int boardId);
 }
