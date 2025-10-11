@@ -1,0 +1,49 @@
+<footer th:fragment="footer" xmlns:th="http://www.thymeleaf.org">
+    <div class="w-full h-[500px] relative bg-[#f5f5f5] flex flex-col items-center justify-center text-black">
+        <!-- 두 개의 칼럼을 위한 영역 -->
+        <div class="flex flex-col md:flex-row gap-20 mb-10">
+            <!-- 첫 번째 칼럼 -->
+            <div class="text-left">
+                <p class="text-[20px] mb-2">LIST</p>
+                <p class="text-[14px] text-[#666]"><a href="/intro/home">구단 소개</a></p>
+                <p class="text-[14px] text-[#666]"><a href="/review/list?boardId=1">공지사항</a></p>
+                <p class="text-[14px] text-[#666]"><a href="/review/list?boardId=2">후기 글</a></p>
+                <p class="text-[14px] text-[#666]"><a href="/member/mypage">내 프로필</a></p>
+            </div>
+
+            <!-- 두 번째 칼럼 -->
+            <div class="text-left">
+                <p class="text-[20px] mb-2">구단 바로가기</p>
+                <p class="text-[14px] text-[#666]"><a href="/intro/Seoul">FC 서울</a></p>
+                <p class="text-[14px] text-[#666]"><a href="/intro/Jeonju">전북현대모터스</a></p>
+                <p class="text-[14px] text-[#666]"><a href="/intro/Ulsan">울산 HD</a></p>
+                <p class="text-[14px] text-[#666]"><a href="/intro/Daejeon">대전하나시티즌</a></p>
+                <p class="text-[14px] text-[#666]"><a href="/intro/Daegu">대구 FC</a></p>
+                <p class="text-[14px] text-[#666]"><a href="/intro/Anyang">FC 안양</a></p>
+            </div>
+
+            <!-- 세번째 칼럼 -->
+            <div class="text-left">
+                <p class="text-[20px] mb-2">구단 바로가기</p>
+                <p class="text-[14px] text-[#666]"><a href="/intro/Pohang">포항 스틸러스</a></p>
+                <p class="text-[14px] text-[#666]"><a href="/intro/Gangwon">강원 FC</a></p>
+                <p class="text-[14px] text-[#666]"><a href="/intro/Gwangju">광주 FC</a></p>
+                <p class="text-[14px] text-[#666]"><a href="/intro/Jeju">제주 SK</a></p>
+                <p class="text-[14px] text-[#666]"><a href="/intro/SuwonFC">수원 FC</a></p>
+                <p class="text-[14px] text-[#666]"><a href="/intro/Kimcheon">김천상무프로축구단</a></p>
+            </div>
+        </div>
+
+        <!-- 구분선 -->
+        <svg width="80%" height="3" viewBox="0 0 1160 3" fill="none" xmlns="http://www.w3.org/2000/svg" class="my-4">
+            <line y1="1.5" x2="1160" y2="1.5" stroke="#666" stroke-width="3"></line>
+        </svg>
+
+        <!-- 하단 텍스트 -->
+        <p class="text-[20px] text-[#666] text-center leading-relaxed">
+            <span>2025. K League & Trip.</span>
+            <br/>
+            <span class="text-sm">shw. project</span>
+        </p>
+    </div>
+</footer>

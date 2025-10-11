@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'NexonLv1Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NexonLv1Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NexonLv1Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+body {
+    font-family: 'NEXON Lv1 Gothic', sans-serif;
+}
+
+nav .line {
+    position: absolute;
+    bottom: 15px; /* 밑줄 위치 조절 */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #9D0A0F; /* 밑줄 색상 */
+    transition: width 0.3s ease;
+}
+
+nav a:hover .line,
+nav div:hover .line {
+    width: 100%;
+}
+
+nav li:hover > a {
+    color: #9D0A0F;
+}

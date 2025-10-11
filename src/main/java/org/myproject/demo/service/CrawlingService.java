@@ -35,7 +35,7 @@ public class CrawlingService {
         List<Team> teamList = new ArrayList<>();
 
         try {
-            int savedTeamCount = crawlingRepository.countTeams();
+            long savedTeamCount = crawlingRepository.count();
 
             if (savedTeamCount >= 12) {
                 System.out.println("이미 팀이 저장되어 있습니다.");
@@ -55,17 +55,24 @@ public class CrawlingService {
                 String team_name = aTag.attr("title");
                 String team_homepage = formatUrl(aTag.attr("href"));
 
-                boolean exists = crawlingRepository.existsTeam(team_name, team_homepage);
+                boolean exists = crawlingRepository.existsByTeamName(team_name);
 
                 //존재하면 저장 x
-                if (exists) {
-                    continue;
-                }
+                if (exists) continue;
 
+                /* 예전 버전
                 crawlingRepository.webCrawling(team_logo, team_name, team_homepage);
-
                 Team team = new Team(team_logo, team_name, team_homepage);
+                */
 
+                // JPA로 변경
+                Team team = Team.builder()
+                        .teamLogo(team_logo)
+                        .teamName(team_name)
+                        .teamHomepage(team_homepage)
+                        .build();
+
+                crawlingRepository.save(team);
                 teamList.add(team);
             }
 

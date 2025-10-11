@@ -4,7 +4,7 @@
 
 <!-- 카카오 지도 JS -->
 <script type="text/javascript"
-        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${javascript_key}&libraries=services">
+        src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=${javascript_key}&libraries=services">
 </script>
 <div class="bg-gray-100 text-gray-900">
 
