@@ -1,6 +1,7 @@
 package org.myproject.demo.vo;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Transient;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -13,14 +14,17 @@ import lombok.experimental.SuperBuilder;
 @ToString(callSuper = true)
 public class Review extends BaseEntity {
 
-    private int userId;
+    private int memberId;
     private int boardId;
     private String title;
     private String body;
     private float rating;
 
+    @Transient
     private String extra_writer;
 
+    @Transient
     private boolean userCanModify;
+    @Transient
     private boolean userCanDelete;
 }

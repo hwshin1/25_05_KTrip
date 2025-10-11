@@ -43,34 +43,34 @@ public class MemberController {
         return "user/join";
     }
 
-    @GetMapping("/login/demoshw/oauth")
-    @ResponseBody
-    public String callBack(HttpServletRequest req, String code) {
-        rq = (Rq) req.getAttribute("rq");
-
-        Kakao kakao = kakaoService.getAccessToken(code);
-
-        long kakao_id = kakao.getKakao_id();
-        LocalDateTime kakao_createAt = kakao.getKakao_createAt();
-        String kakao_nickName = kakao.getKakao_nickName();
-        String kakao_email = kakao.getKakao_email();
-        String access_token = kakao.getAccess_token();
-        String refresh_token = kakao.getRefresh_token();
-
-        ResultData kakaoJoinRd = memberService.kakaoJoin(kakao_id, kakao_createAt, kakao_nickName, kakao_email, access_token, refresh_token);
-
-        if (kakaoJoinRd.isFail()) {
-            return Ut.jsHistoryBack(kakaoJoinRd.getResultCode(), kakaoJoinRd.getMsg());
-        }
-
-        Member member = memberService.getUserByEmailAndLoginType(kakao_email, "kakao");
-
-        if (member == null) {
-            return Ut.jsHistoryBack("F-2", "카카오 회원 정보를 찾을 수 없습니다.");
-        }
-
-        return Ut.jsReplace(kakaoJoinRd.getResultCode(), kakaoJoinRd.getMsg(), "/");
-    }
+//    @GetMapping("/login/demoshw/oauth")
+//    @ResponseBody
+//    public String callBack(HttpServletRequest req, String code) {
+//        rq = (Rq) req.getAttribute("rq");
+//
+//        Kakao kakao = kakaoService.getAccessToken(code);
+//
+//        long kakao_id = kakao.getKakao_id();
+//        LocalDateTime kakao_createAt = kakao.getKakao_createAt();
+//        String kakao_nickName = kakao.getKakao_nickName();
+//        String kakao_email = kakao.getKakao_email();
+//        String access_token = kakao.getAccess_token();
+//        String refresh_token = kakao.getRefresh_token();
+//
+//        ResultData kakaoJoinRd = memberService.kakaoJoin(kakao_id, kakao_createAt, kakao_nickName, kakao_email, access_token, refresh_token);
+//
+//        if (kakaoJoinRd.isFail()) {
+//            return Ut.jsHistoryBack(kakaoJoinRd.getResultCode(), kakaoJoinRd.getMsg());
+//        }
+//
+//        Member member = memberService.getUserByEmailAndLoginType(kakao_email, "kakao");
+//
+//        if (member == null) {
+//            return Ut.jsHistoryBack("F-2", "카카오 회원 정보를 찾을 수 없습니다.");
+//        }
+//
+//        return Ut.jsReplace(kakaoJoinRd.getResultCode(), kakaoJoinRd.getMsg(), "/");
+//    }
 
     @RequestMapping("/user/doJoin")
     @ResponseBody
@@ -154,15 +154,15 @@ public class MemberController {
         return Ut.jsReplace("S-1", "로그아웃 성공", "/");
     }
 
-    @RequestMapping("/user/mypage")
-    public String mypage(HttpServletRequest req, Model model) {
-        rq = (Rq) req.getAttribute("rq");
-
-        Member member = memberService.getUserTeamById(rq.getLoginedUserId());
-
-        model.addAttribute("user", member);
-        return "user/mypage";
-    }
+//    @RequestMapping("/user/mypage")
+//    public String mypage(HttpServletRequest req, Model model) {
+//        rq = (Rq) req.getAttribute("rq");
+//
+//        Member member = memberService.getUserTeamById(rq.getLoginedUserId());
+//
+//        model.addAttribute("user", member);
+//        return "user/mypage";
+//    }
 
     @RequestMapping("/user/userInfo")
     public String showUserInfo() {
@@ -193,50 +193,50 @@ public class MemberController {
         return "user/modify";
     }
 
-    @RequestMapping("/user/doModify")
-    @ResponseBody
-    public String doModify(HttpServletRequest req, String loginPw, String nickName, String email) {
-        rq = (Rq) req.getAttribute("rq");
-
-        if (Ut.isEmptyOrNull(nickName)) {
-            return Ut.jsHistoryBack("F-1", Ut.f("닉네임을 입력하세요."));
-        }
-
-        if (Ut.isEmptyOrNull(email)) {
-            return Ut.jsHistoryBack("F-2", Ut.f("이메일을 입력하세요."));
-        }
-
-        ResultData modifyRd;
-
-        if (Ut.isEmptyOrNull(loginPw)) {
-            modifyRd = memberService.modifyWithoutPw(rq.getLoginedUserId(), nickName, email);
-        } else {
-            modifyRd = memberService.modify(rq.getLoginedUserId(), loginPw, nickName, email);
-        }
-
-        return Ut.jsReplace(modifyRd.getResultCode(), modifyRd.getMsg(), "/user/mypage");
-    }
-
-    @RequestMapping("/user/teamCheck")
-    public String teamCheck() {
-        return "user/teamCheck";
-    }
-
-    @RequestMapping("/user/doTeamCheck")
-    @ResponseBody
-    public String doTeamCheck(HttpServletRequest req, String teamName) {
-        rq = (Rq) req.getAttribute("rq");
-
-        if (Ut.isEmptyOrNull(teamName)) {
-            return Ut.jsHistoryBack("F-1", Ut.f("팀을 선택해주세요."));
-        }
-
-        // 팀 이름으로 번호 찾기
-        int teamId = memberService.getTeamIdByName(teamName);
-
-        // user 업데이트
-        ResultData teamRd = memberService.getupdateTeamId(rq.getLoginedUserId(), teamId);
-
-        return Ut.jsReplace(teamRd.getResultCode(), teamRd.getMsg(), "/user/modify");
-    }
+//    @RequestMapping("/user/doModify")
+//    @ResponseBody
+//    public String doModify(HttpServletRequest req, String loginPw, String nickName, String email) {
+//        rq = (Rq) req.getAttribute("rq");
+//
+//        if (Ut.isEmptyOrNull(nickName)) {
+//            return Ut.jsHistoryBack("F-1", Ut.f("닉네임을 입력하세요."));
+//        }
+//
+//        if (Ut.isEmptyOrNull(email)) {
+//            return Ut.jsHistoryBack("F-2", Ut.f("이메일을 입력하세요."));
+//        }
+//
+//        ResultData modifyRd;
+//
+//        if (Ut.isEmptyOrNull(loginPw)) {
+//            modifyRd = memberService.modifyWithoutPw(rq.getLoginedUserId(), nickName, email);
+//        } else {
+//            modifyRd = memberService.modify(rq.getLoginedUserId(), loginPw, nickName, email);
+//        }
+//
+//        return Ut.jsReplace(modifyRd.getResultCode(), modifyRd.getMsg(), "/user/mypage");
+//    }
+//
+//    @RequestMapping("/user/teamCheck")
+//    public String teamCheck() {
+//        return "user/teamCheck";
+//    }
+//
+//    @RequestMapping("/user/doTeamCheck")
+//    @ResponseBody
+//    public String doTeamCheck(HttpServletRequest req, String teamName) {
+//        rq = (Rq) req.getAttribute("rq");
+//
+//        if (Ut.isEmptyOrNull(teamName)) {
+//            return Ut.jsHistoryBack("F-1", Ut.f("팀을 선택해주세요."));
+//        }
+//
+//        // 팀 이름으로 번호 찾기
+//        int teamId = memberService.getTeamIdByName(teamName);
+//
+//        // user 업데이트
+//        ResultData teamRd = memberService.getupdateTeamId(rq.getLoginedUserId(), teamId);
+//
+//        return Ut.jsReplace(teamRd.getResultCode(), teamRd.getMsg(), "/user/modify");
+//    }
 }

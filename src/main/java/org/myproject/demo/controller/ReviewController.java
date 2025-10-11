@@ -16,11 +16,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class ReviewController {
 
-    private final BeforeInterceptor beforeInterceptor;
+    @Autowired
+    private BeforeInterceptor beforeInterceptor;
 
     @Autowired
     private Rq rq;
@@ -34,10 +36,6 @@ public class ReviewController {
     @Autowired
     private MemberService memberService;
 
-    ReviewController(BeforeInterceptor beforeInterceptor) {
-        this.beforeInterceptor = beforeInterceptor;
-    }
-
     @RequestMapping("/review/list")
     public String reviewList(HttpServletRequest req, Model model, @RequestParam(defaultValue = "2") int boardId, @RequestParam(defaultValue = "1") int page,
                              @RequestParam(defaultValue = "title") String searchKeywordTypeCode,
@@ -50,17 +48,17 @@ public class ReviewController {
             return rq.historyBackOnView("존재하지 않는 게시판");
         }
 
-        int reviewsCount = reviewService.getReviewCount(boardId, searchKeywordTypeCode, searchKeyword);
+//        int reviewsCount = reviewService.getReviewCount(boardId, searchKeywordTypeCode, searchKeyword);
 
         int itemsPage = 10;
 
-        int pagesCount = (int) Math.ceil(reviewsCount / (double) itemsPage);
+//        int pagesCount = (int) Math.ceil(reviewsCount / (double) itemsPage);
 
-        List<Review> reviews = reviewService.getForPrintReviews(boardId, itemsPage, page, searchKeywordTypeCode, searchKeyword);
+//        List<Review> reviews = reviewService.getForPrintReviews(boardId, itemsPage, page, searchKeywordTypeCode, searchKeyword);
 
-        model.addAttribute("reviews", reviews);
-        model.addAttribute("pagesCount", pagesCount);
-        model.addAttribute("reviewsCount", reviewsCount);
+//        model.addAttribute("reviews", reviews);
+//        model.addAttribute("pagesCount", pagesCount);
+//        model.addAttribute("reviewsCount", reviewsCount);
         model.addAttribute("searchKeywordTypeCode", searchKeywordTypeCode);
         model.addAttribute("searchKeyword", searchKeyword);
         model.addAttribute("boardId", boardId);
@@ -74,9 +72,9 @@ public class ReviewController {
     public String write(HttpServletRequest req, Model model) {
         rq = (Rq) req.getAttribute("rq");
 
-        Member member = memberService.getUserById(rq.getLoginedUserId());
+//        Member member = memberService.getUserById(rq.getLoginedUserId());
 
-        model.addAttribute("user", member);
+//        model.addAttribute("user", member);
 
         return "review/write";
     }
@@ -98,11 +96,11 @@ public class ReviewController {
             return Ut.jsHistoryBack("F-3", Ut.f("게시판을 선택하세요."));
         }
 
-        Member member = memberService.getUserById(rq.getLoginedUserId());
+//        Member member = memberService.getUserById(rq.getLoginedUserId());
 
-        if (member.getAuthLevel() != Member.AUTH_LEVEL_ADMIN && boardId.equals("1")) {
-            return Ut.jsHistoryBack("F-4", Ut.f("공지사항은 관리자만 작성 가능합니다."));
-        }
+//        if (member.getAuthLevel() != Member.AUTH_LEVEL_ADMIN && boardId.equals("1")) {
+//            return Ut.jsHistoryBack("F-4", Ut.f("공지사항은 관리자만 작성 가능합니다."));
+//        }
 
         ResultData doWriteRd = reviewService.doWrite(rq.getLoginedUserId(), title, body, boardId);
 
@@ -115,13 +113,14 @@ public class ReviewController {
     public String getReview(HttpServletRequest req, int id, Model model) {
         rq = (Rq) req.getAttribute("rq");
 
-        Review review = reviewService.getForPrintReview(rq.getLoginedUserId(), id);
+//        Review review = reviewService.getForPrintReview(rq.getLoginedUserId(), id);
 
-        model.addAttribute("review", review);
+//        model.addAttribute("review", review);
 
         return "review/detail";
     }
 
+    /*
     @RequestMapping("/review/modify")
     public String modifyReview(HttpServletRequest req, int id, Model model) {
         rq = (Rq) req.getAttribute("rq");
@@ -146,7 +145,7 @@ public class ReviewController {
     public String doModify(HttpServletRequest req, int id, String title, String body) {
         rq = (Rq) req.getAttribute("rq");
 
-        Review review = reviewService.getReviewById(id);
+        Optional<Review> review = reviewService.getReviewById(id);
 
         if (review == null) {
             return Ut.jsReplace("F-1" , Ut.f("%d번 리뷰는 없습니다", id), "/review/list");
@@ -167,14 +166,16 @@ public class ReviewController {
 
     @RequestMapping("/review/doDelete")
     @ResponseBody
-    public String doDelete(HttpServletRequest req, int id) {
+    public String doDelete(HttpServletRequest req, long id) {
         rq = (Rq) req.getAttribute("rq");
 
-        Review review = reviewService.getReviewById(id);
+        Optional<Review> opr = reviewService.getReviewById(id);
 
-        if (review == null) {
+        if (opr == null) {
             return Ut.jsHistoryBack("F-1" ,Ut.f("%d번 리뷰는 없습니다.", id));
         }
+
+        Review review = opr.get();
 
         ResultData userCanDeleteRd = reviewService.userCanDelete(rq.getLoginedUserId(), review);
 
@@ -188,4 +189,5 @@ public class ReviewController {
 
         return Ut.jsReplace(userCanDeleteRd.getResultCode(), userCanDeleteRd.getMsg(), "/review/list");
     }
+     */
 }

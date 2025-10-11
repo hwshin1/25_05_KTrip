@@ -41,8 +41,6 @@ public class Rq {
         if (session.getAttribute("loginedUserId") != null) {
             isLogined = true;
             loginedUserId = (int) session.getAttribute("loginedUserId");
-            loginedMember = memberService.getUserById(loginedUserId);
-            loginedMemberTeam = memberService.getUserTeamById(loginedUserId);
         }
 
         this.req.setAttribute("rq", this);

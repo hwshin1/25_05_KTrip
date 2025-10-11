@@ -3,10 +3,12 @@ package org.myproject.demo.repository;
 import org.myproject.demo.vo.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.time.LocalDateTime;
+public interface MemberRepository extends JpaRepository<Member, Long> {
+    Member findByNameAndEmail(String name, String email);
 
-public interface MemberRepository extends JpaRepository<Member, Integer> {
+    Member findByLoginId(String loginId);
 
+    /* Mybatis 버전
     int doJoin(String loginId, String loginPw, String name, String nickName, String email);
 
     Member getUserByLoginId(String loginId);
@@ -32,4 +34,5 @@ public interface MemberRepository extends JpaRepository<Member, Integer> {
     Member getUserByEmailAndLoginType(String kakao_email, String login_type);
 
     int doJoinKakao(String loginId, String loginPw, String name, String nickName, String email, String login_type);
+     */
 }

@@ -31,7 +31,7 @@ public class CrawlingService {
     private static final String BASE_URL = "https://www.kleague.com";
     private static final String TARGET_URL = BASE_URL + "/index.do";
 
-    public List<Team> webCrawling() {
+    public void webCrawling() {
         List<Team> teamList = new ArrayList<>();
 
         try {
@@ -39,7 +39,6 @@ public class CrawlingService {
 
             if (savedTeamCount >= 12) {
                 System.out.println("이미 팀이 저장되어 있습니다.");
-                return teamList;
             }
 
             Document doc = Jsoup.connect(TARGET_URL).get();
@@ -78,11 +77,8 @@ public class CrawlingService {
 
         } catch (Exception e) {
             System.err.println("크롤링 중 오류 발생: " + e.getMessage());
-            e.printStackTrace();
             throw new RuntimeException("크롤링 실패", e);
         }
-
-        return teamList;
     }
 
     // 상대 경로일 경우 BASE_URL 붙이기

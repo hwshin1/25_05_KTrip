@@ -3,10 +3,8 @@ package org.myproject.demo.repository;
 import org.myproject.demo.vo.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
-public interface ReviewRepository extends JpaRepository<Review, Integer> {
-
+public interface ReviewRepository extends JpaRepository<Review, Long> {
+    /* mybatis 방식
     int doWrite(int userId, String title, String body, String boardId);
 
     List<Review> getReviewList();
@@ -24,4 +22,5 @@ public interface ReviewRepository extends JpaRepository<Review, Integer> {
     int getReviewCount(int boardId, String searchKeywordTypeCode, String searchKeyword);
 
     List<Review> getForPrintReviews(int boardId, int limitFrom, int limitTake, String searchKeywordTypeCode, String searchKeyword);
+     */
 }
