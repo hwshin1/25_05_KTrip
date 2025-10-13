@@ -1,12 +1,14 @@
 package org.myproject.demo.service;
 
 import lombok.RequiredArgsConstructor;
+import org.myproject.demo.repository.KakaoRepository;
 import org.myproject.demo.repository.MemberRepository;
 import org.myproject.demo.util.Ut;
 import org.myproject.demo.vo.Kakao;
 import org.myproject.demo.vo.Member;
 import org.myproject.demo.vo.ResultData;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
@@ -16,8 +18,10 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    public ResultData<Integer> doJoin(String loginId, String loginPw,
-                                      String name, String nickName, String email) {
+    private final KakaoRepository kakaoRepository;
+
+    @Transactional
+    public ResultData<Long> doJoin(String loginId, String loginPw, String name, String nickName, String email) {
         Member memberId = getUserByLoginId(loginId);
 
         if (memberId != null) {
@@ -40,14 +44,16 @@ public class MemberService {
         Member member = Member.builder()
                 .loginId(loginId)
                 .loginPw(loginPw)
+                .authLevel(3)
                 .name(name)
                 .nickName(nickName)
                 .email(email)
+                .loginType("local")
                 .build();
 
         memberRepository.save(member);
 
-        int id = memberRepository.hashCode();
+        long id = member.getId();
 
         return ResultData.from("S-1", Ut.f("회원가입 성공!"), "가입 성공 id", id);
     }
@@ -60,7 +66,7 @@ public class MemberService {
         return memberRepository.findByLoginId(loginId);
     }
 
-    /*
+    /* Mybatis 방식
     public ResultData modifyWithoutPw(int loginedUserId, String nickName, String email) {
         memberRepository.modifyWithoutPw(loginedUserId, nickName, email);
 
@@ -92,8 +98,41 @@ public class MemberService {
     public int getTeamIdByName(String teamName) {
         return memberRepository.getTeamIdByName(teamName);
     }
+     */
 
+    @Transactional
     public ResultData<Kakao> kakaoJoin(long kakao_id, LocalDateTime kakao_createAt, String kakao_nickName, String kakao_email, String access_token, String refresh_token) {
+
+        Kakao kakao = Kakao.builder()
+                .kakao_id(kakao_id)
+                .kakao_createAt(kakao_createAt)
+                .kakao_nickName(kakao_nickName)
+                .kakao_email(kakao_email)
+                .access_token(access_token)
+                .refresh_token(refresh_token)
+                .build();
+
+        kakaoRepository.save(kakao);
+
+        Member isMember = getMemberByEmailAndLoginType(kakao_email, "kakao");
+
+        if (isMember == null) {
+            Member member = Member.builder()
+                    .loginId("kakao_" + kakao_id)
+                    .loginPw("N/A")
+                    .authLevel(3)
+                    .name("")
+                    .nickName(kakao_nickName)
+                    .email(kakao_email)
+                    .loginType("kakao")
+                    .build();
+
+            memberRepository.save(member);
+        }
+
+        return ResultData.from("S-1", Ut.f("%s님 카카오 로그인 성공", kakao.getKakao_nickName()));
+
+        /* Mybatis 방식
         memberRepository.kakaoJoin(kakao_id, kakao_createAt, kakao_nickName, kakao_email, access_token, refresh_token);
 
         Member member = memberRepository.getUserByEmailAndLoginType(kakao_email, "kakao");
@@ -112,10 +151,10 @@ public class MemberService {
         Kakao kakao = new Kakao(kakao_id, kakao_createAt, kakao_nickName, kakao_email, access_token, refresh_token);
 
         return ResultData.from("S-1", Ut.f("%s님 카카오 로그인 성공", kakao.getKakao_nickName()));
+         */
     }
 
-    public Member getUserByEmailAndLoginType(String kakao_email, String login_type) {
-        return memberRepository.getUserByEmailAndLoginType(kakao_email, login_type);
+    public Member getMemberByEmailAndLoginType(String kakao_email, String login_type) {
+        return memberRepository.findByEmailAndLoginType(kakao_email, login_type);
     }
-     */
 }

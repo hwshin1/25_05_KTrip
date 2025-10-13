@@ -50,7 +50,7 @@ public class ReviewController {
 
 //        int reviewsCount = reviewService.getReviewCount(boardId, searchKeywordTypeCode, searchKeyword);
 
-        int itemsPage = 10;
+//        int itemsPage = 10
 
 //        int pagesCount = (int) Math.ceil(reviewsCount / (double) itemsPage);
 

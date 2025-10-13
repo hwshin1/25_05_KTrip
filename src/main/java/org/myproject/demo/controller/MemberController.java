@@ -40,37 +40,39 @@ public class MemberController {
 
         model.addAttribute("sendURL", sendURL);
 
-        return "user/join";
+        // Mybatis 방식
+        // return "user/join";
+        return "member/join";
     }
 
-//    @GetMapping("/login/demoshw/oauth")
-//    @ResponseBody
-//    public String callBack(HttpServletRequest req, String code) {
-//        rq = (Rq) req.getAttribute("rq");
-//
-//        Kakao kakao = kakaoService.getAccessToken(code);
-//
-//        long kakao_id = kakao.getKakao_id();
-//        LocalDateTime kakao_createAt = kakao.getKakao_createAt();
-//        String kakao_nickName = kakao.getKakao_nickName();
-//        String kakao_email = kakao.getKakao_email();
-//        String access_token = kakao.getAccess_token();
-//        String refresh_token = kakao.getRefresh_token();
-//
-//        ResultData kakaoJoinRd = memberService.kakaoJoin(kakao_id, kakao_createAt, kakao_nickName, kakao_email, access_token, refresh_token);
-//
-//        if (kakaoJoinRd.isFail()) {
-//            return Ut.jsHistoryBack(kakaoJoinRd.getResultCode(), kakaoJoinRd.getMsg());
-//        }
-//
-//        Member member = memberService.getUserByEmailAndLoginType(kakao_email, "kakao");
-//
-//        if (member == null) {
-//            return Ut.jsHistoryBack("F-2", "카카오 회원 정보를 찾을 수 없습니다.");
-//        }
-//
-//        return Ut.jsReplace(kakaoJoinRd.getResultCode(), kakaoJoinRd.getMsg(), "/");
-//    }
+    @GetMapping("/login/demoshw/oauth")
+    @ResponseBody
+    public String callBack(HttpServletRequest req, String code) {
+        rq = (Rq) req.getAttribute("rq");
+
+        Kakao kakao = kakaoService.getAccessToken(code);
+
+        long kakao_id = kakao.getKakao_id();
+        LocalDateTime kakao_createAt = kakao.getKakao_createAt();
+        String kakao_nickName = kakao.getKakao_nickName();
+        String kakao_email = kakao.getKakao_email();
+        String access_token = kakao.getAccess_token();
+        String refresh_token = kakao.getRefresh_token();
+
+        ResultData kakaoJoinRd = memberService.kakaoJoin(kakao_id, kakao_createAt, kakao_nickName, kakao_email, access_token, refresh_token);
+
+        if (kakaoJoinRd.isFail()) {
+            return Ut.jsHistoryBack(kakaoJoinRd.getResultCode(), kakaoJoinRd.getMsg());
+        }
+
+        Member member = memberService.getMemberByEmailAndLoginType(kakao_email, "kakao");
+
+        if (member == null) {
+            return Ut.jsHistoryBack("F-2", "카카오 회원 정보를 찾을 수 없습니다.");
+        }
+
+        return Ut.jsReplace(kakaoJoinRd.getResultCode(), kakaoJoinRd.getMsg(), "/");
+    }
 
     @RequestMapping("/user/doJoin")
     @ResponseBody
@@ -109,9 +111,13 @@ public class MemberController {
         String sendURL = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="
                 + kakaoRestApiKey + "&redirect_uri="+ kakaoRedirectUri;
 
+        System.out.println(sendURL);
+
         model.addAttribute("sendURL", sendURL);
 
-        return "user/login";
+        // Mybatis 방식
+        // return "user/login";
+        return "member/login";
     }
 
     @RequestMapping("/user/doLogin")

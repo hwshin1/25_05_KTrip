@@ -34,7 +34,7 @@ public class Member extends BaseEntity {
     private String email;
 
     @Column(name = "login_type")
-    private String login_type;
+    private String loginType;
 
     @Column(name = "teamId")
     private int teamId;

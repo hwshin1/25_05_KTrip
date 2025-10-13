@@ -1,10 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/head :: head">
     <meta charset="UTF-8">
-    <title>Title</title>
 </head>
 <body>
+<header th:replace="common/header :: header"></header>
+
+<section class="h-screen flex flex-col justify-center items-center">
+    <div class="mx-auto">
+        <form action="../member/doJoin" method="POST">
+            <div class="flex w-full justify-center items-center bg-white">
+                <div class="w-[360px] p-[40px] rounded-[16px] bg-[#fdfdfd]">
+                    <h2 class="flex text-center mb-[24px] text-[#333]">회원가입</h2>
+
+                    <!-- 아이디 -->
+                    <input name="loginId" type="text" placeholder="아이디를 입력하세요"
+                           class="w-full h-[40px] mb-[12px] p-[10px] border rounded-[8px] text-sm">
+
+                    <!-- 비밀번호 -->
+                    <input name="loginPw" type="text" placeholder="비밀번호를 입력하세요"
+                           class="w-full h-[40px] mb-[12px] p-[10px] border rounded-[8px] text-sm">
+
+                    <!-- 이름 -->
+                    <input name="name" type="text" placeholder="이름을 입력하세요"
+                           class="w-full h-[40px] mb-[12px] p-[10px] border rounded-[8px] text-sm">
+
+                    <!-- 닉네임 -->
+                    <input name="nickName" type="text" placeholder="닉네임을 입력하세요"
+                           class="w-full h-[40px] mb-[12px] p-[10px] border rounded-[8px] text-sm">
+
+                    <!-- 이메일 -->
+                    <input name="email" type="text" placeholder="이메일을 입력하세요"
+                           class="w-full h-[40px] mb-[12px] p-[10px] border rounded-[8px] text-sm">
+
+                    <!-- 회원가입 버튼 -->
+                    <button class="w-full h-[40px] rounded-[20px] bg-[#333] text-white text-sm cursor-pointer">
+                        회원가입
+                    </button>
+
+                    <!-- 구분선 및 SNS 문구 -->
+                    <div class="flex items-center my-6">
+                        <hr class="flex-1 border-0 h-[1px] bg-gray-300">
+                        <span class="px-[10px] text-[#888] text-[12px]">SNS로 회원가입</span>
+                        <hr class="flex-1 border-0 h-[1px] bg-gray-300">
+                    </div>
+
+                    <!-- 카카오 로그인 -->
+                    <a href="${sendURL}">
+                        <img src="/kakao_login_medium_narrow.png" alt="카카오 로그인" class="mx-auto">
+                    </a>
+                </div>
+            </div>
+        </form>
+        <!-- 뒤로가기 버튼 -->
+        <div class="text-center mt-8">
+            <button onclick="history.back();"
+                    class="px-5 py-2.5 border border-gray-400 text-gray-700 text-base bg-white hover:bg-gray-100 rounded-md transition duration-200">
+                뒤로가기
+            </button>
+        </div>
+    </div>
+</section>
+
+<footer th:replace="common/footer :: footer"></footer>
 
 </body>
 </html>

@@ -8,6 +8,8 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 
     Member findByLoginId(String loginId);
 
+    Member findByEmailAndLoginType(String kakaoEmail, String kakao);
+
     /* Mybatis 버전
     int doJoin(String loginId, String loginPw, String name, String nickName, String email);
 
