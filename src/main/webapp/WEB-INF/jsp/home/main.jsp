@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="w-full h-[600px] relative text-white bg-[url(/VideoCapture_20250521-202515.jpg)] bg-cover bg-center">
+    <div class="w-full h-[600px] relative text-white bg-[url(/KakaoTalk_20251015_141635790.jpg)] bg-cover bg-center">
         <div class="relative w-full h-full flex flex-col items-center justify-center text-center space-y-6 bg-black/40">
             <p class="text-[50px] font-bold">
                 재미있는 축구 직관
