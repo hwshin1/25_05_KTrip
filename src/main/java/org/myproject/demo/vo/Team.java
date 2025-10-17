@@ -19,7 +19,7 @@ public class Team {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    private int id;
+    private Long id;
     private String teamLogo;
     private String teamName;
     private String teamHomepage;

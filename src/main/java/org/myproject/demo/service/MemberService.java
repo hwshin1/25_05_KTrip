@@ -3,10 +3,12 @@ package org.myproject.demo.service;
 import lombok.RequiredArgsConstructor;
 import org.myproject.demo.repository.KakaoRepository;
 import org.myproject.demo.repository.MemberRepository;
+import org.myproject.demo.repository.TeamRepository;
 import org.myproject.demo.util.Ut;
 import org.myproject.demo.vo.Kakao;
 import org.myproject.demo.vo.Member;
 import org.myproject.demo.vo.ResultData;
+import org.myproject.demo.vo.Team;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +21,8 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     private final KakaoRepository kakaoRepository;
+
+    private final TeamRepository teamRepository;
 
     @Transactional
     public ResultData<Long> doJoin(String loginId, String loginPw, String name, String nickName, String email) {
@@ -66,39 +70,72 @@ public class MemberService {
         return memberRepository.findByLoginId(loginId);
     }
 
-    /* Mybatis 방식
-    public ResultData modifyWithoutPw(int loginedUserId, String nickName, String email) {
+    @Transactional
+    public ResultData modifyWithoutPw(Long loginedMemberId, String nickName, String email) {
+        Member member = getLoginMemberById(loginedMemberId);
+
+        if (nickName != null) {
+            member.setNickName(nickName);
+        }
+
+        if (email != null) {
+            member.setEmail(email);
+        }
+
+        memberRepository.save(member);
+
+        /* Mybatis 방식
         memberRepository.modifyWithoutPw(loginedUserId, nickName, email);
+         */
 
         return ResultData.from("S-1", "회원정보 수정 완료");
     }
 
-    public ResultData modify(int loginedUserId, String loginPw, String nickName, String email) {
+    @Transactional
+    public ResultData modify(Long loginedMemberId, String loginPw, String nickName, String email) {
+        Member member = getLoginMemberById(loginedMemberId);
+
+        if (loginPw != null) {
+            member.setLoginPw(loginPw);
+        }
+
+        if (nickName != null) {
+            member.setNickName(nickName);
+        }
+
+        if (email != null) {
+            member.setEmail(email);
+        }
+
+        memberRepository.save(member);
+
+        /* Mybatis 방식
         memberRepository.modify(loginedUserId, loginPw, nickName, email);
+         */
 
         return ResultData.from("S-1", "회원정보 수정 완료");
     }
 
-    public Member getUserById(int loginedUserId) {
-        return memberRepository.getUserById(loginedUserId);
+    public Member getLoginMemberById(Long loginedMemberId) {
+        return memberRepository.findById(loginedMemberId)
+                .orElseThrow(() -> new RuntimeException("로그인 된 아이디를 불러오지 못했습니다."));
     }
 
-    public Member getUserTeamById(int loginedUserId) {
-        return memberRepository.getUserTeamById(loginedUserId);
+    public Team getTeamById(Long teamId) {
+        if (teamId == null) return null;
+        return teamRepository.findById(teamId).orElseThrow(() -> new RuntimeException("해당 팀이 존재하지 않습니다."));
     }
 
-    public ResultData getupdateTeamId(int loginedUserId, int teamId) {
+    /* Mybatis 방식
+    public ResultData getUpdateTeamId(Long loginedUserId, Long teamId) {
         memberRepository.getupdateTeamId(loginedUserId, teamId);
 
         Member member = memberRepository.getUserTeamById(loginedUserId);
 
-        return ResultData.from("S-1", Ut.f("%s팀 선택 완료!", member.getExtra_teamName()));
-    }
 
-    public int getTeamIdByName(String teamName) {
-        return memberRepository.getTeamIdByName(teamName);
+        return ResultData.from("S-1", Ut.f("%s팀 선택 완료!", team.getTeamName()));
     }
-     */
+    */
 
     @Transactional
     public ResultData<Kakao> kakaoJoin(long kakao_id, LocalDateTime kakao_createAt, String kakao_nickName, String kakao_email, String access_token, String refresh_token) {
@@ -156,5 +193,19 @@ public class MemberService {
 
     public Member getMemberByEmailAndLoginType(String kakao_email, String login_type) {
         return memberRepository.findByEmailAndLoginType(kakao_email, login_type);
+    }
+
+    public ResultData updateTeamByName(Long loginedMemberId, String teamName) {
+        Long teamId = teamRepository.findByTeamName(teamName);
+
+        if (teamId == null) {
+            return ResultData.from("F-1", "해당 팀을 찾을 수 없습니다.");
+        }
+
+        Member member = getLoginMemberById(loginedMemberId);
+
+        member.setTeamId(teamId);
+
+        return ResultData.from("S-1", Ut.f("%s팀 선택 완료", teamName));
     }
 }

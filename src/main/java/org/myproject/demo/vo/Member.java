@@ -36,8 +36,8 @@ public class Member extends BaseEntity {
     @Column(name = "login_type")
     private String loginType;
 
-    @Column(name = "teamId")
-    private int teamId;
+    @Column(name = "teamId", nullable = true)
+    private Long teamId;
 
     @Transient
     private String extra_writer;

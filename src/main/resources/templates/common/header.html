@@ -52,13 +52,13 @@
         <!-- 로그인 / 로그아웃 버튼 -->
         <div class="relative w-[240px] h-[70px] flex items-center justify-center">
             <a th:if="${rq == null or !rq.isLogined()}"
-               th:href="@{/user/login}"
+               th:href="@{/member/login}"
                class="w-24 h-10 text-center rounded-full text-base text-white bg-[#001C48] flex justify-center items-center hover:bg-[#002e70]">
                 로그인
             </a>
 
             <a th:if="${rq != null and rq.isLogined()}"
-               th:href="@{/user/doLogout}"
+               th:href="@{/member/doLogout}"
                class="w-24 h-10 text-center rounded-full text-base text-white bg-[#001C48] flex justify-center items-center hover:bg-[#002e70]">
                 로그아웃
             </a>

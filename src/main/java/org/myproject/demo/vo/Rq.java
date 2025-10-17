@@ -2,7 +2,6 @@ package org.myproject.demo.vo;
 
 import java.io.IOException;
 
-import org.myproject.demo.service.MemberService;
 import org.myproject.demo.util.Ut;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -25,7 +24,7 @@ public class Rq {
     private final HttpSession session;
 
     private boolean isLogined = false;
-    private int loginedUserId = 0;
+    private Long loginedMemberId;
 
     @Getter
     private Member loginedMember;
@@ -33,14 +32,14 @@ public class Rq {
     @Getter
     private Member loginedMemberTeam;
 
-    public Rq(HttpServletRequest req, HttpServletResponse resp, MemberService memberService) {
+    public Rq(HttpServletRequest req, HttpServletResponse resp) {
         this.req = req;
         this.resp = resp;
         this.session = req.getSession();
 
-        if (session.getAttribute("loginedUserId") != null) {
+        if (session.getAttribute("loginedMemberId") != null) {
             isLogined = true;
-            loginedUserId = (int) session.getAttribute("loginedUserId");
+            loginedMemberId = (Long) session.getAttribute("loginedMemberId");
         }
 
         this.req.setAttribute("rq", this);
@@ -83,13 +82,13 @@ public class Rq {
     }
 
     public void logout() {
-        session.removeAttribute("loginedUserId");
+        session.removeAttribute("loginedMemberId");
         session.removeAttribute("loginedMember");
     }
 
     public void login(Member member) {
-        session.setAttribute("loginedUserId", member.getId());
-        session.setAttribute("loginedUser", member);
+        session.setAttribute("loginedMemberId", member.getId());
+        session.setAttribute("loginedMember", member);
     }
 
     public void initBeforeActionInterceptor() {

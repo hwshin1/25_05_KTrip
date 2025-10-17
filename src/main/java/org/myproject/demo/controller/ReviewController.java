@@ -102,7 +102,7 @@ public class ReviewController {
 //            return Ut.jsHistoryBack("F-4", Ut.f("공지사항은 관리자만 작성 가능합니다."));
 //        }
 
-        ResultData doWriteRd = reviewService.doWrite(rq.getLoginedUserId(), title, body, boardId);
+        ResultData doWriteRd = reviewService.doWrite(Math.toIntExact(rq.getLoginedMemberId()), title, body, boardId);
 
         int id = (int) doWriteRd.getData1();
 
