@@ -39,9 +39,6 @@ public class MemberController {
                 + kakaoRestApiKey + "&redirect_uri="+ kakaoRedirectUri;
 
         model.addAttribute("sendURL", sendURL);
-
-        // Mybatis 방식
-        // return "user/join";
         return "member/join";
     }
 
@@ -114,9 +111,6 @@ public class MemberController {
         System.out.println(sendURL);
 
         model.addAttribute("sendURL", sendURL);
-
-        // Mybatis 방식
-        // return "user/login";
         return "member/login";
     }
 

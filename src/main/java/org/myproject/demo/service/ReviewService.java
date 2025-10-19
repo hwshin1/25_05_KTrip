@@ -62,7 +62,6 @@ public class ReviewService {
         reviewRepository.deleteById(id);
     }
 
-    /*
     public Review getForPrintReview(int loginedUserId, int id) {
         Review review = reviewRepository.getForPrintReview(id);
 
@@ -109,5 +108,4 @@ public class ReviewService {
 
         return reviewRepository.getForPrintReviews(boardId, limitFrom, limitTake, searchKeywordTypeCode, searchKeyword);
     }
-     */
 }
