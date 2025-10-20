@@ -33,7 +33,7 @@ public class ReviewService {
 
         reviewRepository.save(review);
 
-        Optional<Review> id = reviewRepository.findById(review.getId());
+        Long id = review.getId();
 
         return ResultData.from("S-1", Ut.f("%d번 리뷰가 등록되었습니다.", id), "등록된 리뷰의 id", id);
     }
@@ -42,12 +42,12 @@ public class ReviewService {
         return reviewRepository.findAll();
     }
 
-    public Optional<Review> getReviewById(long id) {
+    public Optional<Review> getReviewById(Long id) {
         return reviewRepository.findById(id);
     }
 
     @Transactional
-    public void doModify(long id, String title, String body) {
+    public void doModify(Long id, String title, String body) {
         Review updateReview = reviewRepository.findById(id).orElse(null);
 
         if (updateReview != null) {
@@ -62,36 +62,36 @@ public class ReviewService {
         reviewRepository.deleteById(id);
     }
 
-    public Review getForPrintReview(int loginedUserId, int id) {
+    public Review getForPrintReview(Long loginedMemberId, Long id) {
         Review review = reviewRepository.getForPrintReview(id);
 
-        controlForPrintData(loginedUserId, review);
+        controlForPrintData(loginedMemberId, review);
 
         return review;
     }
 
-    private void controlForPrintData(int loginedUserId, Optional<Review> review) {
-        if (review.isEmpty()) {
+    private void controlForPrintData(Long loginedMemberId, Review review) {
+        if (review.getId() == null) {
             return;
         }
 
-        ResultData userCanModifyRd = userCanModify(loginedUserId, review);
+        ResultData userCanModifyRd = userCanModify(loginedMemberId, review);
         review.setUserCanModify(userCanModifyRd.isSuccess());
 
-        ResultData userCanDeleteRd = userCanDelete(loginedUserId, review);
+        ResultData userCanDeleteRd = userCanDelete(loginedMemberId, review);
         review.setUserCanDelete(userCanDeleteRd.isSuccess());
     }
 
-    public ResultData userCanModify(int loginedUserId, Optional<Review> review) {
-        if (review.getUserId() != loginedUserId) {
+    public ResultData userCanModify(Long loginedMemberId, Review review) {
+        if (review.getId() != loginedMemberId) {
             return ResultData.from("F-A", Ut.f("%d번 리뷰에 대한 수정 권한 없음", review));
         }
 
         return ResultData.from("S-1", Ut.f("%d번 리뷰가 수정되었습니다.", review));
     }
 
-    public ResultData userCanDelete(int loginedUserId, Optional<Review> review) {
-        if (review.get().getId() != loginedUserId) {
+    public ResultData userCanDelete(Long loginedMemberId, Review review) {
+        if (review.getId() != loginedMemberId) {
             return ResultData.from("F-A", Ut.f("%d번 리뷰에 대한 삭제 권한 없음", review));
         }
 

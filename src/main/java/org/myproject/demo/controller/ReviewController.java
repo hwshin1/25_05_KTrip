@@ -50,7 +50,7 @@ public class ReviewController {
 
         int reviewsCount = reviewService.getReviewCount(boardId, searchKeywordTypeCode, searchKeyword);
 
-        int itemsPage = 10
+        int itemsPage = 10;
 
         int pagesCount = (int) Math.ceil(reviewsCount / (double) itemsPage);
 
@@ -72,7 +72,7 @@ public class ReviewController {
     public String write(HttpServletRequest req, Model model) {
         rq = (Rq) req.getAttribute("rq");
 
-        Member member = memberService.getUserById(rq.getLoginedUserId());
+        Member member = memberService.getLoginMemberById(rq.getLoginedMemberId());
 
         model.addAttribute("user", member);
         return "review/write";
@@ -95,7 +95,7 @@ public class ReviewController {
             return Ut.jsHistoryBack("F-3", Ut.f("게시판을 선택하세요."));
         }
 
-        Member member = memberService.getUserById(rq.getLoginedUserId());
+        Member member = memberService.getLoginMemberById(rq.getLoginedMemberId());
 
         if (member.getAuthLevel() != Member.AUTH_LEVEL_ADMIN && boardId.equals("1")) {
             return Ut.jsHistoryBack("F-4", Ut.f("공지사항은 관리자만 작성 가능합니다."));
@@ -109,10 +109,10 @@ public class ReviewController {
     }
 
     @RequestMapping("/review/detail")
-    public String getReview(HttpServletRequest req, int id, Model model) {
+    public String getReview(HttpServletRequest req, Long id, Model model) {
         rq = (Rq) req.getAttribute("rq");
 
-        Review review = reviewService.getForPrintReview(rq.getLoginedUserId(), id);
+        Review review = reviewService.getForPrintReview(rq.getLoginedMemberId(), id);
 
         model.addAttribute("review", review);
 
@@ -120,10 +120,10 @@ public class ReviewController {
     }
 
     @RequestMapping("/review/modify")
-    public String modifyReview(HttpServletRequest req, int id, Model model) {
+    public String modifyReview(HttpServletRequest req, Long id, Model model) {
         rq = (Rq) req.getAttribute("rq");
 
-        Review review = reviewService.getForPrintReview(rq.getLoginedUserId(), id);
+        Review review = reviewService.getForPrintReview(rq.getLoginedMemberId(), id);
 
         if (review == null) {
             return Ut.jsHistoryBack("F-1", Ut.f("%d번 리뷰는 없습니다.", id));
@@ -140,16 +140,16 @@ public class ReviewController {
 
     @RequestMapping("/review/doModify")
     @ResponseBody
-    public String doModify(HttpServletRequest req, int id, String title, String body) {
+    public String doModify(HttpServletRequest req, Long id, String title, String body) {
         rq = (Rq) req.getAttribute("rq");
 
-        Optional<Review> review = reviewService.getReviewById(id);
+        Review review = reviewService.getForPrintReview(rq.getLoginedMemberId(), id);
 
         if (review == null) {
             return Ut.jsReplace("F-1" , Ut.f("%d번 리뷰는 없습니다", id), "/review/list");
         }
 
-        ResultData userCanModifyRd = reviewService.userCanModify(rq.getLoginedUserId(), review);
+        ResultData userCanModifyRd = reviewService.userCanModify(rq.getLoginedMemberId(), review);
 
         if (userCanModifyRd.isFail()) {
             return Ut.jsHistoryBack(userCanModifyRd.getResultCode(), userCanModifyRd.getMsg());
@@ -164,18 +164,16 @@ public class ReviewController {
 
     @RequestMapping("/review/doDelete")
     @ResponseBody
-    public String doDelete(HttpServletRequest req, long id) {
+    public String doDelete(HttpServletRequest req, Long id) {
         rq = (Rq) req.getAttribute("rq");
 
-        Optional<Review> opr = reviewService.getReviewById(id);
+        Review review = reviewService.getForPrintReview(rq.getLoginedMemberId(), id);
 
-        if (opr == null) {
+        if (review == null) {
             return Ut.jsHistoryBack("F-1" ,Ut.f("%d번 리뷰는 없습니다.", id));
         }
 
-        Review review = opr.get();
-
-        ResultData userCanDeleteRd = reviewService.userCanDelete(rq.getLoginedUserId(), review);
+        ResultData userCanDeleteRd = reviewService.userCanDelete(rq.getLoginedMemberId(), review);
 
         if (userCanDeleteRd.isFail()) {
             return Ut.jsHistoryBack(userCanDeleteRd.getResultCode(), userCanDeleteRd.getMsg());
