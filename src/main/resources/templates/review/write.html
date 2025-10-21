@@ -16,11 +16,9 @@
                 <label for="boardId" class="block mb-2 font-semibold text-gray-700">게시판 선택</label>
                 <select id="boardId" name="boardId" required
                         class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
-                    <option value="" disabled selected>게시판을 선택해주세요</option>
-                    <th:if test="${member.authLevel == 7}">
-                        <option value="1">공지사항</option>
-                    </th:if>
-                    <option value="2">후기</option>
+                    <option th:value="" disabled selected>게시판을 선택해주세요</option>
+                    <option th:if="${member.authLevel == 7}" th:value="1">공지사항</option>
+                    <option th:value="2">후기</option>
                 </select>
             </div>
 
