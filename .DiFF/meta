@@ -1,0 +1,18 @@
+[
+  {
+    "branchName": "main",
+    "root": true,
+    "createdAt": "2025-10-23T18:04:35.402+09:00",
+    "lastRequestedCommit": "7125c4b13d72816ab719d5caa4d357eaac123900",
+    "lastRequestedAt": null,
+    "requestCount": 0
+  },
+  {
+    "branchName": "oldver",
+    "root": false,
+    "createdAt": "2025-10-23T18:04:35.403+09:00",
+    "lastRequestedCommit": "7125c4b13d72816ab719d5caa4d357eaac123900",
+    "lastRequestedAt": null,
+    "requestCount": 0
+  }
+]

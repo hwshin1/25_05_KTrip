@@ -7,10 +7,10 @@ import org.myproject.demo.repository.ReviewRepository;
 import org.myproject.demo.util.Ut;
 import org.myproject.demo.vo.ResultData;
 import org.myproject.demo.vo.Review;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 @Slf4j
@@ -38,14 +38,6 @@ public class ReviewService {
         return ResultData.from("S-1", Ut.f("%d번 리뷰가 등록되었습니다.", id), "등록된 리뷰의 id", id);
     }
 
-    public List<Review> getReviewList() {
-        return reviewRepository.findAll();
-    }
-
-    public Optional<Review> getReviewById(Long id) {
-        return reviewRepository.findById(id);
-    }
-
     @Transactional
     public void doModify(Long id, String title, String body) {
         Review updateReview = reviewRepository.findById(id).orElse(null);
@@ -63,9 +55,9 @@ public class ReviewService {
     }
 
     public Review getForPrintReview(Long loginedMemberId, Long id) {
-        Review review = reviewRepository.getForPrintReview(id);
+        Review review = reviewRepository.findById(id).orElse(null);
 
-        controlForPrintData(loginedMemberId, review);
+        if (review != null) controlForPrintData(loginedMemberId, review);
 
         return review;
     }
@@ -98,14 +90,27 @@ public class ReviewService {
         return ResultData.from("S-1", Ut.f("%d번 리뷰가 삭제 되었습니다", review));
     }
 
-    public int getReviewCount(int boardId, String searchKeywordTypeCode, String searchKeyword) {
-        return reviewRepository.getReviewCount(boardId, searchKeywordTypeCode, searchKeyword);
+    public int getReviewCount(int boardId) {
+        return reviewRepository.countByBoardId(boardId);
     }
 
-    public List<Review> getForPrintReviews(int boardId, int itemsPage, int page, String searchKeywordTypeCode, String searchKeyword) {
-        int limitFrom = (page - 1) * itemsPage;
-        int limitTake = itemsPage;
+    public Page<Review> getForPrintReviews(int boardId, int itemsPage, int page, String searchKeywordTypeCode, String searchKeyword) {
+        Pageable pageable = PageRequest.of(page - 1, itemsPage);
 
-        return reviewRepository.getForPrintReviews(boardId, limitFrom, limitTake, searchKeywordTypeCode, searchKeyword);
+        if (searchKeyword == null || searchKeyword.isBlank()) {
+            return reviewRepository.findByBoardId(boardId, pageable);
+        }
+
+        switch (searchKeywordTypeCode) {
+            case "title":
+                return reviewRepository.findByBoardIdAndTitleContaining(boardId, searchKeyword, pageable);
+            case "body":
+                return reviewRepository.findByBoardIdAndBodyContaining(boardId, searchKeyword, pageable);
+            case "title,body":
+                return reviewRepository.findByBoardIdAndTitleContainingOrBoardIdAndBodyContaining(
+                        boardId, searchKeyword, boardId, searchKeyword, pageable);
+            default:
+                return reviewRepository.findByBoardId(boardId, pageable);
+        }
     }
 }

@@ -8,6 +8,7 @@ import org.myproject.demo.service.MemberService;
 import org.myproject.demo.util.Ut;
 import org.myproject.demo.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class ReviewController {
@@ -48,13 +47,13 @@ public class ReviewController {
             return rq.historyBackOnView("존재하지 않는 게시판");
         }
 
-        int reviewsCount = reviewService.getReviewCount(boardId, searchKeywordTypeCode, searchKeyword);
+        int reviewsCount = reviewService.getReviewCount(boardId);
 
         int itemsPage = 10;
 
         int pagesCount = (int) Math.ceil(reviewsCount / (double) itemsPage);
 
-        List<Review> reviews = reviewService.getForPrintReviews(boardId, itemsPage, page, searchKeywordTypeCode, searchKeyword);
+        Page<Review> reviews = reviewService.getForPrintReviews(boardId, itemsPage, page, searchKeywordTypeCode, searchKeyword);
 
         model.addAttribute("reviews", reviews);
         model.addAttribute("pagesCount", pagesCount);
