@@ -2,7 +2,7 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="common/head :: head">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>내 페이지</title>
 </head>
 <body>
 <header th:replace="common/header :: header"></header>
@@ -24,7 +24,7 @@
                 <p class="text-sm text-center text-gray-200" th:text="${team != null ? team.teamName : '팀 없음'}"></p>
                 <!-- 버튼 -->
                 <button class="mt-4 px-5 py-2 text-sm font-bold uppercase tracking-wide bg-white text-black rounded-xl hover:bg-gray-100 transition">
-                    <a href="../member/userInfo">내 정보 수정</a>
+                    <a href="../member/modifyInfo">내 정보 수정</a>
                 </button>
             </div>
         </div>

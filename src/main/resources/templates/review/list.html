@@ -20,8 +20,8 @@
                 </div>
             </div>
 
-            <form action="/review/list" class="flex flex-wrap gap-2 items-center">
-                <input type="hidden" name="boardId" value="${param.boardId}"/>
+            <form action="../review/list" class="flex flex-wrap gap-2 items-center">
+                <input type="hidden" name="boardId" th:value="${param.boardId}"/>
                 <select name="searchKeywordTypeCode"
                         class="border border-gray-300 bg-white rounded-md px-3 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
                     <option value="title">제목</option>
@@ -70,12 +70,11 @@
 
         <!-- 페이징 -->
         <div class="flex justify-center mt-8">
-            <div class="flex gap-1">
-                <c:set var="paginationLen" value="3"/>
-                <c:set var="startPage" value="${page - paginationLen >= 1 ? page - paginationLen : 1}"/>
-                <c:set var="endPage" value="${page + paginationLen <= pagesCount ? page + paginationLen : pagesCount}"/>
-                <c:set var="baseUri"
-                       value="?boardId=${boardId}&searchKeywordTypeCode=${searchKeywordTypeCode}&searchKeyword=${searchKeyword}"/>
+            <div class="flex gap-1"
+                 th:with="paginationLen=3,
+                 startPage=${page - paginationLen >= 1 ? page - paginationLen : 1},
+                 endPage=${page + paginationLen <= pagesCount ? page + paginationLen : pagesCount},
+                 baseUri='?boardId=' + ${boardId} + '&searchKeywordTypeCode=' + ${searchKeywordTypeCode} + '&searchKeyword=' + ${searchKeyword}">
 
                 <a th:if="${startPage > 1}" class="px-3 py-1 rounded-md border text-sm hover:bg-gray-100"
                    th:href="${baseUri + '&page=1'}">
@@ -102,7 +101,7 @@
 
         <!-- 글쓰기 버튼 -->
         <div class="flex justify-end mt-8">
-            <a href="/review/write"
+            <a href="../review/write"
                class="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm shadow-md transition">
                 <i class="fa-solid fa-pen text-sm"></i>
                 글쓰기
