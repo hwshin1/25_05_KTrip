@@ -69,32 +69,40 @@
         </div>
 
         <!-- 페이징 -->
-        <div class="flex justify-center mt-8">
+        <div class="flex justify-center mt-8" xmlns:th="http://www.thymeleaf.org">
             <div class="flex gap-1"
-                 th:with="paginationLen=3,
-                 startPage=${page - paginationLen >= 1 ? page - paginationLen : 1},
-                 endPage=${page + paginationLen <= pagesCount ? page + paginationLen : pagesCount},
-                 baseUri='?boardId=' + ${boardId} + '&searchKeywordTypeCode=' + ${searchKeywordTypeCode} + '&searchKeyword=' + ${searchKeyword}">
+                 th:with="
+            paginationLen=${3},
+            startPage=${page - paginationLen >= 1 ? page - paginationLen : 1},
+            endPage=${page + paginationLen <= pagesCount ? page + paginationLen : pagesCount},
+            baseUri='?boardId=' + ${boardId} + '&searchKeywordTypeCode=' + ${searchKeywordTypeCode} + '&searchKeyword=' + ${searchKeyword}">
 
-                <a th:if="${startPage > 1}" class="px-3 py-1 rounded-md border text-sm hover:bg-gray-100"
-                   th:href="${baseUri + '&page=1'}">
+                <!-- 첫 페이지로 이동 -->
+                <a th:if="${startPage > 1}"
+                   th:href="${baseUri + '&page=1'}"
+                   class="px-3 py-1 rounded-md border text-sm hover:bg-gray-100">
                     1
                 </a>
 
+                <!-- 앞쪽 생략 -->
                 <span th:if="${startPage > 2}" class="px-2 text-gray-400">...</span>
 
-                <a class="px-3 py-1 rounded-md border text-sm transition ${param.page == i ? 'bg-gray-800 text-white' : 'hover:bg-gray-100'}"
-                   th:each="i : ${endPage}"
+                <!-- 페이지 번호 반복 -->
+                <a th:each="i : ${#numbers.sequence(startPage, endPage)}"
                    th:href="${baseUri + '&page=' + i}"
-                   th:text="${i}">
+                   th:text="${i}"
+                   th:classappend="${page == i} ? ' bg-gray-800 text-white' : ' hover:bg-gray-100'"
+                   class="px-3 py-1 rounded-md border text-sm transition">
                 </a>
 
+                <!-- 뒤쪽 생략 -->
                 <span th:if="${endPage < pagesCount - 1}" class="px-2 text-gray-400">...</span>
 
-                <a class="px-3 py-1 rounded-md border text-sm hover:bg-gray-100"
+                <!-- 마지막 페이지 -->
+                <a th:if="${endPage < pagesCount}"
                    th:href="${baseUri + '&page=' + pagesCount}"
-                   th:if="${endPage < pagesCount}"
-                   th:text="${pagesCount}">
+                   th:text="${pagesCount}"
+                   class="px-3 py-1 rounded-md border text-sm hover:bg-gray-100">
                 </a>
             </div>
         </div>
