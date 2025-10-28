@@ -1,7 +1,6 @@
 package org.myproject.demo.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
-import org.myproject.demo.interceptor.BeforeInterceptor;
 import org.myproject.demo.service.BoardService;
 import org.myproject.demo.service.ReviewService;
 import org.myproject.demo.service.MemberService;
@@ -19,9 +18,6 @@ import java.io.IOException;
 
 @Controller
 public class ReviewController {
-
-    @Autowired
-    private BeforeInterceptor beforeInterceptor;
 
     @Autowired
     private Rq rq;

@@ -6,8 +6,9 @@
     <title th:text="${teamName} + ' 음식점 지도'">음식점 지도</title>
 </head>
 <body>
-<!-- 카카오 지도 JS: Thymeleaf 파라미터 바인딩으로 주입 -->
-<script type="text/javascript" th:src="@{//dapi.kakao.com/v2/maps/sdk.js(appkey=${kakao.javascript_key},libraries=services)}"></script>
+<!-- 카카오 지도 -->
+<script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${javascript_key}&libraries=services"></script>
 
 <div class="bg-gray-100 text-gray-900">
     <div class="flex h-screen">
