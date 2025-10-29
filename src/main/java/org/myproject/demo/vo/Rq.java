@@ -40,6 +40,7 @@ public class Rq {
         if (session.getAttribute("loginedMemberId") != null) {
             isLogined = true;
             loginedMemberId = (Long) session.getAttribute("loginedMemberId");
+            loginedMember = (Member) session.getAttribute("loginedMember");
         }
 
         this.req.setAttribute("rq", this);
