@@ -27,7 +27,7 @@ public class IntroductionController {
 
     @RequestMapping("/Seoul")
     public String introSeoul() {
-        return "teamPage/Seoul/FCSeoul";
+        return "teamPage/FCSeoul";
     }
 
     @RequestMapping("/Seoul/restaurant")
@@ -43,12 +43,12 @@ public class IntroductionController {
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "teamPage/Seoul/FCSeoulRestaurant";
+        return "teamPage/restaurantList";
     }
 
     @RequestMapping("/Anyang")
     public String introAnyang() {
-        return "teamPage/Anyang/FCAnyang";
+        return "teamPage/FCAnyang";
     }
 
     @RequestMapping("/Anyang/restaurant")
@@ -64,12 +64,12 @@ public class IntroductionController {
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "teamPage/Anyang/FCAnyangRestaurant";
+        return "teamPage/restaurantList";
     }
 
     @RequestMapping("/SuwonFC")
     public String introSuwon() {
-        return "teamPage/SuwonFC/SuwonFC";
+        return "teamPage/SuwonFC";
     }
 
     @RequestMapping("/SuwonFC/restaurant")
@@ -85,12 +85,12 @@ public class IntroductionController {
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "teamPage/SuwonFC/SuwonFCRestaurant";
+        return "teamPage/restaurantList";
     }
 
     @RequestMapping("/Gangwon")
     public String introGangwon() {
-        return "teamPage/Gangwon/GangwonFC";
+        return "teamPage/GangwonFC";
     }
 
     @RequestMapping("/GangwonCh/restaurant")
@@ -106,7 +106,7 @@ public class IntroductionController {
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "teamPage/Gangwon/GangwonFCRestaurant";
+        return "teamPage/restaurantList";
     }
 
     @RequestMapping("/GangwonG/restaurant")
@@ -122,12 +122,12 @@ public class IntroductionController {
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "teamPage/Gangwon/GangwonFCRestaurant2";
+        return "teamPage/restaurantList";
     }
 
     @RequestMapping("/Daejeon")
     public String introDaejeon() {
-        return "teamPage/Daejeon/DaejeonHana";
+        return "teamPage/DaejeonHana";
     }
 
     @RequestMapping("/Daejeon/restaurant")
@@ -143,12 +143,12 @@ public class IntroductionController {
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "teamPage/Daejeon/DaejeonHanaRestaurant";
+        return "teamPage/restaurantList";
     }
 
     @RequestMapping("/Kimcheon")
     public String introKimcheon() {
-        return "teamPage/Kimcheon/KimcheonSangmu";
+        return "teamPage/KimcheonSangmu";
     }
 
     @RequestMapping("/Kimcheon/restaurant")
@@ -164,12 +164,12 @@ public class IntroductionController {
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "teamPage/Kimcheon/KimcheonSangmuRestaurant";
+        return "teamPage/restaurantList";
     }
 
     @RequestMapping("/Daegu")
     public String introDaegu() {
-        return "teamPage/Daegu/DaeguFC";
+        return "teamPage/DaeguFC";
     }
 
     @RequestMapping("/Daegu/restaurant")
@@ -185,12 +185,12 @@ public class IntroductionController {
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "teamPage/Daegu/DaeguFCRestaurant";
+        return "teamPage/restaurantList";
     }
 
     @RequestMapping("/Jeonju")
     public String introJeonju() {
-        return "teamPage/Jeonju/JeonBukHyunDai";
+        return "teamPage/JeonBukHyunDai";
     }
 
     @RequestMapping("/Jeonju/restaurant")
@@ -206,12 +206,12 @@ public class IntroductionController {
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "teamPage/Jeonju/JeonBukHyunDaiRestaurant";
+        return "teamPage/restaurantList";
     }
 
     @RequestMapping("/Pohang")
     public String introPohang() {
-        return "teamPage/Pohang/PohangSteel";
+        return "teamPage/PohangSteel";
     }
 
     @RequestMapping("/Pohang/restaurant")
@@ -227,12 +227,12 @@ public class IntroductionController {
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "teamPage/Pohang/PohangSteelRestaurant";
+        return "teamPage/restaurantList";
     }
 
     @RequestMapping("/Ulsan")
     public String introUlSan() {
-        return "teamPage/Ulsan/UlsanHD";
+        return "teamPage/UlsanHD";
     }
 
     @RequestMapping("/Ulsan/restaurant")
@@ -248,12 +248,12 @@ public class IntroductionController {
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "teamPage/Ulsan/UlsanHDRestaurant";
+        return "teamPage/restaurantList";
     }
 
     @RequestMapping("/Jeju")
     public String introJeju() {
-        return "teamPage/Jeju/JejuSK";
+        return "teamPage/JejuSK";
     }
 
     @RequestMapping("/Jeju/restaurant")
@@ -269,12 +269,12 @@ public class IntroductionController {
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "teamPage/Jeju/JejuSKResutaurant";
+        return "teamPage/restaurantList";
     }
 
     @RequestMapping("/Gwangju")
     public String introGwangju() {
-        return "teamPage/Gwangju/GwangjuFC";
+        return "teamPage/GwangjuFC";
     }
 
     @RequestMapping("/Gwangju/restaurant")
@@ -290,7 +290,7 @@ public class IntroductionController {
         model.addAttribute("restaurants", restaurants);
         model.addAttribute("javascript_key", javascript_key);
 
-        return "teamPage/Gwangju/GwangjuFCRestaurant";
+        return "teamPage/restaurantList";
     }
 
     private String getRegionByTeam(String teamName) {
