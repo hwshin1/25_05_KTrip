@@ -1,6 +1,7 @@
 package org.myproject.demo.controller;
 
 import org.myproject.demo.service.MemberService;
+import org.myproject.demo.vo.Member;
 import org.myproject.demo.vo.Rq;
 import org.myproject.demo.vo.Team;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,13 @@ public class GlobalModelAdvice {
             return null;
         }
 
-        Team memberTeam = memberService.getTeamById(rq.getLoginedMemberId());
+        Member member = rq.getLoginedMember();
+        // 팀이 아직 설정되지 않은 회원이면 null 반환
+        if (member == null || member.getTeamId() == null) {
+            return null;
+        }
+
+        Team memberTeam = memberService.getTeamById(member.getTeamId());
 
         if (memberTeam == null) {
             return null;
