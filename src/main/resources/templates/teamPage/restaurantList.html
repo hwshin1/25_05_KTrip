@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="common/head :: head">
+<head th:replace="~{common/head :: head}">
     <!-- 공통 head 프래그먼트 사용 -->
     <meta charset="UTF-8"/>
     <title th:text="${teamName} + ' 음식점 지도'">음식점 지도</title>
@@ -117,6 +117,6 @@
     /*]]>*/
 </script>
 
-<footer th:replace="common/footer :: footer"></footer>
+<footer th:replace="~{common/footer :: footer}"></footer>
 </body>
 </html>

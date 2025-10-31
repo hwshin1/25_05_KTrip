@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="common/head :: head">
+<head th:replace="~{common/head :: head}">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<header th:replace="common/header :: header"></header>
+<header th:replace="~{common/header :: header}"></header>
 
 <section class="h-screen flex justify-center items-start mt-24 px-4">
     <div class="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-8">
@@ -93,6 +93,6 @@
     }
 </script>
 
-<footer th:replace="common/footer :: footer"></footer>
+<footer th:replace="~{common/footer :: footer}"></footer>
 </body>
 </html>

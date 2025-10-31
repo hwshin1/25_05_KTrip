@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="common/head :: head">
+<head th:replace="~{common/head :: head}">
     <meta charset="UTF-8">
 </head>
 <body>
-<header th:replace="common/header :: header"></header>
+<header th:replace="~{common/header :: header}"></header>
 
 <div class="w-full h-auto relative overflow-hidden bg-white">
-    <div th:replace="common/slider :: slider"></div>
+    <div th:replace="~{common/slider :: slider}"></div>
 
     <div class="w-full h-[760px] relative overflow-hidden bg-[#F5F5F5]">
         <p class="flex justify-center mt-[120px] text-5xl text-center">
@@ -231,7 +231,7 @@
     </div>
 </div>
 
-<footer th:replace="common/footer :: footer"></footer>
+<footer th:replace="~{common/footer :: footer}"></footer>
 
 </body>
 </html>

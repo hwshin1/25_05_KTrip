@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="common/head :: head">
+<head th:replace="~{common/head :: head}">
     <meta charset="UTF-8">
     <title></title>
 </head>
 <body>
-<header th:replace="common/header :: header"></header>
+<header th:replace="~{common/header :: header}"></header>
 
 <div class="fixed inset-0 bg-black bg-opacity-40 z-50 flex justify-center items-center">
     <form action="../member/doTeamCheck" method="POST">
@@ -100,6 +100,6 @@
     </form>
 </div>
 
-<footer th:replace="common/footer :: footer"></footer>
+<footer th:replace="~{common/footer :: footer}"></footer>
 </body>
 </html>

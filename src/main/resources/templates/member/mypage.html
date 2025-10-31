@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="common/head :: head">
+<head th:replace="~{common/head :: head}">
     <meta charset="UTF-8">
     <title>내 페이지</title>
 </head>
 <body>
-<header th:replace="common/header :: header"></header>
+<header th:replace="~{common/header :: header}"></header>
 
 <div class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="relative group w-full max-w-xs bg-white rounded-2xl shadow-xl overflow-hidden h-96">
@@ -31,7 +31,7 @@
     </div>
 </div>
 
-<footer th:replace="common/footer :: footer"></footer>
+<footer th:replace="~{common/footer :: footer}"></footer>
 
 </body>
 </html>
