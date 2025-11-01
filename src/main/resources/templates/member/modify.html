@@ -16,11 +16,11 @@
             <div class="grid grid-cols-2 gap-6">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">가입일</label>
-                    <div class="p-2 bg-gray-100 rounded-md text-gray-800">${rq.loginedUser.regDate}</div>
+                    <div class="p-2 bg-gray-100 rounded-md text-gray-800" th:text="${rq.loginedMember.regDate}"></div>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">아이디</label>
-                    <div class="p-2 bg-gray-100 rounded-md text-gray-800">${rq.loginedUser.loginId}</div>
+                    <div class="p-2 bg-gray-100 rounded-md text-gray-800" th:text="${rq.loginedMember.loginId}"></div>
                 </div>
             </div>
 
@@ -28,13 +28,13 @@
             <div class="grid grid-cols-2 gap-6">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">새 비밀번호</label>
-                    <input name="loginPw" type="text" autocomplete="off"
+                    <input name="loginPw" type="password" autocomplete="off"
                            placeholder="새 비밀번호 입력"
                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">비밀번호 확인</label>
-                    <input name="loginPwConfirm" type="text" autocomplete="off"
+                    <input name="loginPwConfirm" type="password" autocomplete="off"
                            placeholder="비밀번호 확인 입력"
                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
                 </div>
@@ -43,13 +43,13 @@
             <!-- 닉네임 / 이메일 -->
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">닉네임</label>
-                <input name="nickName" type="text" autocomplete="off" value="${rq.loginedUser.nickName}"
+                <input name="nickName" type="text" autocomplete="off" th:value="${rq.loginedMember.nickName}"
                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">이메일</label>
-                <input name="email" type="text" autocomplete="off" value="${rq.loginedUser.email}"
+                <input name="email" type="text" autocomplete="off" th:value="${rq.loginedMember.email}"
                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
             </div>
 
@@ -79,12 +79,12 @@
 
         if (form.loginPw.value.length > 0) {
             form.loginPwConfirm.value = form.loginPwConfirm.value.trim();
-            if (form.loginPwConfirm.value == 0) {
+            if (form.loginPwConfirm.value === 0) {
                 alert('비밀번호 확인이 비어있습니다.');
                 return;
             }
 
-            if (form.loginPwConfirm.value != form.loginPw.value) {
+            if (form.loginPwConfirm.value !== form.loginPw.value) {
                 alert('비밀번호가 일치하지 않습니다.');
                 return;
             }
