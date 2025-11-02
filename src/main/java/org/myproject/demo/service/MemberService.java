@@ -196,15 +196,15 @@ public class MemberService {
     }
 
     public ResultData updateTeamByName(Long loginedMemberId, String teamName) {
-        Long teamId = teamRepository.findByTeamName(teamName);
+        Team team = teamRepository.findByTeamName(teamName).orElse(null);
 
-        if (teamId == null) {
+        if (team == null) {
             return ResultData.from("F-1", "해당 팀을 찾을 수 없습니다.");
         }
 
         Member member = getLoginMemberById(loginedMemberId);
 
-        member.setTeamId(teamId);
+        member.setTeamId(team.getId());
 
         return ResultData.from("S-1", Ut.f("%s팀 선택 완료", teamName));
     }
