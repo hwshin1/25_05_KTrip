@@ -160,14 +160,19 @@ public class MemberController {
 
         Member member = memberService.getLoginMemberById(rq.getLoginedMemberId());
 
-        Team team = null;
+        if (member == null) {
+            return "redirect:/member/login";
+        }
 
+        Team team = null;
         if (member.getTeamId() != null) {
             team = memberService.getTeamById(member.getTeamId());
         }
 
         model.addAttribute("member", member);
         model.addAttribute("team", team);
+
+        rq.login(member);
         return "member/mypage";
     }
 
