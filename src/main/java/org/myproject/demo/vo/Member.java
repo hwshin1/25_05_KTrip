@@ -1,8 +1,6 @@
 package org.myproject.demo.vo;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -36,8 +34,9 @@ public class Member extends BaseEntity {
     @Column(name = "login_type")
     private String loginType;
 
-    @Column(name = "teamId", nullable = true)
-    private Long teamId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "team_id")
+    private Team team;
 
     @Transient
     private String extra_writer;

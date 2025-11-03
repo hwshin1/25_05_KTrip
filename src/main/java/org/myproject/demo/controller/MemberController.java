@@ -158,16 +158,17 @@ public class MemberController {
     public String mypage(HttpServletRequest req, Model model) {
         rq = (Rq) req.getAttribute("rq");
 
-        Member member = memberService.getLoginMemberById(rq.getLoginedMemberId());
+        // 로그인 안되어 있으면 로그인 창으로
+        if (!rq.isLogined()) {
+            return "redirect:/member/login";
+        }
 
+        Member member = memberService.getLoginMemberById(rq.getLoginedMemberId());
         if (member == null) {
             return "redirect:/member/login";
         }
 
-        Team team = null;
-        if (member.getTeamId() != null) {
-            team = memberService.getTeamById(member.getTeamId());
-        }
+        Team team = member.getTeam();
 
         model.addAttribute("member", member);
         model.addAttribute("team", team);

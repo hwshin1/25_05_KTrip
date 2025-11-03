@@ -204,7 +204,9 @@ public class MemberService {
 
         Member member = getLoginMemberById(loginedMemberId);
 
-        member.setTeamId(team.getId());
+        // 팀 설정 후 수정(저장)
+        member.setTeam(team);
+        memberRepository.save(member);
 
         return ResultData.from("S-1", Ut.f("%s팀 선택 완료", teamName));
     }

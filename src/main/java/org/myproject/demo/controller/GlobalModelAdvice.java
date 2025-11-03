@@ -26,11 +26,11 @@ public class GlobalModelAdvice {
 
         Member member = rq.getLoginedMember();
         // 팀이 아직 설정되지 않은 회원이면 null 반환
-        if (member == null || member.getTeamId() == null) {
+        if (member == null || member.getTeam() == null) {
             return null;
         }
 
-        Team memberTeam = memberService.getTeamById(member.getTeamId());
+        Team memberTeam = member.getTeam();
 
         if (memberTeam == null) {
             return null;
