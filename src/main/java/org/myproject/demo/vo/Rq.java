@@ -96,10 +96,21 @@ public class Rq {
         System.err.println("initBeforeActionInterceptor 실행됨");
     }
 
-    public String historyBackOnView(String msg) {
-        req.setAttribute("msg", msg);
-        req.setAttribute("historyBack", true);
-        return "common/js";
+    public String historyBackOnView(String msg) throws IOException {
+        resp.setContentType("text/html; charset=UTF-8");
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("<script>");
+        if (msg != null && !msg.trim().isEmpty()) {
+            sb.append("alert('").append(msg.replace("'", "\\'")).append("');");
+        }
+        sb.append("history.back();");
+        sb.append("</script>");
+
+        resp.getWriter().write(sb.toString());
+        resp.getWriter().flush();
+        resp.getWriter().close();
+        return msg;
     }
 
     public String getCurrentUri() {

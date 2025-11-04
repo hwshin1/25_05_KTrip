@@ -115,7 +115,7 @@ public class ReviewController {
     }
 
     @RequestMapping("/review/modify")
-    public String modifyReview(HttpServletRequest req, Long id, Model model) {
+    public String modifyReview(HttpServletRequest req, Long id, Model model) throws IOException {
         rq = (Rq) req.getAttribute("rq");
 
         Review review = reviewService.getForPrintReview(rq.getLoginedMemberId(), id);
