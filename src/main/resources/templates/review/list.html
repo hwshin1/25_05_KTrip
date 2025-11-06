@@ -61,7 +61,7 @@
                     </td>
                     <td th:text="${review.extra_writer}"></td>
                 </tr>
-                <tr th:if="${empty reviews}">
+                <tr th:if="${#lists.isEmpty(reviews)}">
                     <td colspan="4" class="text-gray-500 py-6">게시글이 없습니다.</td>
                 </tr>
                 </tbody>
