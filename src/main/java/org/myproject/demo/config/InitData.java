@@ -18,19 +18,16 @@ public class InitData {
         Board boardNotice = Board.builder()
                 .code("NOTICE")
                 .name("공지사항")
-                .delStatus(false)
                 .build();
 
         Board boardReview = Board.builder()
                 .code("REVIEW")
                 .name("후기")
-                .delStatus(false)
                 .build();
 
         Board boardQnA = Board.builder()
                 .code("QnA")
                 .name("질의응답")
-                .delStatus(false)
                 .build();
 
         if (boardRepository.count() == 0) {

@@ -17,6 +17,7 @@ public class Board extends BaseEntity {
 
     private String code;
     private String name;
-    private boolean delStatus;
+    @Builder.Default
+    private boolean delStatus = false;
     private LocalDateTime delDate;
 }
