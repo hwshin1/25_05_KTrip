@@ -69,7 +69,7 @@ public class ReviewController {
 
         Member member = memberService.getLoginMemberById(rq.getLoginedMemberId());
 
-        model.addAttribute("user", member);
+        model.addAttribute("member", member);
         return "review/write";
     }
 
