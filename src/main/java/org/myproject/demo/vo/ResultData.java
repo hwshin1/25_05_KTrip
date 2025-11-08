@@ -37,7 +37,7 @@ public class ResultData<DT> {
     }
 
     public boolean isFail() {
-        return isSuccess() == false;
+        return !isSuccess();
     }
 
     public static <DT> ResultData<DT> newData(ResultData rd, String dataName, DT newData) {

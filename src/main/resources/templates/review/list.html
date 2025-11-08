@@ -52,7 +52,7 @@
                 <tbody class="bg-white">
                 <tr th:each="review : ${reviews}" class="hover:bg-gray-50 border-b transition-colors">
                     <td class="py-3" th:text="${review.id}"></td>
-                    <td th:text="${review.regDate.substring(0,10)}"></td>
+                    <td th:text="${#temporals.format(review.regDate, 'yyyy-MM-dd')}"></td>
                     <td>
                         <a href="../review/detail?id=${review.id}"
                            class="text-blue-600 hover:underline font-medium"
