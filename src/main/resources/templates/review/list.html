@@ -54,7 +54,7 @@
                     <td class="py-3" th:text="${review.id}"></td>
                     <td th:text="${#temporals.format(review.regDate, 'yyyy-MM-dd')}"></td>
                     <td>
-                        <a href="../review/detail?id=${review.id}"
+                        <a th:href="@{/review/detail(id=${review.id})}"
                            class="text-blue-600 hover:underline font-medium"
                            th:text="${review.title}">
                         </a>
