@@ -93,6 +93,7 @@ public class CrawlingService {
         System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
         options.addArguments("--remote-allow-origins=*");
         WebDriver driver = new ChromeDriver(options);
 
