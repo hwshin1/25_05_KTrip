@@ -84,10 +84,10 @@ public class ReviewService {
 
     public ResultData userCanDelete(Long loginedMemberId, Review review) {
         if (review.getId() != loginedMemberId) {
-            return ResultData.from("F-A", Ut.f("%d번 리뷰에 대한 삭제 권한 없음", review));
+            return ResultData.from("F-A", Ut.f("%d번 리뷰에 대한 삭제 권한 없음", review.getId()));
         }
 
-        return ResultData.from("S-1", Ut.f("%d번 리뷰가 삭제 되었습니다", review));
+        return ResultData.from("S-1", Ut.f("%d번 리뷰가 삭제 되었습니다", review.getId()));
     }
 
     public int getReviewCount(int boardId) {
