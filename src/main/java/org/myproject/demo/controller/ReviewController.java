@@ -98,7 +98,7 @@ public class ReviewController {
 
         ResultData doWriteRd = reviewService.doWrite(Math.toIntExact(rq.getLoginedMemberId()), title, body, boardId);
 
-        int id = (int) doWriteRd.getData1();
+        Long id = (Long) doWriteRd.getData1();
 
         return Ut.jsReplace(doWriteRd.getResultCode(), doWriteRd.getMsg(), "/review/detail?id=" + id);
     }

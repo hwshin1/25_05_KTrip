@@ -95,7 +95,7 @@ public class ReviewService {
     }
 
     public Page<Review> getForPrintReviews(int boardId, int itemsPage, int page, String searchKeywordTypeCode, String searchKeyword) {
-        Pageable pageable = PageRequest.of(page - 1, itemsPage);
+        Pageable pageable = PageRequest.of(page, itemsPage);
 
         if (searchKeyword == null || searchKeyword.isBlank()) {
             return reviewRepository.findByBoardId(boardId, pageable);
